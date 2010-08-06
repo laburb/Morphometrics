@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência do Arquivo heap.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência do Arquivo heap.c</h1><code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="heap_8c.html">Header/heap.h</a>&quot;</code><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Heap *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8c.html#a01dcf35b4a134c3b3837d65ae4cd1ac2">Heap_criar</a> (void *funcao)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cria heap.  <a href="#a01dcf35b4a134c3b3837d65ae4cd1ac2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8c.html#a98e7957975c09a0e0bfc827c9e03fd9c">Heap_adicionar</a> (Heap *heap, void *dado)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adiciona elemento no heap.  <a href="#a98e7957975c09a0e0bfc827c9e03fd9c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8c.html#a8e9274908484a05986bef6c858c1c78b">Heap_remover</a> (Heap *heap)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Remove elemento do heap e o retorna.  <a href="#a8e9274908484a05986bef6c858c1c78b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8c.html#a6ac2cb20a7fb135e6d11bc5953270ea2">Heap_atualiza</a> (Heap *heap, int posicao)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Atualiza elemento na heap.  <a href="#a6ac2cb20a7fb135e6d11bc5953270ea2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="heap_8c.html#a6d9f10302fd662a09a205883fbce9494">Heap_vazio</a> (Heap *heap)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verifica se heap esta vazia.  <a href="#a6d9f10302fd662a09a205883fbce9494"></a><br/></td></tr>
+</table>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="a98e7957975c09a0e0bfc827c9e03fd9c"></a><!-- doxytag: member="heap.c::Heap_adicionar" ref="a98e7957975c09a0e0bfc827c9e03fd9c" args="(Heap *heap, void *dado)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Heap_adicionar </td>
+          <td>(</td>
+          <td class="paramtype">Heap *&nbsp;</td>
+          <td class="paramname"> <em>heap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>dado</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adiciona elemento no heap. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>heap</em>&nbsp;</td><td>Estrutura do heap </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dado</em>&nbsp;</td><td>Dado a ser adicionado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6ac2cb20a7fb135e6d11bc5953270ea2"></a><!-- doxytag: member="heap.c::Heap_atualiza" ref="a6ac2cb20a7fb135e6d11bc5953270ea2" args="(Heap *heap, int posicao)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Heap_atualiza </td>
+          <td>(</td>
+          <td class="paramtype">Heap *&nbsp;</td>
+          <td class="paramname"> <em>heap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>posicao</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Atualiza elemento na heap. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>heap</em>&nbsp;</td><td>Estrutura do heap </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posicao</em>&nbsp;</td><td>Posição que o dado esta na matriz do heap </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a01dcf35b4a134c3b3837d65ae4cd1ac2"></a><!-- doxytag: member="heap.c::Heap_criar" ref="a01dcf35b4a134c3b3837d65ae4cd1ac2" args="(void *funcao)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Heap* Heap_criar </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>funcao</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cria heap. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>funcao</em>&nbsp;</td><td>Funcao para compara os elementos no heap</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Estrutura do heap</dd></dl>
+<dl><dt><b>Valores Retornados:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ponteiro</em>&nbsp;</td><td>para o heap </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e9274908484a05986bef6c858c1c78b"></a><!-- doxytag: member="heap.c::Heap_remover" ref="a8e9274908484a05986bef6c858c1c78b" args="(Heap *heap)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Heap_remover </td>
+          <td>(</td>
+          <td class="paramtype">Heap *&nbsp;</td>
+          <td class="paramname"> <em>heap</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Remove elemento do heap e o retorna. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>heap</em>&nbsp;</td><td>Estrutura do heap</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Valores Retornados:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ponteiro</em>&nbsp;</td><td>para o dado </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NULL</em>&nbsp;</td><td>Heap vazia </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6d9f10302fd662a09a205883fbce9494"></a><!-- doxytag: member="heap.c::Heap_vazio" ref="a6d9f10302fd662a09a205883fbce9494" args="(Heap *heap)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Heap_vazio </td>
+          <td>(</td>
+          <td class="paramtype">Heap *&nbsp;</td>
+          <td class="paramname"> <em>heap</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Verifica se heap esta vazia. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>heap</em>&nbsp;</td><td>Estrutura do heap</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Valores Retornados:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>1</em>&nbsp;</td><td>Vazio </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>0</em>&nbsp;</td><td>Possui elementos </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 5 21:33:04 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

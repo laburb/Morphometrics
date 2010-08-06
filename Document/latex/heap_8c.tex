@@ -1,0 +1,94 @@
+\hypertarget{heap_8c}{
+\section{Referência do Arquivo heap.c}
+\label{heap_8c}\index{heap.c@{heap.c}}
+}
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include \char`\"{}Header/heap.h\char`\"{}}\par
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+Heap $\ast$ \hyperlink{heap_8c_a01dcf35b4a134c3b3837d65ae4cd1ac2}{Heap\_\-criar} (void $\ast$funcao)
+\begin{DoxyCompactList}\small\item\em Cria heap. \item\end{DoxyCompactList}\item 
+void \hyperlink{heap_8c_a98e7957975c09a0e0bfc827c9e03fd9c}{Heap\_\-adicionar} (Heap $\ast$heap, void $\ast$dado)
+\begin{DoxyCompactList}\small\item\em Adiciona elemento no heap. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{heap_8c_a8e9274908484a05986bef6c858c1c78b}{Heap\_\-remover} (Heap $\ast$heap)
+\begin{DoxyCompactList}\small\item\em Remove elemento do heap e o retorna. \item\end{DoxyCompactList}\item 
+void \hyperlink{heap_8c_a6ac2cb20a7fb135e6d11bc5953270ea2}{Heap\_\-atualiza} (Heap $\ast$heap, int posicao)
+\begin{DoxyCompactList}\small\item\em Atualiza elemento na heap. \item\end{DoxyCompactList}\item 
+int \hyperlink{heap_8c_a6d9f10302fd662a09a205883fbce9494}{Heap\_\-vazio} (Heap $\ast$heap)
+\begin{DoxyCompactList}\small\item\em Verifica se heap esta vazia. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Funções}
+\hypertarget{heap_8c_a98e7957975c09a0e0bfc827c9e03fd9c}{
+\index{heap.c@{heap.c}!Heap\_\-adicionar@{Heap\_\-adicionar}}
+\index{Heap\_\-adicionar@{Heap\_\-adicionar}!heap.c@{heap.c}}
+\subsubsection[{Heap\_\-adicionar}]{\setlength{\rightskip}{0pt plus 5cm}void Heap\_\-adicionar (Heap $\ast$ {\em heap}, \/  void $\ast$ {\em dado})}}
+\label{heap_8c_a98e7957975c09a0e0bfc827c9e03fd9c}
+
+
+Adiciona elemento no heap. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em heap}]Estrutura do heap \item[{\em dado}]Dado a ser adicionado \end{DoxyParams}
+\hypertarget{heap_8c_a6ac2cb20a7fb135e6d11bc5953270ea2}{
+\index{heap.c@{heap.c}!Heap\_\-atualiza@{Heap\_\-atualiza}}
+\index{Heap\_\-atualiza@{Heap\_\-atualiza}!heap.c@{heap.c}}
+\subsubsection[{Heap\_\-atualiza}]{\setlength{\rightskip}{0pt plus 5cm}void Heap\_\-atualiza (Heap $\ast$ {\em heap}, \/  int {\em posicao})}}
+\label{heap_8c_a6ac2cb20a7fb135e6d11bc5953270ea2}
+
+
+Atualiza elemento na heap. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em heap}]Estrutura do heap \item[{\em posicao}]Posição que o dado esta na matriz do heap \end{DoxyParams}
+\hypertarget{heap_8c_a01dcf35b4a134c3b3837d65ae4cd1ac2}{
+\index{heap.c@{heap.c}!Heap\_\-criar@{Heap\_\-criar}}
+\index{Heap\_\-criar@{Heap\_\-criar}!heap.c@{heap.c}}
+\subsubsection[{Heap\_\-criar}]{\setlength{\rightskip}{0pt plus 5cm}Heap$\ast$ Heap\_\-criar (void $\ast$ {\em funcao})}}
+\label{heap_8c_a01dcf35b4a134c3b3837d65ae4cd1ac2}
+
+
+Cria heap. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em funcao}]Funcao para compara os elementos no heap\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura do heap
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valores Retornados}
+\item[{\em ponteiro}]para o heap \end{DoxyRetVals}
+\hypertarget{heap_8c_a8e9274908484a05986bef6c858c1c78b}{
+\index{heap.c@{heap.c}!Heap\_\-remover@{Heap\_\-remover}}
+\index{Heap\_\-remover@{Heap\_\-remover}!heap.c@{heap.c}}
+\subsubsection[{Heap\_\-remover}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Heap\_\-remover (Heap $\ast$ {\em heap})}}
+\label{heap_8c_a8e9274908484a05986bef6c858c1c78b}
+
+
+Remove elemento do heap e o retorna. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em heap}]Estrutura do heap\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores Retornados}
+\item[{\em ponteiro}]para o dado \item[{\em NULL}]Heap vazia \end{DoxyRetVals}
+\hypertarget{heap_8c_a6d9f10302fd662a09a205883fbce9494}{
+\index{heap.c@{heap.c}!Heap\_\-vazio@{Heap\_\-vazio}}
+\index{Heap\_\-vazio@{Heap\_\-vazio}!heap.c@{heap.c}}
+\subsubsection[{Heap\_\-vazio}]{\setlength{\rightskip}{0pt plus 5cm}int Heap\_\-vazio (Heap $\ast$ {\em heap})}}
+\label{heap_8c_a6d9f10302fd662a09a205883fbce9494}
+
+
+Verifica se heap esta vazia. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em heap}]Estrutura do heap\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores Retornados}
+\item[{\em 1}]Vazio \item[{\em 0}]Possui elementos \end{DoxyRetVals}

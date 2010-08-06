@@ -3,6 +3,14 @@
 
 #include "Header/conjdis.h"
 
+/**
+ *  Inciar o conjunto disjunto.
+ *
+ *  @param tamanho Tamanho do conjunto
+ *
+ *  @return Estrutura do conjunto
+ */
+
 Conjdis *Conjdis_iniciar(int tamanho) {
 	int i;
 	Conjdis *a=malloc(sizeof(Conjdis));
@@ -15,6 +23,13 @@ Conjdis *Conjdis_iniciar(int tamanho) {
 	return a;
 }
 
+/**
+ *  Libera da memoria o conjunto.
+ *
+ *  @param conj Ponteiro para estrutura do conjunto
+ */
+
+
 void Conjdis_deletar(Conjdis **conj) {
   if (*conj) {
     if ((*conj)->v)
@@ -24,6 +39,19 @@ void Conjdis_deletar(Conjdis **conj) {
 
   *conj=NULL;
 }
+
+/**
+ *  Procura o conjunto de um elemento.
+ *
+ *  @param cd Estrutura do conjunto
+ *  @param elem Elemento
+ *
+ *  @return Retorna o conjunto pertencente do elemento
+ *
+ *  @retval 1>= Conjunto pertencente
+ *  @retval -1 Falha
+ *
+ */
 
 int Conjdis_procurar(Conjdis *cd, int elem) {
 	int i=elem;
@@ -38,6 +66,15 @@ int Conjdis_procurar(Conjdis *cd, int elem) {
 
 	return i;
 }
+
+/**
+ *  Junta dois conjuntos apartir do conjunto dos dois elementos passados por parametro.
+ *
+ *  @param cd Estrutura do conjunto
+ *  @param elem1 Elemento
+ *  @param elem2 Elemento
+ *
+ */
 
 void Conjdis_juntar(Conjdis *cd, int elem1, int elem2) {
 	int pos1=Conjdis_procurar(cd,elem1);

@@ -1,0 +1,40 @@
+\hypertarget{mensagens_8c}{
+\section{Referência do Arquivo mensagens.c}
+\label{mensagens_8c}\index{mensagens.c@{mensagens.c}}
+}
+{\ttfamily \#include $<$gtk/gtk.h$>$}\par
+{\ttfamily \#include \char`\"{}Header/mensagens.h\char`\"{}}\par
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mensagens_8c_a0e9d1974367f157da35f624c1d43b321}{Mensagem} (TipoMensagem tipo, char $\ast$titulo, char $\ast$mesg,...)
+\begin{DoxyCompactList}\small\item\em Mostra uma janela de mensagem. \item\end{DoxyCompactList}\item 
+void \hyperlink{mensagens_8c_ac4d905705d6e05343df0437c0e3256e5}{Pergunta} (void($\ast$fsim)(), void($\ast$fnao)(), gchar $\ast$titulo, gchar $\ast$mesg,...)
+\begin{DoxyCompactList}\small\item\em Mostra uma janela de pergunta. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Funções}
+\hypertarget{mensagens_8c_a0e9d1974367f157da35f624c1d43b321}{
+\index{mensagens.c@{mensagens.c}!Mensagem@{Mensagem}}
+\index{Mensagem@{Mensagem}!mensagens.c@{mensagens.c}}
+\subsubsection[{Mensagem}]{\setlength{\rightskip}{0pt plus 5cm}void Mensagem (TipoMensagem {\em tipo}, \/  char $\ast$ {\em titulo}, \/  char $\ast$ {\em mesg}, \/   {\em ...})}}
+\label{mensagens_8c_a0e9d1974367f157da35f624c1d43b321}
+
+
+Mostra uma janela de mensagem. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em tipo}]Tipo de mensagem \item[{\em titulo}]Titulo da janela \item[{\em mesg}]Mensagem \end{DoxyParams}
+\hypertarget{mensagens_8c_ac4d905705d6e05343df0437c0e3256e5}{
+\index{mensagens.c@{mensagens.c}!Pergunta@{Pergunta}}
+\index{Pergunta@{Pergunta}!mensagens.c@{mensagens.c}}
+\subsubsection[{Pergunta}]{\setlength{\rightskip}{0pt plus 5cm}void Pergunta (void($\ast$)() {\em fsim}, \/  void($\ast$)() {\em fnao}, \/  gchar $\ast$ {\em titulo}, \/  gchar $\ast$ {\em mesg}, \/   {\em ...})}}
+\label{mensagens_8c_ac4d905705d6e05343df0437c0e3256e5}
+
+
+Mostra uma janela de pergunta. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em fsim}]Função que ira ser execultada se respoder sim \item[{\em fnao}]Função que ira ser execultada se respoder não \item[{\em titulo}]Titulo da janela \item[{\em mesg}]Mensagem \end{DoxyParams}

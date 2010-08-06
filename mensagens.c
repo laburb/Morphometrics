@@ -9,7 +9,7 @@
 
 #include "Header/mensagens.h"
 
-void Mensagem_generica(GtkMessageType gtkTipo, void (*fsim)(), void (*fnao)(), gchar *titulo, gchar *mesg) {
+static void Mensagem_generica(GtkMessageType gtkTipo, void (*fsim)(), void (*fnao)(), char *titulo, char *mesg) {
   GtkButtonsType botao=(gtkTipo == GTK_MESSAGE_QUESTION)? GTK_BUTTONS_YES_NO:GTK_BUTTONS_OK;
 
   GtkWidget *mesgWid=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL, gtkTipo, botao,"%s", mesg);
@@ -24,9 +24,18 @@ void Mensagem_generica(GtkMessageType gtkTipo, void (*fsim)(), void (*fnao)(), g
     fnao();
 }
 
-void Mensagem(TipoMensagem tipo, gchar *titulo, gchar *mesg, ...) {
+/**
+ *  Mostra uma janela de mensagem.
+ *
+ *  @param tipo Tipo de mensagem
+ *  @param titulo Titulo da janela
+ *  @param mesg Mensagem
+ *
+ */
+
+void Mensagem(TipoMensagem tipo, char *titulo, char *mesg, ...) {
   GtkMessageType gtkTipo;
-  gchar mesgF[256];
+  char mesgF[256];
 
   va_list ap;
 
@@ -45,6 +54,16 @@ void Mensagem(TipoMensagem tipo, gchar *titulo, gchar *mesg, ...) {
 
   Mensagem_generica(gtkTipo, NULL, NULL, titulo, mesgF);
 }
+
+/**
+ *  Mostra uma janela de pergunta
+ *
+ *  @param fsim Função que ira ser execultada se respoder sim
+ *  @param fnao Função que ira ser execultada se respoder não
+ *  @param titulo Titulo da janela
+ *  @param mesg Mensagem
+ *
+ */
 
 void Pergunta(void (*fsim)(), void (*fnao)() , gchar *titulo, gchar *mesg, ...) {
   gchar mesgF[256];

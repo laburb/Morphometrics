@@ -7,15 +7,18 @@
 
 #include <gtk/gtk.h>
 
-#include "Header/sinais.h"
-#include "Header/opengl.h"
-#include "Header/mensagens.h"
 #include "Header/interface.h"
+#include "Header/importar.h"
+
+/**
+ * Função principal do sistema.
+ */
 
 int main(int argc, char *argv[]) {
 
   Interface_iniciar();
 
+  importar("rectangle_DXF_CAD2000.dxf");
   gtk_main();
 
   Interface_finalizar();

@@ -1,0 +1,139 @@
+\hypertarget{grafo_8h}{
+\section{Referência do Arquivo Header/grafo.h}
+\label{grafo_8h}\index{Header/grafo.h@{Header/grafo.h}}
+}
+{\ttfamily \#include \char`\"{}ponto.h\char`\"{}}\par
+\subsection*{Estruturas de Dados}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnodo}{nodo}
+\item 
+struct \hyperlink{structarestas}{arestas}
+\item 
+struct \hyperlink{structGrafo}{Grafo}
+\end{DoxyCompactItemize}
+\subsection*{Definições de Tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structarestas}{arestas} \hyperlink{grafo_8h_a8b44af2a236fd15db6f3d59afc9b3221}{Arestas}
+\item 
+typedef struct \hyperlink{structnodo}{nodo} \hyperlink{grafo_8h_a46556b0fd3be65be11d967516d9866f1}{Nodo}
+\end{DoxyCompactItemize}
+\subsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{grafo_8h_a22fbf7d4e760958794a34d162b0df86e}{ArestaTipo} \{ \hyperlink{grafo_8h_a22fbf7d4e760958794a34d162b0df86ea76ccc5d9411e6456eee8626bd2855d6a}{DIRECIONADA}, 
+\hyperlink{grafo_8h_a22fbf7d4e760958794a34d162b0df86eaf759a6b2a0b28e3c90e578cfb3b02623}{BIDIRECIONADA}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structGrafo}{Grafo} $\ast$ \hyperlink{grafo_8h_aab40871f2dd74afa1e5efb731bb24f46}{Grafo\_\-iniciar} (int n)
+\item 
+void \hyperlink{grafo_8h_aed077809cbd2dc7fe07f04d56c22f5aa}{Grafo\_\-deletar} (\hyperlink{structGrafo}{Grafo} $\ast$$\ast$grafo)
+\item 
+void \hyperlink{grafo_8h_aebbc32c233cde8025bb199d51f3a70a1}{Grafo\_\-adicionarAresta} (\hyperlink{structGrafo}{Grafo} $\ast$grafo, int a, int b, enum \hyperlink{grafo_8h_a22fbf7d4e760958794a34d162b0df86e}{ArestaTipo} tipo, int valor)
+\item 
+void \hyperlink{grafo_8h_a478db7324fdc12392316039356177069}{Grafo\_\-removerAresta} (\hyperlink{structGrafo}{Grafo} $\ast$grafo, int a, int b)
+\item 
+int \hyperlink{grafo_8h_aed586affb47396d47950919280bbbfc6}{Grafo\_\-isAdjacente} (\hyperlink{structGrafo}{Grafo} $\ast$grafo, int a, int b)
+\item 
+\hyperlink{structarestas}{Arestas} $\ast$ \hyperlink{grafo_8h_a2e690ef24d96d19e75484064e6f7988e}{Grafo\_\-getAresta} (\hyperlink{structGrafo}{Grafo} $\ast$grafo, int a, int b)
+\item 
+\hyperlink{structnodo}{Nodo} $\ast$ \hyperlink{grafo_8h_a1d87718c3ef807c3ac21f83f9b855a52}{Grafo\_\-getNodo} (\hyperlink{structGrafo}{Grafo} $\ast$grafo, int \hyperlink{structnodo}{nodo})
+\item 
+void \hyperlink{grafo_8h_a4165f1aacd2bc69965c5543c8aeb3aac}{Grafo\_\-setNodosAux} (\hyperlink{structGrafo}{Grafo} $\ast$grafo, int valor)
+\item 
+void \hyperlink{grafo_8h_a4568ab10e7749e8dc0fc13e87b329b30}{Grafo\_\-setArestasValor} (\hyperlink{structGrafo}{Grafo} $\ast$grafo, int valor)
+\item 
+\hyperlink{structGrafo}{Grafo} $\ast$ \hyperlink{grafo_8h_a3bce06f14f6af66ffcb1ddf0406a3c4f}{Grafo\_\-duplicar} (\hyperlink{structGrafo}{Grafo} $\ast$base)
+\end{DoxyCompactItemize}
+
+
+\subsection{Definições dos tipos}
+\hypertarget{grafo_8h_a8b44af2a236fd15db6f3d59afc9b3221}{
+\index{grafo.h@{grafo.h}!Arestas@{Arestas}}
+\index{Arestas@{Arestas}!grafo.h@{grafo.h}}
+\subsubsection[{Arestas}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf arestas} {\bf Arestas}}}
+\label{grafo_8h_a8b44af2a236fd15db6f3d59afc9b3221}
+\hypertarget{grafo_8h_a46556b0fd3be65be11d967516d9866f1}{
+\index{grafo.h@{grafo.h}!Nodo@{Nodo}}
+\index{Nodo@{Nodo}!grafo.h@{grafo.h}}
+\subsubsection[{Nodo}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf nodo} {\bf Nodo}}}
+\label{grafo_8h_a46556b0fd3be65be11d967516d9866f1}
+
+
+\subsection{Enumerações}
+\hypertarget{grafo_8h_a22fbf7d4e760958794a34d162b0df86e}{
+\index{grafo.h@{grafo.h}!ArestaTipo@{ArestaTipo}}
+\index{ArestaTipo@{ArestaTipo}!grafo.h@{grafo.h}}
+\subsubsection[{ArestaTipo}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ArestaTipo}}}
+\label{grafo_8h_a22fbf7d4e760958794a34d162b0df86e}
+\begin{Desc}
+\item[Valores enumerados: ]\par
+\begin{description}
+\index{DIRECIONADA@{DIRECIONADA}!grafo.h@{grafo.h}}\index{grafo.h@{grafo.h}!DIRECIONADA@{DIRECIONADA}}\item[{\em 
+\hypertarget{grafo_8h_a22fbf7d4e760958794a34d162b0df86ea76ccc5d9411e6456eee8626bd2855d6a}{
+DIRECIONADA}
+\label{grafo_8h_a22fbf7d4e760958794a34d162b0df86ea76ccc5d9411e6456eee8626bd2855d6a}
+}]\index{BIDIRECIONADA@{BIDIRECIONADA}!grafo.h@{grafo.h}}\index{grafo.h@{grafo.h}!BIDIRECIONADA@{BIDIRECIONADA}}\item[{\em 
+\hypertarget{grafo_8h_a22fbf7d4e760958794a34d162b0df86eaf759a6b2a0b28e3c90e578cfb3b02623}{
+BIDIRECIONADA}
+\label{grafo_8h_a22fbf7d4e760958794a34d162b0df86eaf759a6b2a0b28e3c90e578cfb3b02623}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Funções}
+\hypertarget{grafo_8h_aebbc32c233cde8025bb199d51f3a70a1}{
+\index{grafo.h@{grafo.h}!Grafo\_\-adicionarAresta@{Grafo\_\-adicionarAresta}}
+\index{Grafo\_\-adicionarAresta@{Grafo\_\-adicionarAresta}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-adicionarAresta}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-adicionarAresta ({\bf Grafo} $\ast$ {\em grafo}, \/  int {\em a}, \/  int {\em b}, \/  enum {\bf ArestaTipo} {\em tipo}, \/  int {\em valor})}}
+\label{grafo_8h_aebbc32c233cde8025bb199d51f3a70a1}
+\hypertarget{grafo_8h_aed077809cbd2dc7fe07f04d56c22f5aa}{
+\index{grafo.h@{grafo.h}!Grafo\_\-deletar@{Grafo\_\-deletar}}
+\index{Grafo\_\-deletar@{Grafo\_\-deletar}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-deletar}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-deletar ({\bf Grafo} $\ast$$\ast$ {\em grafo})}}
+\label{grafo_8h_aed077809cbd2dc7fe07f04d56c22f5aa}
+\hypertarget{grafo_8h_a3bce06f14f6af66ffcb1ddf0406a3c4f}{
+\index{grafo.h@{grafo.h}!Grafo\_\-duplicar@{Grafo\_\-duplicar}}
+\index{Grafo\_\-duplicar@{Grafo\_\-duplicar}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-duplicar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grafo}$\ast$ Grafo\_\-duplicar ({\bf Grafo} $\ast$ {\em base})}}
+\label{grafo_8h_a3bce06f14f6af66ffcb1ddf0406a3c4f}
+\hypertarget{grafo_8h_a2e690ef24d96d19e75484064e6f7988e}{
+\index{grafo.h@{grafo.h}!Grafo\_\-getAresta@{Grafo\_\-getAresta}}
+\index{Grafo\_\-getAresta@{Grafo\_\-getAresta}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-getAresta}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Arestas}$\ast$ Grafo\_\-getAresta ({\bf Grafo} $\ast$ {\em grafo}, \/  int {\em a}, \/  int {\em b})}}
+\label{grafo_8h_a2e690ef24d96d19e75484064e6f7988e}
+\hypertarget{grafo_8h_a1d87718c3ef807c3ac21f83f9b855a52}{
+\index{grafo.h@{grafo.h}!Grafo\_\-getNodo@{Grafo\_\-getNodo}}
+\index{Grafo\_\-getNodo@{Grafo\_\-getNodo}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-getNodo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Nodo}$\ast$ Grafo\_\-getNodo ({\bf Grafo} $\ast$ {\em grafo}, \/  int {\em nodo})}}
+\label{grafo_8h_a1d87718c3ef807c3ac21f83f9b855a52}
+\hypertarget{grafo_8h_aab40871f2dd74afa1e5efb731bb24f46}{
+\index{grafo.h@{grafo.h}!Grafo\_\-iniciar@{Grafo\_\-iniciar}}
+\index{Grafo\_\-iniciar@{Grafo\_\-iniciar}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-iniciar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grafo}$\ast$ Grafo\_\-iniciar (int {\em n})}}
+\label{grafo_8h_aab40871f2dd74afa1e5efb731bb24f46}
+\hypertarget{grafo_8h_aed586affb47396d47950919280bbbfc6}{
+\index{grafo.h@{grafo.h}!Grafo\_\-isAdjacente@{Grafo\_\-isAdjacente}}
+\index{Grafo\_\-isAdjacente@{Grafo\_\-isAdjacente}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-isAdjacente}]{\setlength{\rightskip}{0pt plus 5cm}int Grafo\_\-isAdjacente ({\bf Grafo} $\ast$ {\em grafo}, \/  int {\em a}, \/  int {\em b})}}
+\label{grafo_8h_aed586affb47396d47950919280bbbfc6}
+\hypertarget{grafo_8h_a478db7324fdc12392316039356177069}{
+\index{grafo.h@{grafo.h}!Grafo\_\-removerAresta@{Grafo\_\-removerAresta}}
+\index{Grafo\_\-removerAresta@{Grafo\_\-removerAresta}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-removerAresta}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-removerAresta ({\bf Grafo} $\ast$ {\em grafo}, \/  int {\em a}, \/  int {\em b})}}
+\label{grafo_8h_a478db7324fdc12392316039356177069}
+\hypertarget{grafo_8h_a4568ab10e7749e8dc0fc13e87b329b30}{
+\index{grafo.h@{grafo.h}!Grafo\_\-setArestasValor@{Grafo\_\-setArestasValor}}
+\index{Grafo\_\-setArestasValor@{Grafo\_\-setArestasValor}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-setArestasValor}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-setArestasValor ({\bf Grafo} $\ast$ {\em grafo}, \/  int {\em valor})}}
+\label{grafo_8h_a4568ab10e7749e8dc0fc13e87b329b30}
+\hypertarget{grafo_8h_a4165f1aacd2bc69965c5543c8aeb3aac}{
+\index{grafo.h@{grafo.h}!Grafo\_\-setNodosAux@{Grafo\_\-setNodosAux}}
+\index{Grafo\_\-setNodosAux@{Grafo\_\-setNodosAux}!grafo.h@{grafo.h}}
+\subsubsection[{Grafo\_\-setNodosAux}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-setNodosAux ({\bf Grafo} $\ast$ {\em grafo}, \/  int {\em valor})}}
+\label{grafo_8h_a4165f1aacd2bc69965c5543c8aeb3aac}

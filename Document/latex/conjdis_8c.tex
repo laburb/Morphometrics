@@ -1,0 +1,78 @@
+\hypertarget{conjdis_8c}{
+\section{Referência do Arquivo conjdis.c}
+\label{conjdis_8c}\index{conjdis.c@{conjdis.c}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include \char`\"{}Header/conjdis.h\char`\"{}}\par
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+Conjdis $\ast$ \hyperlink{conjdis_8c_afda983ef758cbd5134974dd877829d28}{Conjdis\_\-iniciar} (int tamanho)
+\begin{DoxyCompactList}\small\item\em Inciar o conjunto disjunto. \item\end{DoxyCompactList}\item 
+void \hyperlink{conjdis_8c_aeec85b32d20dc0cfd20681f79f1240e5}{Conjdis\_\-deletar} (Conjdis $\ast$$\ast$conj)
+\begin{DoxyCompactList}\small\item\em Libera da memoria o conjunto. \item\end{DoxyCompactList}\item 
+int \hyperlink{conjdis_8c_a6367e25c4d35458ce8617448983361df}{Conjdis\_\-procurar} (Conjdis $\ast$cd, int elem)
+\begin{DoxyCompactList}\small\item\em Procura o conjunto de um elemento. \item\end{DoxyCompactList}\item 
+void \hyperlink{conjdis_8c_a5123f247a31c1637bcb42a6a79dff021}{Conjdis\_\-juntar} (Conjdis $\ast$cd, int elem1, int elem2)
+\begin{DoxyCompactList}\small\item\em Junta dois conjuntos apartir do conjunto dos dois elementos passados por parametro. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Funções}
+\hypertarget{conjdis_8c_aeec85b32d20dc0cfd20681f79f1240e5}{
+\index{conjdis.c@{conjdis.c}!Conjdis\_\-deletar@{Conjdis\_\-deletar}}
+\index{Conjdis\_\-deletar@{Conjdis\_\-deletar}!conjdis.c@{conjdis.c}}
+\subsubsection[{Conjdis\_\-deletar}]{\setlength{\rightskip}{0pt plus 5cm}void Conjdis\_\-deletar (Conjdis $\ast$$\ast$ {\em conj})}}
+\label{conjdis_8c_aeec85b32d20dc0cfd20681f79f1240e5}
+
+
+Libera da memoria o conjunto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em conj}]Ponteiro para estrutura do conjunto \end{DoxyParams}
+\hypertarget{conjdis_8c_afda983ef758cbd5134974dd877829d28}{
+\index{conjdis.c@{conjdis.c}!Conjdis\_\-iniciar@{Conjdis\_\-iniciar}}
+\index{Conjdis\_\-iniciar@{Conjdis\_\-iniciar}!conjdis.c@{conjdis.c}}
+\subsubsection[{Conjdis\_\-iniciar}]{\setlength{\rightskip}{0pt plus 5cm}Conjdis$\ast$ Conjdis\_\-iniciar (int {\em tamanho})}}
+\label{conjdis_8c_afda983ef758cbd5134974dd877829d28}
+
+
+Inciar o conjunto disjunto. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em tamanho}]Tamanho do conjunto\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura do conjunto 
+\end{DoxyReturn}
+\hypertarget{conjdis_8c_a5123f247a31c1637bcb42a6a79dff021}{
+\index{conjdis.c@{conjdis.c}!Conjdis\_\-juntar@{Conjdis\_\-juntar}}
+\index{Conjdis\_\-juntar@{Conjdis\_\-juntar}!conjdis.c@{conjdis.c}}
+\subsubsection[{Conjdis\_\-juntar}]{\setlength{\rightskip}{0pt plus 5cm}void Conjdis\_\-juntar (Conjdis $\ast$ {\em cd}, \/  int {\em elem1}, \/  int {\em elem2})}}
+\label{conjdis_8c_a5123f247a31c1637bcb42a6a79dff021}
+
+
+Junta dois conjuntos apartir do conjunto dos dois elementos passados por parametro. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em cd}]Estrutura do conjunto \item[{\em elem1}]Elemento \item[{\em elem2}]Elemento \end{DoxyParams}
+\hypertarget{conjdis_8c_a6367e25c4d35458ce8617448983361df}{
+\index{conjdis.c@{conjdis.c}!Conjdis\_\-procurar@{Conjdis\_\-procurar}}
+\index{Conjdis\_\-procurar@{Conjdis\_\-procurar}!conjdis.c@{conjdis.c}}
+\subsubsection[{Conjdis\_\-procurar}]{\setlength{\rightskip}{0pt plus 5cm}int Conjdis\_\-procurar (Conjdis $\ast$ {\em cd}, \/  int {\em elem})}}
+\label{conjdis_8c_a6367e25c4d35458ce8617448983361df}
+
+
+Procura o conjunto de um elemento. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em cd}]Estrutura do conjunto \item[{\em elem}]Elemento\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Retorna o conjunto pertencente do elemento
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valores Retornados}
+\item[{\em 1$>$=}]Conjunto pertencente \item[{\em -\/1}]Falha \end{DoxyRetVals}

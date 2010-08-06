@@ -10,7 +10,15 @@
 
 #include "Header/opengl.h"
 
-GLfloat rtri, rquad;
+static GLfloat rtri, rquad;
+
+/**
+ *  Incializa o opengl
+ *
+ *  @param w Largura
+ *  @param h Altura
+ *
+ */
 
 void Opengl_iniciar(int w, int h) {
   /* Height / width ration */
@@ -57,9 +65,21 @@ void Opengl_iniciar(int w, int h) {
 
 }
 
+/**
+ *  Função chamada quando a tela é redimencionada
+ *
+ *  @param w Largura
+ *  @param h Altura
+ *
+ */
+
 void Opengl_redimencionar(int w, int h) {
   glViewport(0, 0, w, h);
 }
+
+/**
+ *  Desenha
+ */
 
 void Opengl_desenha() {
   glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );

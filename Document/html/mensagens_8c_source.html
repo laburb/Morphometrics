@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Código-Fonte de mensagens.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+    </ul>
+  </div>
+<h1>mensagens.c</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> * mensagens.c</span>
+<a name="l00003"></a>00003 <span class="comment"> *</span>
+<a name="l00004"></a>00004 <span class="comment"> *  Created on: 23/07/2010</span>
+<a name="l00005"></a>00005 <span class="comment"> *      Author: bruno</span>
+<a name="l00006"></a>00006 <span class="comment"> */</span>
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;gtk/gtk.h&gt;</span>
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;Header/mensagens.h&quot;</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 <span class="keywordtype">void</span> Mensagem_generica(GtkMessageType gtkTipo, <span class="keywordtype">void</span> (*fsim)(), <span class="keywordtype">void</span> (*fnao)(), <span class="keywordtype">char</span> *titulo, <span class="keywordtype">char</span> *mesg) {
+<a name="l00013"></a>00013   GtkButtonsType botao=(gtkTipo == GTK_MESSAGE_QUESTION)? GTK_BUTTONS_YES_NO:GTK_BUTTONS_OK;
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015   GtkWidget *mesgWid=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL, gtkTipo, botao,<span class="stringliteral">&quot;%s&quot;</span>, mesg);
+<a name="l00016"></a>00016   gtk_window_set_title(GTK_WINDOW(mesgWid), titulo);
+<a name="l00017"></a>00017   gtk_window_set_position(GTK_WINDOW(mesgWid), GTK_WIN_POS_CENTER_ON_PARENT);
+<a name="l00018"></a>00018   gint result=gtk_dialog_run(GTK_DIALOG (mesgWid));
+<a name="l00019"></a>00019   gtk_widget_destroy(mesgWid);
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021   <span class="keywordflow">if</span> ((result == GTK_RESPONSE_YES) &amp;&amp; (fsim))
+<a name="l00022"></a>00022     fsim();
+<a name="l00023"></a>00023   <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((result == GTK_RESPONSE_NO) &amp;&amp; (fnao))
+<a name="l00024"></a>00024     fnao();
+<a name="l00025"></a>00025 }
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="keywordtype">void</span> Mensagem(TipoMensagem tipo, <span class="keywordtype">char</span> *titulo, <span class="keywordtype">char</span> *mesg, ...) {
+<a name="l00028"></a>00028   GtkMessageType gtkTipo;
+<a name="l00029"></a>00029   <span class="keywordtype">char</span> mesgF[256];
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031   va_list ap;
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033   <span class="keywordflow">if</span> (mesg == NULL) <span class="keywordflow">return</span>;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035   va_start(ap, mesg);
+<a name="l00036"></a>00036   vsprintf(mesgF, mesg, ap);
+<a name="l00037"></a>00037   va_end(ap);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039   <span class="keywordflow">if</span> (tipo == MENSAGEM_AVISO)
+<a name="l00040"></a>00040      gtkTipo=GTK_MESSAGE_WARNING;
+<a name="l00041"></a>00041    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tipo == MENSAGEM_INFORMACAO)
+<a name="l00042"></a>00042      gtkTipo=GTK_MESSAGE_INFO;
+<a name="l00043"></a>00043    <span class="keywordflow">else</span>
+<a name="l00044"></a>00044      gtkTipo=GTK_MESSAGE_ERROR;
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046   Mensagem_generica(gtkTipo, NULL, NULL, titulo, mesgF);
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="keywordtype">void</span> Pergunta(<span class="keywordtype">void</span> (*fsim)(), <span class="keywordtype">void</span> (*fnao)() , gchar *titulo, gchar *mesg, ...) {
+<a name="l00050"></a>00050   gchar mesgF[256];
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052   va_list ap;
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054   <span class="keywordflow">if</span> (mesg == NULL) <span class="keywordflow">return</span>;
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056   va_start(ap, mesg);
+<a name="l00057"></a>00057   vsprintf(mesgF, mesg, ap);
+<a name="l00058"></a>00058   va_end(ap);
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060   Mensagem_generica(GTK_MESSAGE_QUESTION,fsim,fnao, titulo, mesgF);
+<a name="l00061"></a>00061 }
+</pre></div></div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 5 20:06:27 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

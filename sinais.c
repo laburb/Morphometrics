@@ -13,7 +13,7 @@
 #include "Header/sinais.h"
 #include "Header/interface.h"
 
-int timeID=0;
+static int timeID=0;
 
 G_MODULE_EXPORT void on_window_destroy(GtkObject *object, gpointer user_data) {
   if (timeID) {

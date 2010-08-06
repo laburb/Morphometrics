@@ -1,6 +1,8 @@
 #ifndef _GRAFO_H_
 #define _GRAFO_H_
 
+  #include "ponto.h"
+
   typedef struct arestas Arestas;
   typedef struct nodo Nodo;
 
@@ -12,6 +14,8 @@
   struct nodo {
     int valor;
     int aux;
+    Ponto p1;
+    Ponto p2;
     Arestas *arestas;
   };
 

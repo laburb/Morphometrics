@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência do Arquivo importar.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência do Arquivo importar.c</h1><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="importar_8c.html">Header/mensagens.h</a>&quot;</code><br/>
+<code>#include &quot;Import/Header/importDFX.h&quot;</code><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="importar_8c.html#a95981bcf03118131cd77c24ec7163f24">importar</a> (char *arquivo)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Importa um arquivo.  <a href="#a95981bcf03118131cd77c24ec7163f24"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Variáveis</h2></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;char *&nbsp;&nbsp;&nbsp;<a class="el" href="importar_8c.html#a71ac783a3ca66bd546dc964f1dd0e0f0">ext</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Extensão.  <a href="#a0e93488e507ee29735af187863e63cdf"></a><br/></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;int(*&nbsp;&nbsp;&nbsp;<a class="el" href="importar_8c.html#ac5c9c9bd1d1bfc7c603e0787b708de86">func</a> )(char *)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Função.  <a href="#ac23fbe63fe69bf71f78408a822fe77b2"></a><br/></td></tr>
+<tr><td class="memItemLeft" valign="top">}&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="importar_8c.html#a1ec2940dd0f610f4e56d919e52ab935a">listaExt</a> []</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Estrutura contendo as extensões suportadas e as funções especificas.  <a href="#a1ec2940dd0f610f4e56d919e52ab935a"></a><br/></td></tr>
+</table>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="a95981bcf03118131cd77c24ec7163f24"></a><!-- doxytag: member="importar.c::importar" ref="a95981bcf03118131cd77c24ec7163f24" args="(char *arquivo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void importar </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>arquivo</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Importa um arquivo. </p>
+<p>Chama outra função responsavel por importar o arquivo especificada em listaExt.</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>arquivo</em>&nbsp;</td><td>Caminho do arquivo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Variáveis</h2>
+<a class="anchor" id="a71ac783a3ca66bd546dc964f1dd0e0f0"></a><!-- doxytag: member="importar.c::ext" ref="a71ac783a3ca66bd546dc964f1dd0e0f0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="importar_8c.html#a71ac783a3ca66bd546dc964f1dd0e0f0">ext</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Extensão. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac5c9c9bd1d1bfc7c603e0787b708de86"></a><!-- doxytag: member="importar.c::func" ref="ac5c9c9bd1d1bfc7c603e0787b708de86" args=")(char *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="importar_8c.html#ac5c9c9bd1d1bfc7c603e0787b708de86">func</a>)(char *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Função. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1ec2940dd0f610f4e56d919e52ab935a"></a><!-- doxytag: member="importar.c::listaExt" ref="a1ec2940dd0f610f4e56d919e52ab935a" args="[]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="importar_8c.html#a1ec2940dd0f610f4e56d919e52ab935a">listaExt</a>[]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Estrutura contendo as extensões suportadas e as funções especificas. </p>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 5 21:33:04 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

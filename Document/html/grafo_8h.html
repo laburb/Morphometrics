@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência do Arquivo Header/grafo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência do Arquivo Header/grafo.h</h1><code>#include &quot;<a class="el" href="grafo_8h.html">ponto.h</a>&quot;</code><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Estruturas de Dados</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnodo.html">nodo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structarestas.html">arestas</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGrafo.html">Grafo</a></td></tr>
+<tr><td colspan="2"><h2>Definições de Tipos</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structarestas.html">arestas</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#a8b44af2a236fd15db6f3d59afc9b3221">Arestas</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structnodo.html">nodo</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#a46556b0fd3be65be11d967516d9866f1">Nodo</a></td></tr>
+<tr><td colspan="2"><h2>Enumerações</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#a22fbf7d4e760958794a34d162b0df86e">ArestaTipo</a> { <a class="el" href="grafo_8h.html#a22fbf7d4e760958794a34d162b0df86ea76ccc5d9411e6456eee8626bd2855d6a">DIRECIONADA</a>, 
+<a class="el" href="grafo_8h.html#a22fbf7d4e760958794a34d162b0df86eaf759a6b2a0b28e3c90e578cfb3b02623">BIDIRECIONADA</a>
+ }</td></tr>
+<tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#aab40871f2dd74afa1e5efb731bb24f46">Grafo_iniciar</a> (int n)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#aed077809cbd2dc7fe07f04d56c22f5aa">Grafo_deletar</a> (<a class="el" href="structGrafo.html">Grafo</a> **grafo)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#aebbc32c233cde8025bb199d51f3a70a1">Grafo_adicionarAresta</a> (<a class="el" href="structGrafo.html">Grafo</a> *grafo, int a, int b, enum <a class="el" href="grafo_8h.html#a22fbf7d4e760958794a34d162b0df86e">ArestaTipo</a> tipo, int valor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#a478db7324fdc12392316039356177069">Grafo_removerAresta</a> (<a class="el" href="structGrafo.html">Grafo</a> *grafo, int a, int b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#aed586affb47396d47950919280bbbfc6">Grafo_isAdjacente</a> (<a class="el" href="structGrafo.html">Grafo</a> *grafo, int a, int b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structarestas.html">Arestas</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#a2e690ef24d96d19e75484064e6f7988e">Grafo_getAresta</a> (<a class="el" href="structGrafo.html">Grafo</a> *grafo, int a, int b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodo.html">Nodo</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#a1d87718c3ef807c3ac21f83f9b855a52">Grafo_getNodo</a> (<a class="el" href="structGrafo.html">Grafo</a> *grafo, int <a class="el" href="structnodo.html">nodo</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#a4165f1aacd2bc69965c5543c8aeb3aac">Grafo_setNodosAux</a> (<a class="el" href="structGrafo.html">Grafo</a> *grafo, int valor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#a4568ab10e7749e8dc0fc13e87b329b30">Grafo_setArestasValor</a> (<a class="el" href="structGrafo.html">Grafo</a> *grafo, int valor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8h.html#a3bce06f14f6af66ffcb1ddf0406a3c4f">Grafo_duplicar</a> (<a class="el" href="structGrafo.html">Grafo</a> *base)</td></tr>
+</table>
+<hr/><h2>Definições dos tipos</h2>
+<a class="anchor" id="a8b44af2a236fd15db6f3d59afc9b3221"></a><!-- doxytag: member="grafo.h::Arestas" ref="a8b44af2a236fd15db6f3d59afc9b3221" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structarestas.html">arestas</a> <a class="el" href="structarestas.html">Arestas</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a46556b0fd3be65be11d967516d9866f1"></a><!-- doxytag: member="grafo.h::Nodo" ref="a46556b0fd3be65be11d967516d9866f1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structnodo.html">nodo</a> <a class="el" href="structnodo.html">Nodo</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Enumerações</h2>
+<a class="anchor" id="a22fbf7d4e760958794a34d162b0df86e"></a><!-- doxytag: member="grafo.h::ArestaTipo" ref="a22fbf7d4e760958794a34d162b0df86e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="grafo_8h.html#a22fbf7d4e760958794a34d162b0df86e">ArestaTipo</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Valores enumerados: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a22fbf7d4e760958794a34d162b0df86ea76ccc5d9411e6456eee8626bd2855d6a"></a><!-- doxytag: member="DIRECIONADA" ref="a22fbf7d4e760958794a34d162b0df86ea76ccc5d9411e6456eee8626bd2855d6a" args="" -->DIRECIONADA</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a22fbf7d4e760958794a34d162b0df86eaf759a6b2a0b28e3c90e578cfb3b02623"></a><!-- doxytag: member="BIDIRECIONADA" ref="a22fbf7d4e760958794a34d162b0df86eaf759a6b2a0b28e3c90e578cfb3b02623" args="" -->BIDIRECIONADA</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="aebbc32c233cde8025bb199d51f3a70a1"></a><!-- doxytag: member="grafo.h::Grafo_adicionarAresta" ref="aebbc32c233cde8025bb199d51f3a70a1" args="(Grafo *grafo, int a, int b, enum ArestaTipo tipo, int valor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grafo_adicionarAresta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td>
+          <td class="paramname"> <em>grafo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="grafo_8h.html#a22fbf7d4e760958794a34d162b0df86e">ArestaTipo</a>&nbsp;</td>
+          <td class="paramname"> <em>tipo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>valor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed077809cbd2dc7fe07f04d56c22f5aa"></a><!-- doxytag: member="grafo.h::Grafo_deletar" ref="aed077809cbd2dc7fe07f04d56c22f5aa" args="(Grafo **grafo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grafo_deletar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrafo.html">Grafo</a> **&nbsp;</td>
+          <td class="paramname"> <em>grafo</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3bce06f14f6af66ffcb1ddf0406a3c4f"></a><!-- doxytag: member="grafo.h::Grafo_duplicar" ref="a3bce06f14f6af66ffcb1ddf0406a3c4f" args="(Grafo *base)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structGrafo.html">Grafo</a>* Grafo_duplicar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td>
+          <td class="paramname"> <em>base</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2e690ef24d96d19e75484064e6f7988e"></a><!-- doxytag: member="grafo.h::Grafo_getAresta" ref="a2e690ef24d96d19e75484064e6f7988e" args="(Grafo *grafo, int a, int b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structarestas.html">Arestas</a>* Grafo_getAresta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td>
+          <td class="paramname"> <em>grafo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1d87718c3ef807c3ac21f83f9b855a52"></a><!-- doxytag: member="grafo.h::Grafo_getNodo" ref="a1d87718c3ef807c3ac21f83f9b855a52" args="(Grafo *grafo, int nodo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnodo.html">Nodo</a>* Grafo_getNodo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td>
+          <td class="paramname"> <em>grafo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>nodo</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab40871f2dd74afa1e5efb731bb24f46"></a><!-- doxytag: member="grafo.h::Grafo_iniciar" ref="aab40871f2dd74afa1e5efb731bb24f46" args="(int n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structGrafo.html">Grafo</a>* Grafo_iniciar </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>n</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed586affb47396d47950919280bbbfc6"></a><!-- doxytag: member="grafo.h::Grafo_isAdjacente" ref="aed586affb47396d47950919280bbbfc6" args="(Grafo *grafo, int a, int b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Grafo_isAdjacente </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td>
+          <td class="paramname"> <em>grafo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a478db7324fdc12392316039356177069"></a><!-- doxytag: member="grafo.h::Grafo_removerAresta" ref="a478db7324fdc12392316039356177069" args="(Grafo *grafo, int a, int b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grafo_removerAresta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td>
+          <td class="paramname"> <em>grafo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4568ab10e7749e8dc0fc13e87b329b30"></a><!-- doxytag: member="grafo.h::Grafo_setArestasValor" ref="a4568ab10e7749e8dc0fc13e87b329b30" args="(Grafo *grafo, int valor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grafo_setArestasValor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td>
+          <td class="paramname"> <em>grafo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>valor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4165f1aacd2bc69965c5543c8aeb3aac"></a><!-- doxytag: member="grafo.h::Grafo_setNodosAux" ref="a4165f1aacd2bc69965c5543c8aeb3aac" args="(Grafo *grafo, int valor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grafo_setNodosAux </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrafo.html">Grafo</a> *&nbsp;</td>
+          <td class="paramname"> <em>grafo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>valor</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 5 20:20:12 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência do Arquivo interface.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência do Arquivo interface.c</h1><code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;gtk/gtk.h&gt;</code><br/>
+<code>#include &lt;gtk/gtkgl.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="interface_8c.html">Header/interface.h</a>&quot;</code><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Definições e Macros</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a8d6eed3398717c5e313947da3a87d126">INTERFACE_CAMINHO</a>&nbsp;&nbsp;&nbsp;&quot;Interface/&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#ad144a6e055c76aa273dc44be426c9e98">INTERFACE_PRINCIPAL</a>&nbsp;&nbsp;&nbsp;&quot;principal.glade&quot;</td></tr>
+<tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a4399a129948ef1ff172e15473a5a8db2">Interface_iniciar</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inicia o gtk e gtkextgl.  <a href="#a4399a129948ef1ff172e15473a5a8db2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a37277fa1c762ce45a8929b8b827c7d44">Interface_finalizar</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finaliza a interface.  <a href="#a37277fa1c762ce45a8929b8b827c7d44"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">GtkBuilder *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#aefefb211f46a89912ae7272f519ad3d0">Interface_carregarXML</a> (char *arquivo)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Carrega a interface do arquivo xml.  <a href="#aefefb211f46a89912ae7272f519ad3d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#ae76152337046294ac6ac05896b9cd2c0">Interface_mudarMouse</a> (GdkWindow *windowT, GdkCursorType tipoMouse)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modifica o cursor do mouse.  <a href="#ae76152337046294ac6ac05896b9cd2c0"></a><br/></td></tr>
+</table>
+<hr/><h2>Definições e macros</h2>
+<a class="anchor" id="a8d6eed3398717c5e313947da3a87d126"></a><!-- doxytag: member="interface.c::INTERFACE_CAMINHO" ref="a8d6eed3398717c5e313947da3a87d126" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTERFACE_CAMINHO&nbsp;&nbsp;&nbsp;&quot;Interface/&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad144a6e055c76aa273dc44be426c9e98"></a><!-- doxytag: member="interface.c::INTERFACE_PRINCIPAL" ref="ad144a6e055c76aa273dc44be426c9e98" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTERFACE_PRINCIPAL&nbsp;&nbsp;&nbsp;&quot;principal.glade&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="aefefb211f46a89912ae7272f519ad3d0"></a><!-- doxytag: member="interface.c::Interface_carregarXML" ref="aefefb211f46a89912ae7272f519ad3d0" args="(char *arquivo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GtkBuilder* Interface_carregarXML </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>arquivo</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Carrega a interface do arquivo xml. </p>
+<p>Diretorio base especificado pela macro INTERFACE_CAMINHO</p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>arquivo</em>&nbsp;</td><td>Nome do arquivo a ser carregado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a37277fa1c762ce45a8929b8b827c7d44"></a><!-- doxytag: member="interface.c::Interface_finalizar" ref="a37277fa1c762ce45a8929b8b827c7d44" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface_finalizar </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finaliza a interface. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4399a129948ef1ff172e15473a5a8db2"></a><!-- doxytag: member="interface.c::Interface_iniciar" ref="a4399a129948ef1ff172e15473a5a8db2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface_iniciar </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inicia o gtk e gtkextgl. </p>
+<p>Carrega a interface definica pela macro INTERFACE_PRINCIPAL </p>
+
+</div>
+</div>
+<a class="anchor" id="ae76152337046294ac6ac05896b9cd2c0"></a><!-- doxytag: member="interface.c::Interface_mudarMouse" ref="ae76152337046294ac6ac05896b9cd2c0" args="(GdkWindow *windowT, GdkCursorType tipoMouse)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface_mudarMouse </td>
+          <td>(</td>
+          <td class="paramtype">GdkWindow *&nbsp;</td>
+          <td class="paramname"> <em>windowT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GdkCursorType&nbsp;</td>
+          <td class="paramname"> <em>tipoMouse</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Modifica o cursor do mouse. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>windowT</em>&nbsp;</td><td>Janela que ira mudar o mouse </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tipoMouse</em>&nbsp;</td><td>Tipo do mouse </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 5 21:33:04 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

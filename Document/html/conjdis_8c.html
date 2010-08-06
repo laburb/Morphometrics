@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência do Arquivo conjdis.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência do Arquivo conjdis.c</h1><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="conjdis_8c.html">Header/conjdis.h</a>&quot;</code><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Conjdis *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conjdis_8c.html#afda983ef758cbd5134974dd877829d28">Conjdis_iniciar</a> (int tamanho)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inciar o conjunto disjunto.  <a href="#afda983ef758cbd5134974dd877829d28"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conjdis_8c.html#aeec85b32d20dc0cfd20681f79f1240e5">Conjdis_deletar</a> (Conjdis **conj)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libera da memoria o conjunto.  <a href="#aeec85b32d20dc0cfd20681f79f1240e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conjdis_8c.html#a6367e25c4d35458ce8617448983361df">Conjdis_procurar</a> (Conjdis *cd, int elem)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Procura o conjunto de um elemento.  <a href="#a6367e25c4d35458ce8617448983361df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conjdis_8c.html#a5123f247a31c1637bcb42a6a79dff021">Conjdis_juntar</a> (Conjdis *cd, int elem1, int elem2)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Junta dois conjuntos apartir do conjunto dos dois elementos passados por parametro.  <a href="#a5123f247a31c1637bcb42a6a79dff021"></a><br/></td></tr>
+</table>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="aeec85b32d20dc0cfd20681f79f1240e5"></a><!-- doxytag: member="conjdis.c::Conjdis_deletar" ref="aeec85b32d20dc0cfd20681f79f1240e5" args="(Conjdis **conj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Conjdis_deletar </td>
+          <td>(</td>
+          <td class="paramtype">Conjdis **&nbsp;</td>
+          <td class="paramname"> <em>conj</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Libera da memoria o conjunto. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>conj</em>&nbsp;</td><td>Ponteiro para estrutura do conjunto </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afda983ef758cbd5134974dd877829d28"></a><!-- doxytag: member="conjdis.c::Conjdis_iniciar" ref="afda983ef758cbd5134974dd877829d28" args="(int tamanho)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Conjdis* Conjdis_iniciar </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>tamanho</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inciar o conjunto disjunto. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tamanho</em>&nbsp;</td><td>Tamanho do conjunto</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Estrutura do conjunto </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5123f247a31c1637bcb42a6a79dff021"></a><!-- doxytag: member="conjdis.c::Conjdis_juntar" ref="a5123f247a31c1637bcb42a6a79dff021" args="(Conjdis *cd, int elem1, int elem2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Conjdis_juntar </td>
+          <td>(</td>
+          <td class="paramtype">Conjdis *&nbsp;</td>
+          <td class="paramname"> <em>cd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>elem1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>elem2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Junta dois conjuntos apartir do conjunto dos dois elementos passados por parametro. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cd</em>&nbsp;</td><td>Estrutura do conjunto </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>elem1</em>&nbsp;</td><td>Elemento </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>elem2</em>&nbsp;</td><td>Elemento </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6367e25c4d35458ce8617448983361df"></a><!-- doxytag: member="conjdis.c::Conjdis_procurar" ref="a6367e25c4d35458ce8617448983361df" args="(Conjdis *cd, int elem)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Conjdis_procurar </td>
+          <td>(</td>
+          <td class="paramtype">Conjdis *&nbsp;</td>
+          <td class="paramname"> <em>cd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>elem</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Procura o conjunto de um elemento. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>cd</em>&nbsp;</td><td>Estrutura do conjunto </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>elem</em>&nbsp;</td><td>Elemento</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Retorna o conjunto pertencente do elemento</dd></dl>
+<dl><dt><b>Valores Retornados:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>1&gt;=</em>&nbsp;</td><td>Conjunto pertencente </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>-1</em>&nbsp;</td><td>Falha </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 5 21:33:04 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

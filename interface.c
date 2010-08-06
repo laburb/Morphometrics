@@ -14,6 +14,13 @@
 #define INTERFACE_CAMINHO "Interface/"
 #define INTERFACE_PRINCIPAL "principal.glade"
 
+/**
+ *  Inicia o gtk e gtkextgl.
+ *
+ *  Carrega a interface definica pela macro INTERFACE_PRINCIPAL
+ *
+ */
+
 void Interface_iniciar() {
   GtkWidget *drawOpengl;
   GtkWidget *window;
@@ -55,9 +62,23 @@ void Interface_iniciar() {
   gtk_widget_show(window);
 }
 
+/**
+ *  Finaliza a interface
+ *
+ */
+
 void Interface_finalizar() {
   g_object_unref(G_OBJECT(builderPrincipal));
 }
+
+/**
+ *  Carrega a interface do arquivo xml.
+ *
+ *  Diretorio base especificado pela macro INTERFACE_CAMINHO
+ *
+ *  @param arquivo Nome do arquivo a ser carregado
+ *
+ */
 
 GtkBuilder *Interface_carregarXML(char *arquivo) {
   char local[256];
@@ -73,6 +94,14 @@ GtkBuilder *Interface_carregarXML(char *arquivo) {
   return builder;
 }
 
+
+/**
+ *  Modifica o cursor do mouse.
+ *
+ *  @param windowT Janela que ira mudar o mouse
+ *  @param tipoMouse Tipo do mouse
+ *
+ */
 
 void Interface_mudarMouse(GdkWindow *windowT, GdkCursorType tipoMouse) {
   //GdkWindow *windowT=gtk_widget_get_window(GTK_WIDGET(builderPrincipal));

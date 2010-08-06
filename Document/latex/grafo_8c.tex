@@ -1,0 +1,181 @@
+\hypertarget{grafo_8c}{
+\section{Referência do Arquivo grafo.c}
+\label{grafo_8c}\index{grafo.c@{grafo.c}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include \char`\"{}Header/grafo.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ponto.h\char`\"{}}\par
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+Grafo $\ast$ \hyperlink{grafo_8c_aab40871f2dd74afa1e5efb731bb24f46}{Grafo\_\-iniciar} (int n)
+\begin{DoxyCompactList}\small\item\em Inciar o grafo. \item\end{DoxyCompactList}\item 
+void \hyperlink{grafo_8c_aed077809cbd2dc7fe07f04d56c22f5aa}{Grafo\_\-deletar} (Grafo $\ast$$\ast$grafo)
+\begin{DoxyCompactList}\small\item\em Libera grafo da memória. \item\end{DoxyCompactList}\item 
+void \hyperlink{grafo_8c_aebbc32c233cde8025bb199d51f3a70a1}{Grafo\_\-adicionarAresta} (Grafo $\ast$grafo, int a, int b, enum ArestaTipo tipo, int valor)
+\begin{DoxyCompactList}\small\item\em Adiciona aresta entre o vertice 'a' e o 'b'. \item\end{DoxyCompactList}\item 
+void \hyperlink{grafo_8c_a478db7324fdc12392316039356177069}{Grafo\_\-removerAresta} (Grafo $\ast$grafo, int a, int b)
+\begin{DoxyCompactList}\small\item\em Remove aresta entre 'a' e 'b' se for BIDIRECIONADA remove tambem de 'b' para 'a'. \item\end{DoxyCompactList}\item 
+int \hyperlink{grafo_8c_aed586affb47396d47950919280bbbfc6}{Grafo\_\-isAdjacente} (Grafo $\ast$grafo, int a, int b)
+\begin{DoxyCompactList}\small\item\em Verifica se o vertice 'a' é adjacente ao 'b'. \item\end{DoxyCompactList}\item 
+Arestas $\ast$ \hyperlink{grafo_8c_a2e690ef24d96d19e75484064e6f7988e}{Grafo\_\-getAresta} (Grafo $\ast$grafo, int a, int b)
+\begin{DoxyCompactList}\small\item\em Retorna o vertice de 'a' para 'b'. \item\end{DoxyCompactList}\item 
+Nodo $\ast$ \hyperlink{grafo_8c_a1d87718c3ef807c3ac21f83f9b855a52}{Grafo\_\-getNodo} (Grafo $\ast$grafo, int nodo)
+\begin{DoxyCompactList}\small\item\em Retorna o vertice. \item\end{DoxyCompactList}\item 
+void \hyperlink{grafo_8c_a4165f1aacd2bc69965c5543c8aeb3aac}{Grafo\_\-setNodosAux} (Grafo $\ast$grafo, int valor)
+\begin{DoxyCompactList}\small\item\em Seta o valor da variavel aux de todos os vertices. \item\end{DoxyCompactList}\item 
+void \hyperlink{grafo_8c_a4568ab10e7749e8dc0fc13e87b329b30}{Grafo\_\-setArestasValor} (Grafo $\ast$grafo, int valor)
+\begin{DoxyCompactList}\small\item\em Seta o valor de todas as arestas. \item\end{DoxyCompactList}\item 
+Grafo $\ast$ \hyperlink{grafo_8c_a3bce06f14f6af66ffcb1ddf0406a3c4f}{Grafo\_\-duplicar} (Grafo $\ast$base)
+\begin{DoxyCompactList}\small\item\em Duplica o grafo. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Funções}
+\hypertarget{grafo_8c_aebbc32c233cde8025bb199d51f3a70a1}{
+\index{grafo.c@{grafo.c}!Grafo\_\-adicionarAresta@{Grafo\_\-adicionarAresta}}
+\index{Grafo\_\-adicionarAresta@{Grafo\_\-adicionarAresta}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-adicionarAresta}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-adicionarAresta (Grafo $\ast$ {\em grafo}, \/  int {\em a}, \/  int {\em b}, \/  enum ArestaTipo {\em tipo}, \/  int {\em valor})}}
+\label{grafo_8c_aebbc32c233cde8025bb199d51f3a70a1}
+
+
+Adiciona aresta entre o vertice 'a' e o 'b'. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em grafo}]Estrutura do grafo \item[{\em a}]Id do vertice de origem \item[{\em b}]Id do vertice de destino \item[{\em tipo}]DIRECIONADA ou BIDIRECIONADA \item[{\em valor}]Valor da aresta \end{DoxyParams}
+\hypertarget{grafo_8c_aed077809cbd2dc7fe07f04d56c22f5aa}{
+\index{grafo.c@{grafo.c}!Grafo\_\-deletar@{Grafo\_\-deletar}}
+\index{Grafo\_\-deletar@{Grafo\_\-deletar}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-deletar}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-deletar (Grafo $\ast$$\ast$ {\em grafo})}}
+\label{grafo_8c_aed077809cbd2dc7fe07f04d56c22f5aa}
+
+
+Libera grafo da memória. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em grafo}]Ponteiro para estrutura do grafo\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores Retornados}
+\item[{\em ponteiro}]para o grafo \end{DoxyRetVals}
+\hypertarget{grafo_8c_a3bce06f14f6af66ffcb1ddf0406a3c4f}{
+\index{grafo.c@{grafo.c}!Grafo\_\-duplicar@{Grafo\_\-duplicar}}
+\index{Grafo\_\-duplicar@{Grafo\_\-duplicar}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-duplicar}]{\setlength{\rightskip}{0pt plus 5cm}Grafo$\ast$ Grafo\_\-duplicar (Grafo $\ast$ {\em base})}}
+\label{grafo_8c_a3bce06f14f6af66ffcb1ddf0406a3c4f}
+
+
+Duplica o grafo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em base}]Estrutura do grafo a que ira ser dublicado\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura do grafo
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valores Retornados}
+\item[{\em ponteiro}]para o grafo dublicado \end{DoxyRetVals}
+\hypertarget{grafo_8c_a2e690ef24d96d19e75484064e6f7988e}{
+\index{grafo.c@{grafo.c}!Grafo\_\-getAresta@{Grafo\_\-getAresta}}
+\index{Grafo\_\-getAresta@{Grafo\_\-getAresta}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-getAresta}]{\setlength{\rightskip}{0pt plus 5cm}Arestas$\ast$ Grafo\_\-getAresta (Grafo $\ast$ {\em grafo}, \/  int {\em a}, \/  int {\em b})}}
+\label{grafo_8c_a2e690ef24d96d19e75484064e6f7988e}
+
+
+Retorna o vertice de 'a' para 'b'. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em grafo}]Estrutura do grafo \item[{\em a}]Id do vertice de origem \item[{\em b}]Id do vertice de destino\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura do vertice
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valores Retornados}
+\item[{\em ponteiro}]para aresta \item[{\em NULL}]Vertice não existe \end{DoxyRetVals}
+\hypertarget{grafo_8c_a1d87718c3ef807c3ac21f83f9b855a52}{
+\index{grafo.c@{grafo.c}!Grafo\_\-getNodo@{Grafo\_\-getNodo}}
+\index{Grafo\_\-getNodo@{Grafo\_\-getNodo}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-getNodo}]{\setlength{\rightskip}{0pt plus 5cm}Nodo$\ast$ Grafo\_\-getNodo (Grafo $\ast$ {\em grafo}, \/  int {\em nodo})}}
+\label{grafo_8c_a1d87718c3ef807c3ac21f83f9b855a52}
+
+
+Retorna o vertice. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em grafo}]Estrutura do grafo \item[{\em nodo}]Id do vertice de origem\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura do vertice
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Valores Retornados}
+\item[{\em ponteiro}]para o nodo \item[{\em NULL}]Nodo não existe \end{DoxyRetVals}
+\hypertarget{grafo_8c_aab40871f2dd74afa1e5efb731bb24f46}{
+\index{grafo.c@{grafo.c}!Grafo\_\-iniciar@{Grafo\_\-iniciar}}
+\index{Grafo\_\-iniciar@{Grafo\_\-iniciar}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-iniciar}]{\setlength{\rightskip}{0pt plus 5cm}Grafo$\ast$ Grafo\_\-iniciar (int {\em n})}}
+\label{grafo_8c_aab40871f2dd74afa1e5efb731bb24f46}
+
+
+Inciar o grafo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em n}]Numero de vertices\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura do grafo 
+\end{DoxyReturn}
+\hypertarget{grafo_8c_aed586affb47396d47950919280bbbfc6}{
+\index{grafo.c@{grafo.c}!Grafo\_\-isAdjacente@{Grafo\_\-isAdjacente}}
+\index{Grafo\_\-isAdjacente@{Grafo\_\-isAdjacente}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-isAdjacente}]{\setlength{\rightskip}{0pt plus 5cm}int Grafo\_\-isAdjacente (Grafo $\ast$ {\em grafo}, \/  int {\em a}, \/  int {\em b})}}
+\label{grafo_8c_aed586affb47396d47950919280bbbfc6}
+
+
+Verifica se o vertice 'a' é adjacente ao 'b'. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em grafo}]Estrutura do grafo \item[{\em a}]Id do vertice de origem \item[{\em b}]Id do vertice de destino\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores Retornados}
+\item[{\em 1}]É adjacente \item[{\em 0}]Não é adjacente \end{DoxyRetVals}
+\hypertarget{grafo_8c_a478db7324fdc12392316039356177069}{
+\index{grafo.c@{grafo.c}!Grafo\_\-removerAresta@{Grafo\_\-removerAresta}}
+\index{Grafo\_\-removerAresta@{Grafo\_\-removerAresta}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-removerAresta}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-removerAresta (Grafo $\ast$ {\em grafo}, \/  int {\em a}, \/  int {\em b})}}
+\label{grafo_8c_a478db7324fdc12392316039356177069}
+
+
+Remove aresta entre 'a' e 'b' se for BIDIRECIONADA remove tambem de 'b' para 'a'. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em grafo}]Estrutura do grafo \item[{\em a}]Id do vertice de origem \item[{\em b}]Id do vertice de destino \end{DoxyParams}
+\hypertarget{grafo_8c_a4568ab10e7749e8dc0fc13e87b329b30}{
+\index{grafo.c@{grafo.c}!Grafo\_\-setArestasValor@{Grafo\_\-setArestasValor}}
+\index{Grafo\_\-setArestasValor@{Grafo\_\-setArestasValor}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-setArestasValor}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-setArestasValor (Grafo $\ast$ {\em grafo}, \/  int {\em valor})}}
+\label{grafo_8c_a4568ab10e7749e8dc0fc13e87b329b30}
+
+
+Seta o valor de todas as arestas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em grafo}]Estrutura do grafo \item[{\em valor}]Valor \end{DoxyParams}
+\hypertarget{grafo_8c_a4165f1aacd2bc69965c5543c8aeb3aac}{
+\index{grafo.c@{grafo.c}!Grafo\_\-setNodosAux@{Grafo\_\-setNodosAux}}
+\index{Grafo\_\-setNodosAux@{Grafo\_\-setNodosAux}!grafo.c@{grafo.c}}
+\subsubsection[{Grafo\_\-setNodosAux}]{\setlength{\rightskip}{0pt plus 5cm}void Grafo\_\-setNodosAux (Grafo $\ast$ {\em grafo}, \/  int {\em valor})}}
+\label{grafo_8c_a4165f1aacd2bc69965c5543c8aeb3aac}
+
+
+Seta o valor da variavel aux de todos os vertices. 
+
+
+\begin{DoxyParams}{Parâmetros}
+\item[{\em grafo}]Estrutura do grafo \item[{\em valor}]Valor \end{DoxyParams}
