@@ -9,16 +9,18 @@
 
 #include "Header/interface.h"
 #include "Header/importar.h"
+#include "Header/grafo.h"
+#include "Header/util.h"
 
 /**
  * Função principal do sistema.
  */
 
 int main(int argc, char *argv[]) {
+  importar("line_DXF_CAD2000.dxf");
 
   Interface_iniciar();
 
-  importar("rectangle_DXF_CAD2000.dxf");
   gtk_main();
 
   Interface_finalizar();

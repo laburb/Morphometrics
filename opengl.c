@@ -7,7 +7,12 @@
 
 #include <GL/gl.h>
 #include <GL/glu.h>
+#include <math.h>
 
+#include "Header/ponto.h"
+#include "Header/mapa.h"
+#include "Header/util.h"
+#include "Header/grafo.h"
 #include "Header/opengl.h"
 
 static GLfloat rtri, rquad;
@@ -20,48 +25,50 @@ static GLfloat rtri, rquad;
  *
  */
 
-void Opengl_iniciar(int w, int h) {
-  /* Height / width ration */
-  GLfloat ratio;
+void Opengl_iniciar(int cx, int cy) {
+  GLdouble dx, dy, dX, dY, xM, yM;
 
-  /* Protect against a divide by zero */
-  if (h == 0)
-    h = 1;
+  if ( cx <= 0 || cy <= 0 )
+    return;
 
-  ratio = (GLfloat) w / (GLfloat) h;
+  dx = mapa.limiteMaximo.x - mapa.limiteMinimo.x;
+  dy = mapa.limiteMaximo.y - mapa.limiteMinimo.y;
 
-  /* Setup our viewport. */
-  glViewport(0, 0, (GLsizei) w, (GLsizei) h);
+  // select the full client area
+  glViewport(0, 0, cx, cy);
 
   /* change to the projection matrix and set our viewing volume. */
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
 
-  /* Set our perspective */
-  gluPerspective(45.0f, ratio, 0.1f, 100.0f);
+  // Now that the dimensions are set up, we can set up the projection
+  // matrix. Since we've overridden OnSize(), we need to do it ourselves
 
-  /* Make sure we're chaning the model view and not the projection */
-  glMatrixMode(GL_MODELVIEW);
-
-  /* Reset The View */
+  // select the viewing volume
+  glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
 
-  glShadeModel(GL_SMOOTH);
+  if (fabs(dx) > 0.001 || fabs(dy) > 0.001)
+  {
+   if (dx < dy)
+   {
+    dY = dx * cx / cy;
+    yM = mapa.limiteMinimo.y  + dY;
 
-  /* Set the background black */
-  glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glOrtho(mapa.limiteMinimo.x, mapa.limiteMaximo.x, mapa.limiteMinimo.y, yM, -100, 100);
+   }
+   else
+   {
+    dX = dy * cx / cy;
+    xM = mapa.limiteMinimo.x + dX;
 
-  /* Depth buffer setup */
-  glClearDepth(1.0f);
+    glOrtho(mapa.limiteMinimo.x, xM, mapa.limiteMinimo.y, mapa.limiteMaximo.y, -100, 100);
+   }
+  }
 
-  /* Enables Depth Testing */
-  glEnable(GL_DEPTH_TEST);
-
-  /* The Type Of Depth Test To Do */
-  glDepthFunc(GL_LEQUAL);
-
-  /* Really Nice Perspective Calculations */
-  glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+  // switch back to the modelview matrix and clear it
+  glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
 
 }
 
@@ -74,8 +81,23 @@ void Opengl_iniciar(int w, int h) {
  */
 
 void Opengl_redimencionar(int w, int h) {
-  glViewport(0, 0, w, h);
+  GLdouble dx, dy;
+  dx = mapa.limiteMaximo.x - mapa.limiteMinimo.x;
+  dy = mapa.limiteMaximo.y - mapa.limiteMinimo.y;
+
+  glViewport(0, 0, dx, dy);
 }
+
+void DrawLine(float x1, float y1, float x2, float y2) {
+ glColor3ub(255, 255, 255);
+ glDisable(GL_TEXTURE_2D);
+
+ glBegin(GL_LINES);
+  glVertex2f(x1-100, y1-100);
+  glVertex2f(x2-100, y2-100);
+ glEnd();
+}
+
 
 /**
  *  Desenha
@@ -84,95 +106,13 @@ void Opengl_redimencionar(int w, int h) {
 void Opengl_desenha() {
   glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-  /* Move Left 1.5 Units And Into The Screen 6.0 */
   glLoadIdentity();
-  glTranslatef( -1.5f, 0.0f, -6.0f );
 
-  /* Rotate The Triangle On The Y axis ( NEW ) */
-  glRotatef( rtri, 0.0f, 1.0f, 0.0f );
-
-  glBegin( GL_TRIANGLES );             /* Drawing Using Triangles       */
-    glColor3f(   1.0f,  0.0f,  0.0f ); /* Red                           */
-    glVertex3f(  0.0f,  1.0f,  0.0f ); /* Top Of Triangle (Front)       */
-    glColor3f(   0.0f,  1.0f,  0.0f ); /* Green                         */
-    glVertex3f( -1.0f, -1.0f,  1.0f ); /* Left Of Triangle (Front)      */
-    glColor3f(   0.0f,  0.0f,  1.0f ); /* Blue                          */
-    glVertex3f(  1.0f, -1.0f,  1.0f ); /* Right Of Triangle (Front)     */
-
-    glColor3f(   1.0f,  0.0f,  0.0f ); /* Red                           */
-    glVertex3f(  0.0f,  1.0f,  0.0f ); /* Top Of Triangle (Right)       */
-    glColor3f(   0.0f,  0.0f,  1.0f ); /* Blue                          */
-    glVertex3f(  1.0f, -1.0f,  1.0f ); /* Left Of Triangle (Right)      */
-    glColor3f(   0.0f,  1.0f,  0.0f ); /* Green                         */
-    glVertex3f(  1.0f, -1.0f, -1.0f ); /* Right Of Triangle (Right)     */
-
-    glColor3f(   1.0f,  0.0f,  0.0f ); /* Red                           */
-    glVertex3f(  0.0f,  1.0f,  0.0f ); /* Top Of Triangle (Back)        */
-    glColor3f(   0.0f,  1.0f,  0.0f ); /* Green                         */
-    glVertex3f(  1.0f, -1.0f, -1.0f ); /* Left Of Triangle (Back)       */
-    glColor3f(   0.0f,  0.0f,  1.0f ); /* Blue                          */
-    glVertex3f( -1.0f, -1.0f, -1.0f ); /* Right Of Triangle (Back)      */
-
-    glColor3f(   1.0f,  0.0f,  0.0f ); /* Red                           */
-    glVertex3f(  0.0f,  1.0f,  0.0f ); /* Top Of Triangle (Left)        */
-    glColor3f(   0.0f,  0.0f,  1.0f ); /* Blue                          */
-    glVertex3f( -1.0f, -1.0f, -1.0f ); /* Left Of Triangle (Left)       */
-    glColor3f(   0.0f,  1.0f,  0.0f ); /* Green                         */
-    glVertex3f( -1.0f, -1.0f,  1.0f ); /* Right Of Triangle (Left)      */
-  glEnd( );                            /* Finished Drawing The Triangle */
-
-  /* Move Right 3 Units */
-  glLoadIdentity( );
-  glTranslatef( 1.5f, 0.0f, -6.0f );
-
-  /* Rotate The Quad On The X axis ( NEW ) */
-  glRotatef( rquad, 1.0f, 0.0f, 0.0f );
-
-  /* Set The Color To Blue One Time Only */
-  glColor3f( 0.5f, 0.5f, 1.0f);
-
-  glBegin( GL_QUADS );                 /* Draw A Quad                      */
-    glColor3f(   0.0f,  1.0f,  0.0f ); /* Set The Color To Green           */
-    glVertex3f(  1.0f,  1.0f, -1.0f ); /* Top Right Of The Quad (Top)      */
-    glVertex3f( -1.0f,  1.0f, -1.0f ); /* Top Left Of The Quad (Top)       */
-    glVertex3f( -1.0f,  1.0f,  1.0f ); /* Bottom Left Of The Quad (Top)    */
-    glVertex3f(  1.0f,  1.0f,  1.0f ); /* Bottom Right Of The Quad (Top)   */
-
-    glColor3f(   1.0f,  0.5f,  0.0f ); /* Set The Color To Orange          */
-    glVertex3f(  1.0f, -1.0f,  1.0f ); /* Top Right Of The Quad (Botm)     */
-    glVertex3f( -1.0f, -1.0f,  1.0f ); /* Top Left Of The Quad (Botm)      */
-    glVertex3f( -1.0f, -1.0f, -1.0f ); /* Bottom Left Of The Quad (Botm)   */
-    glVertex3f(  1.0f, -1.0f, -1.0f ); /* Bottom Right Of The Quad (Botm)  */
-
-    glColor3f(   1.0f,  0.0f,  0.0f ); /* Set The Color To Red             */
-    glVertex3f(  1.0f,  1.0f,  1.0f ); /* Top Right Of The Quad (Front)    */
-    glVertex3f( -1.0f,  1.0f,  1.0f ); /* Top Left Of The Quad (Front)     */
-    glVertex3f( -1.0f, -1.0f,  1.0f ); /* Bottom Left Of The Quad (Front)  */
-    glVertex3f(  1.0f, -1.0f,  1.0f ); /* Bottom Right Of The Quad (Front) */
-
-    glColor3f(   1.0f,  1.0f,  0.0f ); /* Set The Color To Yellow          */
-    glVertex3f(  1.0f, -1.0f, -1.0f ); /* Bottom Left Of The Quad (Back)   */
-    glVertex3f( -1.0f, -1.0f, -1.0f ); /* Bottom Right Of The Quad (Back)  */
-    glVertex3f( -1.0f,  1.0f, -1.0f ); /* Top Right Of The Quad (Back)     */
-    glVertex3f(  1.0f,  1.0f, -1.0f ); /* Top Left Of The Quad (Back)      */
-
-    glColor3f(   0.0f,  0.0f,  1.0f ); /* Set The Color To Blue            */
-    glVertex3f( -1.0f,  1.0f,  1.0f ); /* Top Right Of The Quad (Left)     */
-    glVertex3f( -1.0f,  1.0f, -1.0f ); /* Top Left Of The Quad (Left)      */
-    glVertex3f( -1.0f, -1.0f, -1.0f ); /* Bottom Left Of The Quad (Left)   */
-    glVertex3f( -1.0f, -1.0f,  1.0f ); /* Bottom Right Of The Quad (Left)  */
-
-    glColor3f(   1.0f,  0.0f,  1.0f ); /* Set The Color To Violet          */
-    glVertex3f(  1.0f,  1.0f, -1.0f ); /* Top Right Of The Quad (Right)    */
-    glVertex3f(  1.0f,  1.0f,  1.0f ); /* Top Left Of The Quad (Right)     */
-    glVertex3f(  1.0f, -1.0f,  1.0f ); /* Bottom Left Of The Quad (Right)  */
-    glVertex3f(  1.0f, -1.0f, -1.0f ); /* Bottom Right Of The Quad (Right) */
-  glEnd( );                            /* Done Drawing The Quad            */
+  forList(Nodo *, nodoPerc, grafo->nodos) {
+    DrawLine(nodoPerc->p1.x,nodoPerc->p1.y,nodoPerc->p2.x,nodoPerc->p2.y);
+  }
 }
 
 void Opengl_atualizar() {
-  /* Increase The Rotation Variable For The Triangle ( NEW ) */
-  rtri += 0.2f;
-  /* Decrease The Rotation Variable For The Quad     ( NEW ) */
-  rquad -= 0.15f;
+
 }

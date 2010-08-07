@@ -25,12 +25,15 @@
 <div class="contents">
 <h1>Referência do Arquivo grafo.c</h1><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="grafo_8c.html">Header/grafo.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="grafo_8c.html">Header/util.h</a>&quot;</code><br/>
+<code>#include &quot;estruturas.h&quot;</code><br/>
 <code>#include &quot;ponto.h&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Funções</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Grafo *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#aab40871f2dd74afa1e5efb731bb24f46">Grafo_iniciar</a> (int n)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inciar o grafo.  <a href="#aab40871f2dd74afa1e5efb731bb24f46"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Grafo *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a3723182188c6f5f95dd4dd2774b5718d">Grafo_iniciar</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inciar o grafo.  <a href="#a3723182188c6f5f95dd4dd2774b5718d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Nodo *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a64f8a2dff98a0d01860efc2afa1db935">Grafo_adicionarNodo</a> (Grafo *grafo)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adiciona vertice ao grafo.  <a href="#a64f8a2dff98a0d01860efc2afa1db935"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#aed077809cbd2dc7fe07f04d56c22f5aa">Grafo_deletar</a> (Grafo **grafo)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libera grafo da memória.  <a href="#aed077809cbd2dc7fe07f04d56c22f5aa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#aebbc32c233cde8025bb199d51f3a70a1">Grafo_adicionarAresta</a> (Grafo *grafo, int a, int b, enum ArestaTipo tipo, int valor)</td></tr>
@@ -41,14 +44,16 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verifica se o vertice 'a' é adjacente ao 'b'.  <a href="#aed586affb47396d47950919280bbbfc6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Arestas *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a2e690ef24d96d19e75484064e6f7988e">Grafo_getAresta</a> (Grafo *grafo, int a, int b)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retorna o vertice de 'a' para 'b'.  <a href="#a2e690ef24d96d19e75484064e6f7988e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Nodo *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a1d87718c3ef807c3ac21f83f9b855a52">Grafo_getNodo</a> (Grafo *grafo, int nodo)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retorna o vertice.  <a href="#a1d87718c3ef807c3ac21f83f9b855a52"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Nodo *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a967b86c9a3eef8bc2543ef24906e8b6c">Grafo_getNodo</a> (Grafo *grafo, int valor)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retorna o nodo.  <a href="#a967b86c9a3eef8bc2543ef24906e8b6c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a4165f1aacd2bc69965c5543c8aeb3aac">Grafo_setNodosAux</a> (Grafo *grafo, int valor)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Seta o valor da variavel aux de todos os vertices.  <a href="#a4165f1aacd2bc69965c5543c8aeb3aac"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a4568ab10e7749e8dc0fc13e87b329b30">Grafo_setArestasValor</a> (Grafo *grafo, int valor)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Seta o valor de todas as arestas.  <a href="#a4568ab10e7749e8dc0fc13e87b329b30"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Grafo *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a3bce06f14f6af66ffcb1ddf0406a3c4f">Grafo_duplicar</a> (Grafo *base)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Duplica o grafo.  <a href="#a3bce06f14f6af66ffcb1ddf0406a3c4f"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Variáveis</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Nodo *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#aa153f326ffafd314c1b256fdecb37ee4">nodoAtual</a></td></tr>
 </table>
 <hr/><h2>Funções</h2>
 <a class="anchor" id="aebbc32c233cde8025bb199d51f3a70a1"></a><!-- doxytag: member="grafo.c::Grafo_adicionarAresta" ref="aebbc32c233cde8025bb199d51f3a70a1" args="(Grafo *grafo, int a, int b, enum ArestaTipo tipo, int valor)" -->
@@ -105,6 +110,33 @@
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a64f8a2dff98a0d01860efc2afa1db935"></a><!-- doxytag: member="grafo.c::Grafo_adicionarNodo" ref="a64f8a2dff98a0d01860efc2afa1db935" args="(Grafo *grafo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Nodo* Grafo_adicionarNodo </td>
+          <td>(</td>
+          <td class="paramtype">Grafo *&nbsp;</td>
+          <td class="paramname"> <em>grafo</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adiciona vertice ao grafo. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>grafo</em>&nbsp;</td><td>Estrutura do grafo</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Nodo criado </dd></dl>
 
 </div>
 </div>
@@ -224,7 +256,7 @@
 
 </div>
 </div>
-<a class="anchor" id="a1d87718c3ef807c3ac21f83f9b855a52"></a><!-- doxytag: member="grafo.c::Grafo_getNodo" ref="a1d87718c3ef807c3ac21f83f9b855a52" args="(Grafo *grafo, int nodo)" -->
+<a class="anchor" id="a967b86c9a3eef8bc2543ef24906e8b6c"></a><!-- doxytag: member="grafo.c::Grafo_getNodo" ref="a967b86c9a3eef8bc2543ef24906e8b6c" args="(Grafo *grafo, int valor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -238,7 +270,7 @@
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>nodo</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>valor</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -249,11 +281,11 @@
 </div>
 <div class="memdoc">
 
-<p>Retorna o vertice. </p>
+<p>Retorna o nodo. </p>
 <dl><dt><b>Parâmetros:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>grafo</em>&nbsp;</td><td>Estrutura do grafo </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>nodo</em>&nbsp;</td><td>Id do vertice de origem</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>valor</em>&nbsp;</td><td>Id do vertice</td></tr>
   </table>
   </dd>
 </dl>
@@ -268,15 +300,14 @@
 
 </div>
 </div>
-<a class="anchor" id="aab40871f2dd74afa1e5efb731bb24f46"></a><!-- doxytag: member="grafo.c::Grafo_iniciar" ref="aab40871f2dd74afa1e5efb731bb24f46" args="(int n)" -->
+<a class="anchor" id="a3723182188c6f5f95dd4dd2774b5718d"></a><!-- doxytag: member="grafo.c::Grafo_iniciar" ref="a3723182188c6f5f95dd4dd2774b5718d" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">Grafo* Grafo_iniciar </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>n</em></td>
+          <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -285,12 +316,6 @@
 <div class="memdoc">
 
 <p>Inciar o grafo. </p>
-<dl><dt><b>Parâmetros:</b></dt><dd>
-  <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>n</em>&nbsp;</td><td>Numero de vertices</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="return"><dt><b>Retorna:</b></dt><dd>Estrutura do grafo </dd></dl>
 
 </div>
@@ -460,8 +485,22 @@
 
 </div>
 </div>
+<hr/><h2>Variáveis</h2>
+<a class="anchor" id="aa153f326ffafd314c1b256fdecb37ee4"></a><!-- doxytag: member="grafo.c::nodoAtual" ref="aa153f326ffafd314c1b256fdecb37ee4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Nodo* <a class="el" href="grafo_8c.html#aa153f326ffafd314c1b256fdecb37ee4">nodoAtual</a></td>
+        </tr>
+      </table>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 5 21:33:04 2010 para Morphometrics por&nbsp;
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Fri Aug 6 21:59:05 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

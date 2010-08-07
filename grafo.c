@@ -1,28 +1,67 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "Header/util.h"
 #include "Header/grafo.h"
+
+Nodo *nodoAtual;
+
+static int Grafo_nodoAcao(Grafo *grafo, int id,char acao) {
+  static int opcao=NAO_MUDAR_ID;
+  Lista **primNodo=&grafo->nodos;
+
+  if (acao=='n') {
+    nodoAtual=(Nodo *) Lista_acao('n',primNodo,id,opcao,sizeof(Nodo));
+    grafo->tamanho++;
+  }
+  else if (acao=='d') {
+    nodoAtual=(Nodo *) Lista_acao('d',primNodo,id,opcao,0);
+    if (nodoAtual) grafo->tamanho--;
+  }
+  else if (acao=='z') {
+    while (primNodo!=NULL)
+      Grafo_nodoAcao(grafo,(*primNodo)->id,'d');
+
+    grafo->tamanho=0;
+  }
+  else if (acao=='s') {
+    nodoAtual=(Nodo *) Lista_acao('s',primNodo,id,opcao,0);
+    return (!nodoAtual)?0:1;
+  }
+
+  return 1;
+}
 
 /**
  *  Inciar o grafo.
- *
- *  @param n Numero de vertices
  *
  *  @return Estrutura do grafo
  *
  */
 
-Grafo *Grafo_iniciar(int n) {
-  int i;
+Grafo *Grafo_iniciar() {
   Grafo *grafo=calloc(1, sizeof(Grafo));
 
-  grafo->tamanho=n;
-  grafo->nodos=calloc(n, sizeof(Nodo));
-
-  for (i=1; i<=n ;i++)
-    grafo->nodos[i-1].valor=i;
+  grafo->tamanho=0;
+  grafo->nodos=NULL;
 
   return grafo;
+}
+
+/**
+ *  Adiciona vertice ao grafo
+ *
+ *  @param grafo Estrutura do grafo
+ *
+ *  @return Nodo criado
+ *
+ */
+
+Nodo *Grafo_adicionarNodo(Grafo *grafo) {
+  Grafo_nodoAcao(grafo, grafo->tamanho+1, 'n');
+  nodoAtual->valor=grafo->tamanho;
+
+  return nodoAtual;
 }
 
 /**
@@ -35,12 +74,10 @@ Grafo *Grafo_iniciar(int n) {
  */
 
 void Grafo_deletar(Grafo **grafo) {
-  int i;
-
   Arestas *perc,*ant;
 
-  for (i=0; i<(*grafo)->tamanho ;i++) {
-    perc=(*grafo)->nodos[i].arestas;
+  forList(Nodo *, nodoPerc, (*grafo)->nodos) {
+    perc=nodoPerc->arestas;
 
     while (perc != NULL) {
       ant=perc;
@@ -49,7 +86,7 @@ void Grafo_deletar(Grafo **grafo) {
     }
   }
 
-  free((*grafo)->nodos);
+  Grafo_nodoAcao(*grafo,0,'z');
   free(*grafo);
 
   *grafo=NULL;
@@ -70,15 +107,17 @@ void Grafo_adicionarAresta(Grafo *grafo, int a, int b, enum ArestaTipo tipo, int
   if ((a > grafo->tamanho) || (b > grafo->tamanho) || (Grafo_isAdjacente(grafo, a, b)))
     return;
 
+  nodoAtual=Grafo_getNodo(grafo,a);
+
   Arestas *aresta=calloc(1, sizeof(Arestas));
   aresta->valor=valor;
-  aresta->nodo=&grafo->nodos[b-1];
-  aresta->nodoBase=&grafo->nodos[a-1];
+  aresta->nodo=Grafo_getNodo(grafo,b);
+  aresta->nodoBase=nodoAtual;
   aresta->tipo=tipo;
 
-  Arestas *perc=grafo->nodos[a-1].arestas;
+  Arestas *perc=nodoAtual->arestas;
   if (perc == NULL)
-    grafo->nodos[a-1].arestas=aresta;
+    nodoAtual->arestas=aresta;
   else {
     while (perc->prox != NULL)
       perc=perc->prox;
@@ -105,13 +144,14 @@ void Grafo_removerAresta(Grafo *grafo, int a, int b) {
 
   enum ArestaTipo tipo=DIRECIONADA;
 
-  Arestas *perc=grafo->nodos[a-1].arestas;
+  nodoAtual=Grafo_getNodo(grafo,a);
+  Arestas *perc=nodoAtual->arestas;
   Arestas *ant=NULL;
 
   while (perc != NULL) {
     if (perc->nodo->valor == b) {
       if (ant == NULL)
-        grafo->nodos[a-1].arestas=perc->prox;
+        nodoAtual->arestas=perc->prox;
       else
         ant->prox=perc->prox;
 
@@ -161,7 +201,8 @@ Arestas *Grafo_getAresta(Grafo *grafo, int a, int b) {
   if ((a > grafo->tamanho) || (b > grafo->tamanho))
     return NULL;
 
-  Arestas *perc=grafo->nodos[a-1].arestas;
+  nodoAtual=Grafo_getNodo(grafo,a);
+  Arestas *perc=nodoAtual->arestas;
 
   while (perc != NULL) {
     if (perc->nodo->valor == b)
@@ -174,10 +215,10 @@ Arestas *Grafo_getAresta(Grafo *grafo, int a, int b) {
 }
 
 /**
- *  Retorna o vertice.
+ *  Retorna o nodo.
  *
  *  @param grafo Estrutura do grafo
- *  @param nodo Id do vertice de origem
+ *  @param valor Id do vertice
  *
  *  @return Estrutura do vertice
  *
@@ -186,11 +227,13 @@ Arestas *Grafo_getAresta(Grafo *grafo, int a, int b) {
  *
  */
 
-Nodo *Grafo_getNodo(Grafo *grafo, int nodo) {
-  if (nodo > grafo->tamanho)
-    return NULL;
+Nodo *Grafo_getNodo(Grafo *grafo, int valor) {
+  forList(Nodo *, nodoPerc, grafo->nodos) {
+    if (nodoPerc->valor == valor)
+      return nodoPerc;
+  }
 
-  return &grafo->nodos[nodo-1];
+  return NULL;
 }
 
 /**
@@ -202,10 +245,8 @@ Nodo *Grafo_getNodo(Grafo *grafo, int nodo) {
  */
 
 void Grafo_setNodosAux(Grafo *grafo, int valor) {
-  int i;
-
-  for (i=0; i<grafo->tamanho ;i++)
-    grafo->nodos[i].aux=valor;
+  forList(Nodo *, nodoPerc, grafo->nodos)
+    nodoPerc->aux=valor;
 }
 
 /**
@@ -218,10 +259,9 @@ void Grafo_setNodosAux(Grafo *grafo, int valor) {
 
 void Grafo_setArestasValor(Grafo *grafo, int valor) {
   Arestas *perc;
-  int i;
 
-  for (i=0; i<grafo->tamanho ;i++) {
-    perc=grafo->nodos[i].arestas;
+  forList(Nodo *, nodoPerc, grafo->nodos) {
+    perc=nodoPerc->arestas;
 
     while (perc != NULL) {
       perc->valor=valor;
@@ -242,15 +282,14 @@ void Grafo_setArestasValor(Grafo *grafo, int valor) {
  */
 
 Grafo *Grafo_duplicar(Grafo *base) {
-  int i;
   Grafo *clone=Grafo_iniciar(base->tamanho);
   Arestas *perc;
 
-  for (i=0; i<base->tamanho ;i++) {
-    perc=base->nodos[i].arestas;
+  forList(Nodo *, nodoPerc, base->nodos) {
+    perc=nodoPerc->arestas;
 
     while (perc != NULL) {
-      Grafo_adicionarAresta(clone, i+1, perc->nodo->valor, DIRECIONADA, perc->valor);
+      Grafo_adicionarAresta(clone, nodoPerc->valor, perc->nodo->valor, DIRECIONADA, perc->valor);
       perc=perc->prox;
     }
   }

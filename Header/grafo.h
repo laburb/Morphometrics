@@ -1,6 +1,7 @@
 #ifndef _GRAFO_H_
 #define _GRAFO_H_
 
+  #include "estruturas.h"
   #include "ponto.h"
 
   typedef struct arestas Arestas;
@@ -29,12 +30,15 @@
 
   typedef struct {
     int tamanho;
-    Nodo *nodos;
+    Lista *nodos;
   } Grafo;
 
+  Grafo *grafo;
 
-  Grafo *Grafo_iniciar(int n);
+
+  Grafo *Grafo_iniciar();
   void Grafo_deletar(Grafo **grafo);
+  Nodo *Grafo_adicionarNodo(Grafo *grafo);
   void Grafo_adicionarAresta(Grafo *grafo, int a, int b, enum ArestaTipo tipo, int valor);
   void Grafo_removerAresta(Grafo *grafo, int a, int b);
   int Grafo_isAdjacente(Grafo *grafo, int a, int b);

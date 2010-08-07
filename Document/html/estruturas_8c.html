@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência do Arquivo estruturas.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência do Arquivo estruturas.c</h1><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="estruturas_8c.html">Header/estruturas.h</a>&quot;</code><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="estruturas_8c.html#a663d0174c03591cf34808acb2bf1a872">Lista_acao</a> (char acao, Lista **prim_lista, int id, int opcao, int tamanho)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lista encadeada generica.  <a href="#a663d0174c03591cf34808acb2bf1a872"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="estruturas_8c.html#a0a96a2a92034e9e75d8795b1bb4b352d">Fila_inserir</a> (Fila **fila, void *dado)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Insere elemento na Fila.  <a href="#a0a96a2a92034e9e75d8795b1bb4b352d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="estruturas_8c.html#aeefabbaaa011193a5c12ce6b048fd829">Fila_remover</a> (Fila **fila)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Remove elemento da Fila.  <a href="#aeefabbaaa011193a5c12ce6b048fd829"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="estruturas_8c.html#a47c83d6b884318b55f3fb6e260ca555f">Fila_apagar</a> (Fila **fila)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libera a fila da memoria.  <a href="#a47c83d6b884318b55f3fb6e260ca555f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="estruturas_8c.html#a3763611b7de65b93d7beee0654a2aeac">Pilha_deletar</a> (Pilha *p)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libera a pilha da memoria.  <a href="#a3763611b7de65b93d7beee0654a2aeac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Pilha *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="estruturas_8c.html#aaacac439368f874b992e6f0c627a8569">Pilha_criar</a> (int tamanho)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Cria pilha.  <a href="#aaacac439368f874b992e6f0c627a8569"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="estruturas_8c.html#a0bb0c9fb83b2d5fe9f5f61a8ae5179b4">Pilha_push</a> (Pilha *p, void *dado)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adicona elemento na pilha.  <a href="#a0bb0c9fb83b2d5fe9f5f61a8ae5179b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="estruturas_8c.html#a826721272dc2bea7e6391a3cd9427e5e">Pilha_pop</a> (Pilha *p)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Remove elemento da pilha.  <a href="#a826721272dc2bea7e6391a3cd9427e5e"></a><br/></td></tr>
+</table>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="a47c83d6b884318b55f3fb6e260ca555f"></a><!-- doxytag: member="estruturas.c::Fila_apagar" ref="a47c83d6b884318b55f3fb6e260ca555f" args="(Fila **fila)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fila_apagar </td>
+          <td>(</td>
+          <td class="paramtype">Fila **&nbsp;</td>
+          <td class="paramname"> <em>fila</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Libera a fila da memoria. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fila</em>&nbsp;</td><td>Ponteiro para estrutura da filia </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0a96a2a92034e9e75d8795b1bb4b352d"></a><!-- doxytag: member="estruturas.c::Fila_inserir" ref="a0a96a2a92034e9e75d8795b1bb4b352d" args="(Fila **fila, void *dado)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fila_inserir </td>
+          <td>(</td>
+          <td class="paramtype">Fila **&nbsp;</td>
+          <td class="paramname"> <em>fila</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>dado</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Insere elemento na Fila. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fila</em>&nbsp;</td><td>Estrutura da filia </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dado</em>&nbsp;</td><td>Dado a ser adicionado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aeefabbaaa011193a5c12ce6b048fd829"></a><!-- doxytag: member="estruturas.c::Fila_remover" ref="aeefabbaaa011193a5c12ce6b048fd829" args="(Fila **fila)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Fila_remover </td>
+          <td>(</td>
+          <td class="paramtype">Fila **&nbsp;</td>
+          <td class="paramname"> <em>fila</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Remove elemento da Fila. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fila</em>&nbsp;</td><td>Ponteiro para estrutura da filia</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Retorna ultimo elemento da fila</dd></dl>
+<dl><dt><b>Valores Retornados:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>poteiro</em>&nbsp;</td><td>para o dado </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NULL</em>&nbsp;</td><td>Falha </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a663d0174c03591cf34808acb2bf1a872"></a><!-- doxytag: member="estruturas.c::Lista_acao" ref="a663d0174c03591cf34808acb2bf1a872" args="(char acao, Lista **prim_lista, int id, int opcao, int tamanho)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Lista_acao </td>
+          <td>(</td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>acao</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Lista **&nbsp;</td>
+          <td class="paramname"> <em>prim_lista</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>opcao</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>tamanho</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Lista encadeada generica. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>acao</em>&nbsp;</td><td>'n' Novo item<br/>
+ 'd' Deleta item<br/>
+ 's' Procura elemento </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>prim_lista</em>&nbsp;</td><td>Ponteiro para lista </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>id</em>&nbsp;</td><td>Id do elemento que vai sofrer ação </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>opcao</em>&nbsp;</td><td>MUDAR_ID modifica id para ficar em sequencia<br/>
+ NAO_MUDAR_ID ação modifica o id<br/>
+ ADD_CERTO adiciona no final da lista </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tamanho</em>&nbsp;</td><td>Tamanho da estrutura que ira ser adiciona na lista</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Retorna estrutura</dd></dl>
+<dl><dt><b>Valores Retornados:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>poteiro</em>&nbsp;</td><td>para estrutura </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NULL</em>&nbsp;</td><td>Falha </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aaacac439368f874b992e6f0c627a8569"></a><!-- doxytag: member="estruturas.c::Pilha_criar" ref="aaacac439368f874b992e6f0c627a8569" args="(int tamanho)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Pilha* Pilha_criar </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>tamanho</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Cria pilha. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tamanho</em>&nbsp;</td><td>Tamanho da pilha</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Estrutura da pilha</dd></dl>
+<dl><dt><b>Valores Retornados:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>poteiro</em>&nbsp;</td><td>para a pilha </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3763611b7de65b93d7beee0654a2aeac"></a><!-- doxytag: member="estruturas.c::Pilha_deletar" ref="a3763611b7de65b93d7beee0654a2aeac" args="(Pilha *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pilha_deletar </td>
+          <td>(</td>
+          <td class="paramtype">Pilha *&nbsp;</td>
+          <td class="paramname"> <em>p</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Libera a pilha da memoria. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>Ponteiro para estrutura da pilha </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a826721272dc2bea7e6391a3cd9427e5e"></a><!-- doxytag: member="estruturas.c::Pilha_pop" ref="a826721272dc2bea7e6391a3cd9427e5e" args="(Pilha *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* Pilha_pop </td>
+          <td>(</td>
+          <td class="paramtype">Pilha *&nbsp;</td>
+          <td class="paramname"> <em>p</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Remove elemento da pilha. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>Estrutura da pilha</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Retorna primeiro elemento da pilha</dd></dl>
+<dl><dt><b>Valores Retornados:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>poteiro</em>&nbsp;</td><td>para o dado </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>NULL</em>&nbsp;</td><td>Falha </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0bb0c9fb83b2d5fe9f5f61a8ae5179b4"></a><!-- doxytag: member="estruturas.c::Pilha_push" ref="a0bb0c9fb83b2d5fe9f5f61a8ae5179b4" args="(Pilha *p, void *dado)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pilha_push </td>
+          <td>(</td>
+          <td class="paramtype">Pilha *&nbsp;</td>
+          <td class="paramname"> <em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>dado</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adicona elemento na pilha. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p</em>&nbsp;</td><td>Estrutura da pilha </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dado</em>&nbsp;</td><td>Dado a ser adicionado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Fri Aug 6 21:59:05 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

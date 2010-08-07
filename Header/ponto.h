@@ -9,8 +9,8 @@
 #define PONTO_H_
 
   typedef struct {
-    float x;
-    float y;
+    double x;
+    double y;
   } Ponto;
 
 #endif /* PONTO_H_ */
