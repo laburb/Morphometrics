@@ -19,7 +19,7 @@ static int Grafo_nodoAcao(Grafo *grafo, int id,char acao) {
     if (nodoAtual) grafo->tamanho--;
   }
   else if (acao=='z') {
-    while (primNodo!=NULL)
+    while (*primNodo != NULL)
       Grafo_nodoAcao(grafo,(*primNodo)->id,'d');
 
     grafo->tamanho=0;

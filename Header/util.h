@@ -17,4 +17,6 @@
 
   int Arquivo_acharString(FILE *fp, char *str, int inicio);
 
+  void convertToUpperCase(char *str);
+
 #endif /* UTIL_H_ */

@@ -42,3 +42,14 @@ int Arquivo_acharString(FILE *fp, char *str, int inicio) {
   fseek(fp, posic, SEEK_SET);
   return 0;
 }
+
+/**
+ *  Converte string para maiúsculo
+ *
+ *  @param str String
+ *
+ */
+void convertToUpperCase(char *str) {
+   for (; *str ;str++)
+     *str = toupper(*str);
+}

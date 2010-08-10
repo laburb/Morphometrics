@@ -9,6 +9,7 @@
 #include <gtk/gtk.h>
 #include <gtk/gtkgl.h>
 
+#include "Header/opengl.h"
 #include "Header/interface.h"
 
 #define INTERFACE_CAMINHO "Interface/"
@@ -34,8 +35,8 @@ void Interface_iniciar() {
   window = GTK_WIDGET(gtk_builder_get_object (builderPrincipal, "window"));
   drawOpengl=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "drawOpengl"));
 
-  gtk_adjustment_set_value(GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollHorizGL")),500);
-  gtk_adjustment_set_value(GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollVertGL")),500);
+  /*gtk_adjustment_set_value(GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollHorizGL")),500);
+  gtk_adjustment_set_value(GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollVertGL")),500);*/
 
   //Configura widget para opengl
   glconfig = gdk_gl_config_new_by_mode (GDK_GL_MODE_RGB    |
@@ -109,4 +110,17 @@ void Interface_mudarMouse(GdkWindow *windowT, GdkCursorType tipoMouse) {
   GdkCursor *cur=gdk_cursor_new(tipoMouse);
   gdk_window_set_cursor(windowT, cur );
   gdk_cursor_unref(cur);
+}
+
+/**
+ * Chama Opengl_configTela e redesenha a tela.
+ */
+
+void Interface_atualizaOpengl() {
+  GtkWidget *drawOpengl=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "drawOpengl"));
+
+  Opengl_configTela(drawOpengl->allocation.width, drawOpengl->allocation.height);
+
+  gdk_window_invalidate_rect (drawOpengl->window, &drawOpengl->allocation, FALSE);
+  gdk_window_process_updates (drawOpengl->window, FALSE);
 }

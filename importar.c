@@ -5,11 +5,13 @@
  *      Author: bruno
  */
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <locale.h>
 
 #include "Header/mensagens.h"
 #include "Import/Header/importDFX.h"
+#include "Header/interface.h"
 #include "Header/importar.h"
 
 /**
@@ -38,6 +40,7 @@
 
 void importar(char *arquivo) {
   int i;
+  int numRet;
   char extensao[5];
   char *extTmp;
   char *old_locale, *saved_locale;
@@ -62,13 +65,16 @@ void importar(char *arquivo) {
     //chama funcao referente a extensao do arquivo
     for (i=0; listaExt[i].func ;i++) {
       if (!strcmp(listaExt[i].ext, extensao)) {
-        listaExt[i].func(arquivo);
-        /*
-        if (listaExt[i].func(arquivo))
+        numRet=listaExt[i].func(arquivo);
+        if (numRet == 1) {
+          Interface_atualizaOpengl();
           Mensagem(MENSAGEM_INFORMACAO,"","Arquivo importado com sucesso!");
-        else
+        }
+        else if (numRet == 0)
           Mensagem(MENSAGEM_ERRO,"","Erro ao importar arquivo: %s",arquivo);
-*/
+        else if (numRet == -1)
+          Mensagem(MENSAGEM_ERRO,"","Erro ao importar, versão não suportada.");
+
         //volta a localidade anterior
         setlocale(LC_ALL,saved_locale);
         free(saved_locale);

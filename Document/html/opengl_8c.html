@@ -25,32 +25,57 @@
 <div class="contents">
 <h1>Referência do Arquivo opengl.c</h1><code>#include &lt;GL/gl.h&gt;</code><br/>
 <code>#include &lt;GL/glu.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="opengl_8c.html">Header/opengl.h</a>&quot;</code><br/>
+<code>#include &lt;math.h&gt;</code><br/>
+<code>#include &quot;Header/ponto.h&quot;</code><br/>
+<code>#include &quot;Header/mapa.h&quot;</code><br/>
+<code>#include &quot;Header/util.h&quot;</code><br/>
+<code>#include &quot;Header/grafo.h&quot;</code><br/>
+<code>#include &quot;Header/opengl.h&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#ab278934d69be80ca59b1fe9156123305">Opengl_configTela</a> (int w, int h)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reconfigura a vião do OpenGL.  <a href="#ab278934d69be80ca59b1fe9156123305"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#a4e86ed04fa1b9c188764b7d6b0db69d2">Opengl_iniciar</a> (int w, int h)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Incializa o opengl.  <a href="#a4e86ed04fa1b9c188764b7d6b0db69d2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#aa1acfccc8247082022fbdf545840f3f0">Opengl_redimencionar</a> (int w, int h)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Função chamada quando a tela é redimencionada.  <a href="#aa1acfccc8247082022fbdf545840f3f0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#a6dac1f7203186d38e126e6b4d10423e8">Opengl_desenha</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Desenha.  <a href="#a6dac1f7203186d38e126e6b4d10423e8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#aaaad65978c24a8b0c5cf5f1ae4c5b192">Opengl_atualizar</a> ()</td></tr>
 </table>
 <hr/><h2>Funções</h2>
-<a class="anchor" id="aaaad65978c24a8b0c5cf5f1ae4c5b192"></a><!-- doxytag: member="opengl.c::Opengl_atualizar" ref="aaaad65978c24a8b0c5cf5f1ae4c5b192" args="()" -->
+<a class="anchor" id="ab278934d69be80ca59b1fe9156123305"></a><!-- doxytag: member="opengl.c::Opengl_configTela" ref="ab278934d69be80ca59b1fe9156123305" args="(int w, int h)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Opengl_atualizar </td>
+          <td class="memname">void Opengl_configTela </td>
           <td>(</td>
-          <td class="paramname"></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>h</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reconfigura a vião do OpenGL. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>w</em>&nbsp;</td><td>Largura </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>Altura </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -146,7 +171,7 @@
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Fri Aug 6 21:59:05 2010 para Morphometrics por&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Mon Aug 9 21:22:44 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

@@ -10,12 +10,11 @@
     <child>
       <object class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
-        <property name="orientation">vertical</property>
         <child>
           <object class="GtkMenuBar" id="menubar1">
             <property name="visible">True</property>
             <child>
-              <object class="GtkMenuItem" id="menuitem1">
+              <object class="GtkMenuItem" id="mbArquivo">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">_Arquivo</property>
                 <property name="use_underline">True</property>
@@ -23,7 +22,7 @@
                   <object class="GtkMenu" id="menu1">
                     <property name="visible">True</property>
                     <child>
-                      <object class="GtkImageMenuItem" id="gtk-new">
+                      <object class="GtkImageMenuItem" id="mbArquivoNovo">
                         <property name="label">gtk-new</property>
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
@@ -32,17 +31,21 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem2">
+                      <object class="GtkImageMenuItem" id="mbArquivoAbrir">
                         <property name="label">gtk-open</property>
                         <property name="visible">True</property>
-                        <property name="tooltip_text" translatable="yes">sdfdsfsdf sdfsdf</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                         <property name="always_show_image">True</property>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem3">
+                      <object class="GtkSeparatorMenuItem" id="menuitem5">
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="mbArquivoSalvar">
                         <property name="label">gtk-save</property>
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
@@ -51,7 +54,7 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem4">
+                      <object class="GtkImageMenuItem" id="mbArquivoSalvarComo">
                         <property name="label">gtk-save-as</property>
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
@@ -60,12 +63,57 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkSeparatorMenuItem" id="separatormenuitem1">
+                      <object class="GtkSeparatorMenuItem" id="mbArquivoSeparador">
                         <property name="visible">True</property>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem5">
+                      <object class="GtkImageMenuItem" id="mbArquivoImportar">
+                        <property name="label" translatable="yes">Importar</property>
+                        <property name="visible">True</property>
+                        <property name="image">image1</property>
+                        <property name="use_stock">False</property>
+                        <child type="submenu">
+                          <object class="GtkMenu" id="menu4">
+                            <property name="visible">True</property>
+                            <child>
+                              <object class="GtkMenuItem" id="mbArquivoImportarDFX">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Arquivo DFX</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="on_mbArquivoImportarDFX_activate"/>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="mbArquivoExportar">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Exportar</property>
+                        <property name="use_underline">True</property>
+                        <child type="submenu">
+                          <object class="GtkMenu" id="menu5">
+                            <property name="visible">True</property>
+                            <child>
+                              <object class="GtkMenuItem" id="mbArquivoExportarDFX">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Arquivo DFX</property>
+                                <property name="use_underline">True</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem" id="mbArquivoSeparador1">
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="mbArquivoSair">
                         <property name="label">gtk-quit</property>
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
@@ -477,7 +525,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow1">
+              <object class="GtkScrolledWindow" id="scrollDraw">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="hadjustment">ajustScrollHorizGL</property>
@@ -486,14 +534,12 @@
                   <object class="GtkDrawingArea" id="drawOpengl">
                     <property name="visible">True</property>
                     <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_MOTION_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON2_MOTION_MASK | GDK_BUTTON3_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK | GDK_VISIBILITY_NOTIFY_MASK | GDK_PROXIMITY_IN_MASK | GDK_PROXIMITY_OUT_MASK | GDK_SUBSTRUCTURE_MASK | GDK_SCROLL_MASK</property>
-                    <signal name="configure_event" handler="on_drawOpengl_configure_event"/>
-                    <signal name="realize" handler="on_drawOpengl_realize"/>
-                    <signal name="unmap_event" handler="on_drawOpengl_unmap_event"/>
                     <signal name="expose_event" handler="on_drawOpengl_expose_event"/>
                     <signal name="motion_notify_event" handler="on_drawOpengl_motion_notify_event"/>
-                    <signal name="map_event" handler="on_drawOpengl_map_event"/>
-                    <signal name="enter_notify_event" handler="on_drawOpengl_enter_notify_event"/>
+                    <signal name="realize" handler="on_drawOpengl_realize"/>
                     <signal name="leave_notify_event" handler="on_drawOpengl_leave_notify_event"/>
+                    <signal name="configure_event" handler="on_drawOpengl_configure_event"/>
+                    <signal name="enter_notify_event" handler="on_drawOpengl_enter_notify_event"/>
                   </object>
                 </child>
               </object>
@@ -551,23 +597,29 @@
     <property name="step_increment">1</property>
   </object>
   <object class="GtkAdjustment" id="ajustScrollHorizGL">
-    <property name="value">500</property>
-    <property name="upper">1000</property>
+    <property name="lower">-500</property>
+    <property name="upper">500</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
     <property name="page_size">10</property>
+    <signal name="value_changed" handler="on_ajustScroll_value_changed"/>
   </object>
   <object class="GtkAdjustment" id="ajustScrollVertGL">
-    <property name="value">500</property>
-    <property name="upper">1000</property>
+    <property name="lower">-500</property>
+    <property name="upper">500</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
     <property name="page_size">10</property>
+    <signal name="value_changed" handler="on_ajustScroll_value_changed"/>
   </object>
   <object class="GtkMenu" id="menuDesfazer">
     <property name="visible">True</property>
   </object>
   <object class="GtkMenu" id="menuRefazer">
     <property name="visible">True</property>
+  </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="stock">gtk-missing-image</property>
   </object>
 </interface>

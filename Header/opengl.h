@@ -10,6 +10,8 @@
 
     void Opengl_iniciar(int w, int h);
     void Opengl_redimencionar(int w, int h);
+    void Opengl_configTela(int w, int h);
+
     void Opengl_desenha();
     void Opengl_atualizar();
 

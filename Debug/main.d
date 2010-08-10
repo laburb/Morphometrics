@@ -1,4 +1,4 @@
-sinais.d sinais.o: ../sinais.c /usr/include/gtk-2.0/gtk/gtk.h \
+main.d main.o: ../main.c /usr/include/gtk-2.0/gtk/gtk.h \
  /usr/include/gtk-2.0/gdk/gdk.h \
  /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
  /usr/include/glib-2.0/gio/gio.h /usr/include/glib-2.0/gio/giotypes.h \
@@ -404,29 +404,9 @@ sinais.d sinais.o: ../sinais.c /usr/include/gtk-2.0/gtk/gtk.h \
  /usr/include/gtk-2.0/gtk/gtkoldeditable.h \
  /usr/include/gtk-2.0/gtk/gtkoptionmenu.h \
  /usr/include/gtk-2.0/gtk/gtkpreview.h \
- /usr/include/gtk-2.0/gtk/gtktipsquery.h \
- /usr/include/gtkglext-1.0/gtk/gtkgl.h \
- /usr/include/gtkglext-1.0/gdk/gdkgl.h \
- /usr/lib/gtkglext-1.0/include/gdkglext-config.h \
- /usr/include/gtkglext-1.0/gdk/gdkgldefs.h \
- /usr/include/gtkglext-1.0/gdk/gdkglversion.h \
- /usr/include/gtkglext-1.0/gdk/gdkgltokens.h \
- /usr/include/gtkglext-1.0/gdk/gdkgltypes.h \
- /usr/include/gtkglext-1.0/gdk/gdkglenumtypes.h \
- /usr/include/gtkglext-1.0/gdk/gdkglinit.h \
- /usr/include/gtkglext-1.0/gdk/gdkglquery.h \
- /usr/include/gtkglext-1.0/gdk/gdkglconfig.h \
- /usr/include/gtkglext-1.0/gdk/gdkglcontext.h \
- /usr/include/gtkglext-1.0/gdk/gdkgldrawable.h \
- /usr/include/gtkglext-1.0/gdk/gdkglpixmap.h \
- /usr/include/gtkglext-1.0/gdk/gdkglwindow.h \
- /usr/include/gtkglext-1.0/gdk/gdkglfont.h \
- /usr/include/gtkglext-1.0/gdk/gdkglshapes.h \
- /usr/include/gtkglext-1.0/gtk/gtkgldefs.h \
- /usr/include/gtkglext-1.0/gtk/gtkglversion.h \
- /usr/include/gtkglext-1.0/gtk/gtkglinit.h \
- /usr/include/gtkglext-1.0/gtk/gtkglwidget.h ../Header/opengl.h \
- ../Header/sinais.h ../Header/interface.h
+ /usr/include/gtk-2.0/gtk/gtktipsquery.h ../Header/interface.h \
+ ../Header/importar.h ../Header/grafo.h ../Header/estruturas.h \
+ ../Header/ponto.h ../Header/util.h
 
 /usr/include/gtk-2.0/gtk/gtk.h:
 
@@ -1342,50 +1322,14 @@ sinais.d sinais.o: ../sinais.c /usr/include/gtk-2.0/gtk/gtk.h \
 
 /usr/include/gtk-2.0/gtk/gtktipsquery.h:
 
-/usr/include/gtkglext-1.0/gtk/gtkgl.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkgl.h:
-
-/usr/lib/gtkglext-1.0/include/gdkglext-config.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkgldefs.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglversion.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkgltokens.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkgltypes.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglenumtypes.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglinit.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglquery.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglconfig.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglcontext.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkgldrawable.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglpixmap.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglwindow.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglfont.h:
-
-/usr/include/gtkglext-1.0/gdk/gdkglshapes.h:
-
-/usr/include/gtkglext-1.0/gtk/gtkgldefs.h:
-
-/usr/include/gtkglext-1.0/gtk/gtkglversion.h:
-
-/usr/include/gtkglext-1.0/gtk/gtkglinit.h:
-
-/usr/include/gtkglext-1.0/gtk/gtkglwidget.h:
-
-../Header/opengl.h:
-
-../Header/sinais.h:
-
 ../Header/interface.h:
+
+../Header/importar.h:
+
+../Header/grafo.h:
+
+../Header/estruturas.h:
+
+../Header/ponto.h:
+
+../Header/util.h:

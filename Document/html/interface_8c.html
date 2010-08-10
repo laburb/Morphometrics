@@ -26,7 +26,8 @@
 <h1>Referência do Arquivo interface.c</h1><code>#include &lt;string.h&gt;</code><br/>
 <code>#include &lt;gtk/gtk.h&gt;</code><br/>
 <code>#include &lt;gtk/gtkgl.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="interface_8c.html">Header/interface.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="interface_8c.html">Header/opengl.h</a>&quot;</code><br/>
+<code>#include &quot;Header/interface.h&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Definições e Macros</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a8d6eed3398717c5e313947da3a87d126">INTERFACE_CAMINHO</a>&nbsp;&nbsp;&nbsp;&quot;Interface/&quot;</td></tr>
@@ -40,6 +41,8 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Carrega a interface do arquivo xml.  <a href="#aefefb211f46a89912ae7272f519ad3d0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#ae76152337046294ac6ac05896b9cd2c0">Interface_mudarMouse</a> (GdkWindow *windowT, GdkCursorType tipoMouse)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modifica o cursor do mouse.  <a href="#ae76152337046294ac6ac05896b9cd2c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a4c326e1024b54e7d50be4f677c2b8108">Interface_atualizaOpengl</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Chama Opengl_configTela e redesenha a tela.  <a href="#a4c326e1024b54e7d50be4f677c2b8108"></a><br/></td></tr>
 </table>
 <hr/><h2>Definições e macros</h2>
 <a class="anchor" id="a8d6eed3398717c5e313947da3a87d126"></a><!-- doxytag: member="interface.c::INTERFACE_CAMINHO" ref="a8d6eed3398717c5e313947da3a87d126" args="" -->
@@ -69,6 +72,25 @@
 </div>
 </div>
 <hr/><h2>Funções</h2>
+<a class="anchor" id="a4c326e1024b54e7d50be4f677c2b8108"></a><!-- doxytag: member="interface.c::Interface_atualizaOpengl" ref="a4c326e1024b54e7d50be4f677c2b8108" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Interface_atualizaOpengl </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Chama Opengl_configTela e redesenha a tela. </p>
+
+</div>
+</div>
 <a class="anchor" id="aefefb211f46a89912ae7272f519ad3d0"></a><!-- doxytag: member="interface.c::Interface_carregarXML" ref="aefefb211f46a89912ae7272f519ad3d0" args="(char *arquivo)" -->
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +194,7 @@
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Fri Aug 6 21:59:05 2010 para Morphometrics por&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Mon Aug 9 21:22:44 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

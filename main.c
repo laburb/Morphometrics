@@ -17,7 +17,7 @@
  */
 
 int main(int argc, char *argv[]) {
-  importar("line_DXF_CAD2000.dxf");
+  grafo=Grafo_iniciar();
 
   Interface_iniciar();
 

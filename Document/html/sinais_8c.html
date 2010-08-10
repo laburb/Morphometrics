@@ -28,21 +28,51 @@
 <code>#include &lt;gtk/gtkgl.h&gt;</code><br/>
 <code>#include &quot;Header/opengl.h&quot;</code><br/>
 <code>#include &quot;<a class="el" href="sinais_8c.html">Header/sinais.h</a>&quot;</code><br/>
+<code>#include &quot;Header/importar.h&quot;</code><br/>
+<code>#include &quot;Header/mapa.h&quot;</code><br/>
+<code>#include &quot;Header/selecionarArquivo.h&quot;</code><br/>
 <code>#include &quot;Header/interface.h&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Funções</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#a031e2ac5ab33b63aa481c908333a9846">on_window_destroy</a> (GtkObject *object, gpointer user_data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#a9fcc6bac9300dda05225541a546ab330">onClickTeste</a> (GtkObject *object, gpointer user_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#a27c6259b2b124954d0e26af6fabcfb52">on_mbArquivoImportarDFX_activate</a> (GtkObject *object, gpointer user_data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#af640ec1aef370b7fd5e8caafdefb3f2d">on_drawOpengl_realize</a> (GtkWidget *widget, gpointer user_data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT gboolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#a97dfc4a651db871e4997a4c427e1b7b4">on_drawOpengl_expose_event</a> (GtkWidget *widget, GdkEventExpose *event, gpointer user_data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT gboolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#ad6d05498cfb941856f0a42986f618fca">on_drawOpengl_configure_event</a> (GtkWidget *widget, GdkEventConfigure *event, gpointer user_data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#a521df53fcacc7a7b40f14f0b93df74c7">on_drawOpengl_map_event</a> (GtkWidget *widget, gpointer data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#a56c490524944420a6d88c624e8370a64">on_drawOpengl_unmap_event</a> (GtkWidget *widget, gpointer data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT gboolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#a3d557d64ec0733db3356064e6f0292d9">on_drawOpengl_enter_notify_event</a> (GtkWidget *widget, GdkEventMotion *event, gpointer data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT gboolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#a36dd91d7e76377df63045e38ae0a1708">on_drawOpengl_leave_notify_event</a> (GtkWidget *widget, GdkEventMotion *event, gpointer data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT gboolean&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#a8f05bf021a165b02ae2b862cef008a3b">on_drawOpengl_motion_notify_event</a> (GtkWidget *widget, GdkEventMotion *event, gpointer data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">G_MODULE_EXPORT void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="sinais_8c.html#aca853761ad5b35f0f7001e7fea11df5d">on_ajustScroll_value_changed</a> (GtkObject *object, gpointer user_data)</td></tr>
 </table>
 <hr/><h2>Funções</h2>
+<a class="anchor" id="aca853761ad5b35f0f7001e7fea11df5d"></a><!-- doxytag: member="sinais.c::on_ajustScroll_value_changed" ref="aca853761ad5b35f0f7001e7fea11df5d" args="(GtkObject *object, gpointer user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">G_MODULE_EXPORT void on_ajustScroll_value_changed </td>
+          <td>(</td>
+          <td class="paramtype">GtkObject *&nbsp;</td>
+          <td class="paramname"> <em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gpointer&nbsp;</td>
+          <td class="paramname"> <em>user_data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ad6d05498cfb941856f0a42986f618fca"></a><!-- doxytag: member="sinais.c::on_drawOpengl_configure_event" ref="ad6d05498cfb941856f0a42986f618fca" args="(GtkWidget *widget, GdkEventConfigure *event, gpointer user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -175,33 +205,6 @@
 
 </div>
 </div>
-<a class="anchor" id="a521df53fcacc7a7b40f14f0b93df74c7"></a><!-- doxytag: member="sinais.c::on_drawOpengl_map_event" ref="a521df53fcacc7a7b40f14f0b93df74c7" args="(GtkWidget *widget, gpointer data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">G_MODULE_EXPORT void on_drawOpengl_map_event </td>
-          <td>(</td>
-          <td class="paramtype">GtkWidget *&nbsp;</td>
-          <td class="paramname"> <em>widget</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">gpointer&nbsp;</td>
-          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a8f05bf021a165b02ae2b862cef008a3b"></a><!-- doxytag: member="sinais.c::on_drawOpengl_motion_notify_event" ref="a8f05bf021a165b02ae2b862cef008a3b" args="(GtkWidget *widget, GdkEventMotion *event, gpointer data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -262,21 +265,21 @@
 
 </div>
 </div>
-<a class="anchor" id="a56c490524944420a6d88c624e8370a64"></a><!-- doxytag: member="sinais.c::on_drawOpengl_unmap_event" ref="a56c490524944420a6d88c624e8370a64" args="(GtkWidget *widget, gpointer data)" -->
+<a class="anchor" id="a27c6259b2b124954d0e26af6fabcfb52"></a><!-- doxytag: member="sinais.c::on_mbArquivoImportarDFX_activate" ref="a27c6259b2b124954d0e26af6fabcfb52" args="(GtkObject *object, gpointer user_data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">G_MODULE_EXPORT void on_drawOpengl_unmap_event </td>
+          <td class="memname">G_MODULE_EXPORT void on_mbArquivoImportarDFX_activate </td>
           <td>(</td>
-          <td class="paramtype">GtkWidget *&nbsp;</td>
-          <td class="paramname"> <em>widget</em>, </td>
+          <td class="paramtype">GtkObject *&nbsp;</td>
+          <td class="paramname"> <em>object</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">gpointer&nbsp;</td>
-          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>user_data</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -344,7 +347,7 @@
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Fri Aug 6 21:59:05 2010 para Morphometrics por&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Mon Aug 9 21:22:44 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

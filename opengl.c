@@ -15,7 +15,45 @@
 #include "Header/grafo.h"
 #include "Header/opengl.h"
 
-static GLfloat rtri, rquad;
+/**
+ *  Reconfigura a vião do OpenGL
+ *
+ *  @param w Largura
+ *  @param h Altura
+ *
+ */
+
+void Opengl_configTela(int w, int h) {
+  GLdouble dx, dy, mx, my;
+
+  if ( w <= 0 || h <= 0 )
+    return;
+
+  glViewport(0, 0, w, h);
+
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+
+  dx = mapa.visaoMaximo.x - mapa.visaoMinimo.x;
+  dy = mapa.visaoMaximo.y - mapa.visaoMinimo.y;
+
+
+  mx=mapa.visaoMaximo.x;
+  my=mapa.visaoMaximo.y;
+
+  if (dx < dy)
+    my=mapa.visaoMinimo.y + dx*h/w;
+  else
+    mx=mapa.visaoMinimo.x + dy*w/h;
+
+  glOrtho(mapa.visaoMinimo.x, mx, mapa.visaoMinimo.y, my, -100, 100);
+
+  glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
+}
 
 /**
  *  Incializa o opengl
@@ -25,51 +63,15 @@ static GLfloat rtri, rquad;
  *
  */
 
-void Opengl_iniciar(int cx, int cy) {
-  GLdouble dx, dy, dX, dY, xM, yM;
+void Opengl_iniciar(int w, int h) {
+  glClearColor( 0.72f, 0.72f, 0.72f, 0.0f );
+  glEnable( GL_LINE_SMOOTH );
+  glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
 
-  if ( cx <= 0 || cy <= 0 )
-    return;
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-  dx = mapa.limiteMaximo.x - mapa.limiteMinimo.x;
-  dy = mapa.limiteMaximo.y - mapa.limiteMinimo.y;
-
-  // select the full client area
-  glViewport(0, 0, cx, cy);
-
-  /* change to the projection matrix and set our viewing volume. */
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
-
-  // Now that the dimensions are set up, we can set up the projection
-  // matrix. Since we've overridden OnSize(), we need to do it ourselves
-
-  // select the viewing volume
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
-
-  if (fabs(dx) > 0.001 || fabs(dy) > 0.001)
-  {
-   if (dx < dy)
-   {
-    dY = dx * cx / cy;
-    yM = mapa.limiteMinimo.y  + dY;
-
-    glOrtho(mapa.limiteMinimo.x, mapa.limiteMaximo.x, mapa.limiteMinimo.y, yM, -100, 100);
-   }
-   else
-   {
-    dX = dy * cx / cy;
-    xM = mapa.limiteMinimo.x + dX;
-
-    glOrtho(mapa.limiteMinimo.x, xM, mapa.limiteMinimo.y, mapa.limiteMaximo.y, -100, 100);
-   }
-  }
-
-  // switch back to the modelview matrix and clear it
-  glMatrixMode(GL_MODELVIEW);
-  glLoadIdentity();
-
+  Opengl_configTela(w,h);
 }
 
 /**
@@ -81,15 +83,12 @@ void Opengl_iniciar(int cx, int cy) {
  */
 
 void Opengl_redimencionar(int w, int h) {
-  GLdouble dx, dy;
-  dx = mapa.limiteMaximo.x - mapa.limiteMinimo.x;
-  dy = mapa.limiteMaximo.y - mapa.limiteMinimo.y;
+  Opengl_configTela(w,h);
 
-  glViewport(0, 0, dx, dy);
 }
 
-void DrawLine(float x1, float y1, float x2, float y2) {
- glColor3ub(255, 255, 255);
+static void DrawLine(float x1, float y1, float x2, float y2) {
+ glColor3ub(0, 0, 0);
  glDisable(GL_TEXTURE_2D);
 
  glBegin(GL_LINES);
@@ -111,8 +110,4 @@ void Opengl_desenha() {
   forList(Nodo *, nodoPerc, grafo->nodos) {
     DrawLine(nodoPerc->p1.x,nodoPerc->p1.y,nodoPerc->p2.x,nodoPerc->p2.y);
   }
-}
-
-void Opengl_atualizar() {
-
 }

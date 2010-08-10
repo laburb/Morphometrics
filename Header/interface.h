@@ -8,6 +8,8 @@
 #ifndef INTERFACE_H_
 #define INTERFACE_H_
 
+    #include <gtk/gtk.h>
+
     GtkBuilder *builderPrincipal;
 
     void Interface_iniciar();
@@ -16,5 +18,7 @@
     GtkBuilder *Interface_carregarXML(char *arquivo);
 
     void Interface_mudarMouse(GdkWindow *windowT, GdkCursorType tipoMouse);
+
+    void Interface_atualizaOpengl();
 
 #endif /* INTERFACE_H_ */

@@ -11,16 +11,12 @@
 
 #include "Header/opengl.h"
 #include "Header/sinais.h"
+#include "Header/importar.h"
+#include "Header/mapa.h"
+#include "Header/selecionarArquivo.h"
 #include "Header/interface.h"
 
-static int timeID=0;
-
 G_MODULE_EXPORT void on_window_destroy(GtkObject *object, gpointer user_data) {
-  if (timeID) {
-    g_source_remove(timeID);
-    timeID=0;
-  }
-
   while (gtk_events_pending())
     gtk_main_iteration();
 
@@ -36,6 +32,11 @@ G_MODULE_EXPORT void onClickTeste(GtkObject *object, gpointer user_data) {
     gtk_widget_hide(frame);
   //gtk_widget_set_visible(frame, !gtk_widget_get_visible(frame));
 }
+
+G_MODULE_EXPORT void on_mbArquivoImportarDFX_activate(GtkObject *object, gpointer user_data) {
+  SelecionarArquivo("Importar arquivo","Importar", importar,"dxf teste");
+}
+
 
 //-------------------------- Inicio sinais: drawOpengl --------------------------
 
@@ -90,29 +91,6 @@ G_MODULE_EXPORT gboolean on_drawOpengl_configure_event(GtkWidget *widget, GdkEve
   return FALSE;
 }
 
-static gboolean rotate(gpointer user_data) {
-  GtkWidget *da = GTK_WIDGET (user_data);
-
-  Opengl_atualizar();
-
-  gdk_window_invalidate_rect (da->window, &da->allocation, FALSE);
-  gdk_window_process_updates (da->window, FALSE);
-
-  return TRUE;
-}
-
-G_MODULE_EXPORT void on_drawOpengl_map_event(GtkWidget *widget, gpointer data) {
-  if (!timeID)
-    timeID=g_timeout_add(500 / 60, rotate, widget);
-}
-
-G_MODULE_EXPORT void on_drawOpengl_unmap_event(GtkWidget *widget, gpointer data) {
-  if (timeID) {
-    g_source_remove(timeID);
-    timeID=0;
-  }
-}
-
 G_MODULE_EXPORT gboolean on_drawOpengl_enter_notify_event(GtkWidget *widget, GdkEventMotion *event, gpointer data) {
   Interface_mudarMouse(gtk_widget_get_window(GTK_WIDGET(widget)), GDK_CROSSHAIR);
 
@@ -128,6 +106,15 @@ G_MODULE_EXPORT gboolean on_drawOpengl_leave_notify_event(GtkWidget *widget, Gdk
 G_MODULE_EXPORT gboolean on_drawOpengl_motion_notify_event(GtkWidget *widget, GdkEventMotion *event, gpointer data) {
 
   return TRUE;
+}
+
+
+G_MODULE_EXPORT void on_ajustScroll_value_changed(GtkObject *object, gpointer user_data) {
+  GtkAdjustment *ajustScrollHorizGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollHorizGL"));
+  GtkAdjustment *ajustScrollVertGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollVertGL"));
+
+  Mapa_visao(-gtk_adjustment_get_value(ajustScrollHorizGL),gtk_adjustment_get_value(ajustScrollVertGL));
+  Interface_atualizaOpengl();
 }
 
 //-------------------------- Fim sinais: drawOpengl --------------------------

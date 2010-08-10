@@ -15,6 +15,7 @@ C_SRCS += \
 ../mensagens.c \
 ../opengl.c \
 ../ponto.c \
+../selecionarArquivo.c \
 ../sinais.c \
 ../util.c 
 
@@ -30,6 +31,7 @@ OBJS += \
 ./mensagens.o \
 ./opengl.o \
 ./ponto.o \
+./selecionarArquivo.o \
 ./sinais.o \
 ./util.o 
 
@@ -45,6 +47,7 @@ C_DEPS += \
 ./mensagens.d \
 ./opengl.d \
 ./ponto.d \
+./selecionarArquivo.d \
 ./sinais.d \
 ./util.d 
 
