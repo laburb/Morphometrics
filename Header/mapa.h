@@ -8,6 +8,7 @@
 #ifndef MAPA_H_
 #define MAPA_H_
 
+  #include <gtk/gtk.h>
   #include "ponto.h"
 
   typedef struct {
@@ -18,13 +19,21 @@
 
     Ponto visaoMinimo;
     Ponto visaoMaximo;
+
+    Grafo *grafo;
+
+    char exibirLabel;
+
     int CamadaAtual;
-    //BOOL CamadaAtiva[NUMCAMADAS];
   } Mapa;
 
   Mapa mapa;
 
+  void Mapa_iniciar();
   void Mapa_calculaEixoMax();
-  void Mapa_visao(double x, double y);
+  void Mapa_deslocarVisao(double x, double y);
+  void Mapa_setVisao(Ponto min, Ponto max);
+  void Mapa_calcularVisaoMaximo(int w, int h, double *mx, double *my);
+  void Mapa_mousePosicao(GtkWidget *widget, double mouseX, double mouseY, double *posX, double *posY);
 
 #endif /* MAPA_H_ */

@@ -18,7 +18,7 @@
 //#define DEBUG
 
 static void obterLine(FILE *fp) {
-  Nodo *nodoAtual=Grafo_adicionarNodo(grafo);
+  Nodo *nodoAtual=Grafo_adicionarNodo(mapa.grafo);
 
   Arquivo_acharString(fp, "10", 0);
   fscanf(fp, "%lf", &nodoAtual->p1.x);
@@ -37,15 +37,17 @@ static void obterLine(FILE *fp) {
 #endif
 }
 
-static void obterPolyLine(FILE *fp) {
+static void obterPolyLine(FILE *fp, int versao) {
   Nodo *nodoAtual=NULL;
   Nodo *nodoAtualAnt=NULL;
   Ponto pTmp;
 
   char strTmp[256];
 
+  Arquivo_acharString(fp, ((versao >= 14)?"43":"VERTEX"), 0);
+
   while (fscanf(fp, "%s", strTmp) != EOF) {
-    if (!strcmp("SEQEND", strTmp)) {
+    if (!strcmp(((versao >= 14)?"0":"SEQEND"), strTmp)) {
       if (nodoAtualAnt) {
         nodoAtualAnt->p2.x=pTmp.x;
         nodoAtualAnt->p2.y=pTmp.y;
@@ -53,10 +55,9 @@ static void obterPolyLine(FILE *fp) {
       nodoAtualAnt=NULL;
       break;
     }
-    if (!strcmp("VERTEX", strTmp)) {
-      nodoAtual=Grafo_adicionarNodo(grafo);
+    else if (!strcmp("10", strTmp)) {
+      nodoAtual=Grafo_adicionarNodo(mapa.grafo);
 
-      Arquivo_acharString(fp, "10", 0);
       fscanf(fp, "%lf", &nodoAtual->p1.x);
 
       Arquivo_acharString(fp, "20", 0);
@@ -76,7 +77,7 @@ static void obterPolyLine(FILE *fp) {
 }
 
 /**
-  *  @brief Função que importa arquivo no formato DFX
+  *  Função que importa arquivo no formato DFX
   *
   *  @param arquivo String referente ao comando.
   *
@@ -93,10 +94,10 @@ int importDFX(char *arquivo) {
   char strTmp[256];
   int versao=-1;
 
-  if (grafo)
-    Grafo_deletar(&grafo);
+  if (mapa.grafo)
+    Grafo_deletar(&mapa.grafo);
 
-  grafo=Grafo_iniciar();
+  mapa.grafo=Grafo_iniciar();
 
   fp=fopen(arquivo, "r");
   if (!fp)
@@ -115,7 +116,7 @@ int importDFX(char *arquivo) {
   else if (Arquivo_acharString(fp, "AC1021", 1))
     versao=2007;
 
-  if (versao != 12)
+  if (versao == -1)
     return -1;
 
   if (!Arquivo_acharString(fp, "$EXTMIN", 1))
@@ -150,12 +151,12 @@ int importDFX(char *arquivo) {
   while (fscanf(fp, "%s",strTmp) != EOF) {
     if (!strcmp("LINE",strTmp))
       obterLine(fp);
-    else if (!strcmp("POLYLINE",strTmp))
-      obterPolyLine(fp);
+    if ((!strcmp("AcDbPolyline",strTmp)) || (!strcmp("POLYLINE",strTmp)))
+      obterPolyLine(fp,versao);
   }
 
   Mapa_calculaEixoMax();
-  Mapa_visao(0,0);
+  Mapa_setVisao(mapa.eixoMinimo,mapa.eixoMaximo);
 
   return 1;
 }

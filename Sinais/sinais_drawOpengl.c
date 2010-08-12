@@ -1,7 +1,7 @@
 /*
- * sinais.c
+ * sinais_drawOpengl.c
  *
- *  Created on: 24/07/2010
+ *  Created on: 10/08/2010
  *      Author: bruno
  */
 
@@ -9,36 +9,11 @@
 #include <gtk/gtk.h>
 #include <gtk/gtkgl.h>
 
-#include "Header/opengl.h"
-#include "Header/sinais.h"
-#include "Header/importar.h"
-#include "Header/mapa.h"
-#include "Header/selecionarArquivo.h"
-#include "Header/interface.h"
-
-G_MODULE_EXPORT void on_window_destroy(GtkObject *object, gpointer user_data) {
-  while (gtk_events_pending())
-    gtk_main_iteration();
-
-  gtk_main_quit();
-}
-
-G_MODULE_EXPORT void onClickTeste(GtkObject *object, gpointer user_data) {
-  GtkWidget *frame=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "frameFerramentas"));
-
-  if (!GTK_WIDGET_VISIBLE(frame))
-    gtk_widget_show(frame);
-  else
-    gtk_widget_hide(frame);
-  //gtk_widget_set_visible(frame, !gtk_widget_get_visible(frame));
-}
-
-G_MODULE_EXPORT void on_mbArquivoImportarDFX_activate(GtkObject *object, gpointer user_data) {
-  SelecionarArquivo("Importar arquivo","Importar", importar,"dxf teste");
-}
-
-
-//-------------------------- Inicio sinais: drawOpengl --------------------------
+#include "../Header/grafo.h"
+#include "../Header/mapa.h"
+#include "../Header/opengl.h"
+#include "../Header/interface.h"
+#include "../Header/editar.h"
 
 G_MODULE_EXPORT void on_drawOpengl_realize(GtkWidget *widget, gpointer user_data) {
   GdkGLContext *glcontext = gtk_widget_get_gl_context(widget);
@@ -77,7 +52,7 @@ G_MODULE_EXPORT gboolean on_drawOpengl_expose_event(GtkWidget *widget, GdkEventE
 
 G_MODULE_EXPORT gboolean on_drawOpengl_configure_event(GtkWidget *widget, GdkEventConfigure *event, gpointer user_data) {
   GdkGLContext *glcontext = gtk_widget_get_gl_context(widget);
-  GdkGLDrawable *gldrawable = gtk_widget_get_gl_drawable (widget);
+  GdkGLDrawable *gldrawable = gtk_widget_get_gl_drawable(widget);
 
   /*** OpenGL BEGIN ***/
   if (!gdk_gl_drawable_gl_begin(gldrawable, glcontext))
@@ -92,29 +67,65 @@ G_MODULE_EXPORT gboolean on_drawOpengl_configure_event(GtkWidget *widget, GdkEve
 }
 
 G_MODULE_EXPORT gboolean on_drawOpengl_enter_notify_event(GtkWidget *widget, GdkEventMotion *event, gpointer data) {
-  Interface_mudarMouse(gtk_widget_get_window(GTK_WIDGET(widget)), GDK_CROSSHAIR);
+
+  Interface_mudarMouse(Mapa_cursor());
 
   return TRUE;
 }
 
 G_MODULE_EXPORT gboolean on_drawOpengl_leave_notify_event(GtkWidget *widget, GdkEventMotion *event, gpointer data) {
-  Interface_mudarMouse(gtk_widget_get_window(GTK_WIDGET(widget)), GDK_ARROW);
+  Interface_mudarMouse(GDK_ARROW);
 
   return TRUE;
 }
 
 G_MODULE_EXPORT gboolean on_drawOpengl_motion_notify_event(GtkWidget *widget, GdkEventMotion *event, gpointer data) {
+  double mouseX,mouseY;
+  char str[256];
+
+  GtkLabel *label=GTK_LABEL(gtk_builder_get_object(builderPrincipal, "labelPosicaoXY"));
+
+  Mapa_mousePosicao(widget, event->x, event->y, &mouseX, &mouseY);
+
+  Editar_mouseMove(mouseX,mouseY);
+
+  sprintf(str,"%lf - %lf",mouseX,mouseY);
+  gtk_label_set_text(label, str);
 
   return TRUE;
 }
 
+G_MODULE_EXPORT gboolean on_drawOpengl_button_press_event(GtkWidget *widget, GdkEventButton *event, gpointer data) {
+  double mouseX, mouseY;
+
+  Mapa_mousePosicao(widget, event->x, event->y, &mouseX, &mouseY);
+
+  Editar_mousePressiona(event->button, mouseX, mouseY);
+
+  return TRUE;
+}
+
+G_MODULE_EXPORT gboolean on_drawOpengl_button_release_event(GtkWidget *widget, GdkEventButton *event, gpointer data) {
+  double mouseX, mouseY;
+  Mapa_mousePosicao(widget, event->x, event->y, &mouseX, &mouseY);
+
+  Editar_mouseLibera(event->button, mouseX, mouseY);
+
+  return TRUE;
+}
 
 G_MODULE_EXPORT void on_ajustScroll_value_changed(GtkObject *object, gpointer user_data) {
+  static double antHoriz=0;
+  static double antVert=0;
+
   GtkAdjustment *ajustScrollHorizGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollHorizGL"));
   GtkAdjustment *ajustScrollVertGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollVertGL"));
 
-  Mapa_visao(-gtk_adjustment_get_value(ajustScrollHorizGL),gtk_adjustment_get_value(ajustScrollVertGL));
+
+  Mapa_deslocarVisao(-gtk_adjustment_get_value(ajustScrollHorizGL)-antHoriz,gtk_adjustment_get_value(ajustScrollVertGL)-antVert);
+
+  antHoriz=-gtk_adjustment_get_value(ajustScrollHorizGL);
+  antVert=gtk_adjustment_get_value(ajustScrollVertGL);
+
   Interface_atualizaOpengl();
 }
-
-//-------------------------- Fim sinais: drawOpengl --------------------------

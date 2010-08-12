@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência do Arquivo editar.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência do Arquivo editar.c</h1><code>#include &lt;GL/gl.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="editar_8c.html">Header/interface.h</a>&quot;</code><br/>
+<code>#include &lt;gtk/gtk.h&gt;</code><br/>
+<code>#include &quot;estruturas.h&quot;</code><br/>
+<code>#include &quot;ponto.h&quot;</code><br/>
+<code>#include &lt;math.h&gt;</code><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#a53eacd62d9375293c2c8261eb6edecce">Editar_melhorVisao</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#ac553e42c0700057d09dcfd181c42ad4d">Editar_mouseMove</a> (double mouseX, double mouseY)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#a30e5235fd401b3d4f8d4443db305d7a1">Editar_mousePressiona</a> (int botao, double mouseX, double mouseY)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#a39f15f7cfdc4c750dd098bca8d53ab14">Editar_mouseLibera</a> (int botao, double mouseX, double mouseY)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">GdkCursorType&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#a4322d22cdc8c5efb5f0f15b1c278e468">Mapa_cursor</a> ()</td></tr>
+<tr><td colspan="2"><h2>Variáveis</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum TipoFerramenta&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#aea2056ddd9094c1cca4fea678b98d205">ferramentaAtiva</a> = FERRAMENTA_NAVEGAR</td></tr>
+</table>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="a53eacd62d9375293c2c8261eb6edecce"></a><!-- doxytag: member="editar.c::Editar_melhorVisao" ref="a53eacd62d9375293c2c8261eb6edecce" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Editar_melhorVisao </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a39f15f7cfdc4c750dd098bca8d53ab14"></a><!-- doxytag: member="editar.c::Editar_mouseLibera" ref="a39f15f7cfdc4c750dd098bca8d53ab14" args="(int botao, double mouseX, double mouseY)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Editar_mouseLibera </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>botao</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>mouseX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>mouseY</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac553e42c0700057d09dcfd181c42ad4d"></a><!-- doxytag: member="editar.c::Editar_mouseMove" ref="ac553e42c0700057d09dcfd181c42ad4d" args="(double mouseX, double mouseY)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Editar_mouseMove </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>mouseX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>mouseY</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a30e5235fd401b3d4f8d4443db305d7a1"></a><!-- doxytag: member="editar.c::Editar_mousePressiona" ref="a30e5235fd401b3d4f8d4443db305d7a1" args="(int botao, double mouseX, double mouseY)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Editar_mousePressiona </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>botao</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>mouseX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>mouseY</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4322d22cdc8c5efb5f0f15b1c278e468"></a><!-- doxytag: member="editar.c::Mapa_cursor" ref="a4322d22cdc8c5efb5f0f15b1c278e468" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GdkCursorType Mapa_cursor </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Variáveis</h2>
+<a class="anchor" id="aea2056ddd9094c1cca4fea678b98d205"></a><!-- doxytag: member="editar.c::ferramentaAtiva" ref="aea2056ddd9094c1cca4fea678b98d205" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum TipoFerramenta <a class="el" href="editar_8c.html#aea2056ddd9094c1cca4fea678b98d205">ferramentaAtiva</a> = FERRAMENTA_NAVEGAR</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 12 17:40:21 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

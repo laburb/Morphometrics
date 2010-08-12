@@ -55,7 +55,6 @@ void Interface_iniciar() {
         }
     }
 
-
   if (!gtk_widget_set_gl_capability(drawOpengl, glconfig, NULL, TRUE, GDK_GL_RGBA_TYPE))
     g_assert_not_reached();
 
@@ -94,21 +93,37 @@ GtkBuilder *Interface_carregarXML(char *arquivo) {
 
   return builder;
 }
+/*
+#include "Imagens/cursor/zoom-out.xbm"
+#include "Imagens/cursor/zoom-out-mask.xbm"
+void Interface_carregaCursor() {
+  GdkCursor *cursor;
+  GdkPixmap *source, *mask;
+  GdkColor fg = { 0, 0, 0, 0 };
+  GdkColor bg = { 0, 65535, 65535, 65535 };
+
+  source = gdk_bitmap_create_from_data (NULL, zoom_out_bits, zoom_out_width, zoom_out_height);
+  mask = gdk_bitmap_create_from_data (NULL, zoom_out_mask_bits, zoom_out_mask_width, zoom_out_mask_height);
+  cursor = gdk_cursor_new_from_pixmap (source, mask, &fg, &bg, 8, 8);
+  g_object_unref (source);
+  g_object_unref (mask);
+
+  gdk_window_set_cursor (GDK_ROOT_PARENT(), cursor);
+}*/
 
 
 /**
  *  Modifica o cursor do mouse.
  *
- *  @param windowT Janela que ira mudar o mouse
  *  @param tipoMouse Tipo do mouse
  *
  */
 
-void Interface_mudarMouse(GdkWindow *windowT, GdkCursorType tipoMouse) {
-  //GdkWindow *windowT=gtk_widget_get_window(GTK_WIDGET(builderPrincipal));
+void Interface_mudarMouse(GdkCursorType tipoMouse) {
+  GtkWidget *drawOpengl=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "drawOpengl"));
 
   GdkCursor *cur=gdk_cursor_new(tipoMouse);
-  gdk_window_set_cursor(windowT, cur );
+  gdk_window_set_cursor(drawOpengl->window, cur );
   gdk_cursor_unref(cur);
 }
 

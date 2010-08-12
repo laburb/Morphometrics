@@ -15,4 +15,9 @@
     void Opengl_desenha();
     void Opengl_atualizar();
 
+    void DrawLineXOR(double x1, double y1, double x2, double y2);
+    void DrawQuadradoXOR(double x1, double y1, double x2, double y2);
+
+    char openglDesenharAtivo;
+
 #endif /* OPENGL_H_ */

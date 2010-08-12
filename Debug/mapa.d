@@ -1,5 +1,6 @@
-main.d main.o: ../main.c /usr/include/gtk-2.0/gtk/gtk.h \
- /usr/include/gtk-2.0/gdk/gdk.h \
+mapa.d mapa.o: ../mapa.c ../Header/grafo.h ../Header/estruturas.h \
+ ../Header/ponto.h ../Header/util.h ../Header/mapa.h \
+ /usr/include/gtk-2.0/gtk/gtk.h /usr/include/gtk-2.0/gdk/gdk.h \
  /usr/include/gtk-2.0/gdk/gdkapplaunchcontext.h \
  /usr/include/glib-2.0/gio/gio.h /usr/include/glib-2.0/gio/giotypes.h \
  /usr/include/glib-2.0/gio/gioenums.h /usr/include/glib-2.0/glib-object.h \
@@ -404,9 +405,17 @@ main.d main.o: ../main.c /usr/include/gtk-2.0/gtk/gtk.h \
  /usr/include/gtk-2.0/gtk/gtkoldeditable.h \
  /usr/include/gtk-2.0/gtk/gtkoptionmenu.h \
  /usr/include/gtk-2.0/gtk/gtkpreview.h \
- /usr/include/gtk-2.0/gtk/gtktipsquery.h ../Header/interface.h \
- ../Header/importar.h ../Header/grafo.h ../Header/estruturas.h \
- ../Header/ponto.h ../Header/util.h
+ /usr/include/gtk-2.0/gtk/gtktipsquery.h
+
+../Header/grafo.h:
+
+../Header/estruturas.h:
+
+../Header/ponto.h:
+
+../Header/util.h:
+
+../Header/mapa.h:
 
 /usr/include/gtk-2.0/gtk/gtk.h:
 
@@ -1321,15 +1330,3 @@ main.d main.o: ../main.c /usr/include/gtk-2.0/gtk/gtk.h \
 /usr/include/gtk-2.0/gtk/gtkpreview.h:
 
 /usr/include/gtk-2.0/gtk/gtktipsquery.h:
-
-../Header/interface.h:
-
-../Header/importar.h:
-
-../Header/grafo.h:
-
-../Header/estruturas.h:
-
-../Header/ponto.h:
-
-../Header/util.h:

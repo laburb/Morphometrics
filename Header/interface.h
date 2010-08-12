@@ -17,7 +17,7 @@
 
     GtkBuilder *Interface_carregarXML(char *arquivo);
 
-    void Interface_mudarMouse(GdkWindow *windowT, GdkCursorType tipoMouse);
+    void Interface_mudarMouse(GdkCursorType tipoMouse);
 
     void Interface_atualizaOpengl();
 

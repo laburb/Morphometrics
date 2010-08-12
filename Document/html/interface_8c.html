@@ -26,7 +26,7 @@
 <h1>Referência do Arquivo interface.c</h1><code>#include &lt;string.h&gt;</code><br/>
 <code>#include &lt;gtk/gtk.h&gt;</code><br/>
 <code>#include &lt;gtk/gtkgl.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="interface_8c.html">Header/opengl.h</a>&quot;</code><br/>
+<code>#include &quot;Header/opengl.h&quot;</code><br/>
 <code>#include &quot;Header/interface.h&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Definições e Macros</h2></td></tr>
@@ -39,8 +39,8 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Finaliza a interface.  <a href="#a37277fa1c762ce45a8929b8b827c7d44"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">GtkBuilder *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#aefefb211f46a89912ae7272f519ad3d0">Interface_carregarXML</a> (char *arquivo)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Carrega a interface do arquivo xml.  <a href="#aefefb211f46a89912ae7272f519ad3d0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#ae76152337046294ac6ac05896b9cd2c0">Interface_mudarMouse</a> (GdkWindow *windowT, GdkCursorType tipoMouse)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modifica o cursor do mouse.  <a href="#ae76152337046294ac6ac05896b9cd2c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#adfd870da544e05d3e418e5d5be7f6ca6">Interface_mudarMouse</a> (GdkCursorType tipoMouse)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Modifica o cursor do mouse.  <a href="#adfd870da544e05d3e418e5d5be7f6ca6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a4c326e1024b54e7d50be4f677c2b8108">Interface_atualizaOpengl</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Chama Opengl_configTela e redesenha a tela.  <a href="#a4c326e1024b54e7d50be4f677c2b8108"></a><br/></td></tr>
 </table>
@@ -157,26 +157,17 @@
 
 </div>
 </div>
-<a class="anchor" id="ae76152337046294ac6ac05896b9cd2c0"></a><!-- doxytag: member="interface.c::Interface_mudarMouse" ref="ae76152337046294ac6ac05896b9cd2c0" args="(GdkWindow *windowT, GdkCursorType tipoMouse)" -->
+<a class="anchor" id="adfd870da544e05d3e418e5d5be7f6ca6"></a><!-- doxytag: member="interface.c::Interface_mudarMouse" ref="adfd870da544e05d3e418e5d5be7f6ca6" args="(GdkCursorType tipoMouse)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Interface_mudarMouse </td>
           <td>(</td>
-          <td class="paramtype">GdkWindow *&nbsp;</td>
-          <td class="paramname"> <em>windowT</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">GdkCursorType&nbsp;</td>
-          <td class="paramname"> <em>tipoMouse</em></td><td>&nbsp;</td>
-        </tr>
-        <tr>
+          <td class="paramname"> <em>tipoMouse</em></td>
+          <td>&nbsp;)&nbsp;</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
@@ -185,7 +176,6 @@
 <p>Modifica o cursor do mouse. </p>
 <dl><dt><b>Parâmetros:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>windowT</em>&nbsp;</td><td>Janela que ira mudar o mouse </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>tipoMouse</em>&nbsp;</td><td>Tipo do mouse </td></tr>
   </table>
   </dd>
@@ -194,7 +184,7 @@
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Mon Aug 9 21:22:44 2010 para Morphometrics por&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 12 17:40:21 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

@@ -33,9 +33,6 @@
     Lista *nodos;
   } Grafo;
 
-  Grafo *grafo;
-
-
   Grafo *Grafo_iniciar();
   void Grafo_deletar(Grafo **grafo);
   Nodo *Grafo_adicionarNodo(Grafo *grafo);

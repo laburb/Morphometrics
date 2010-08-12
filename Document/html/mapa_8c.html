@@ -23,16 +23,24 @@
   </div>
 </div>
 <div class="contents">
-<h1>Referência do Arquivo mapa.c</h1><code>#include &quot;Header/ponto.h&quot;</code><br/>
-<code>#include &quot;Header/grafo.h&quot;</code><br/>
+<h1>Referência do Arquivo mapa.c</h1><code>#include &quot;Header/grafo.h&quot;</code><br/>
 <code>#include &quot;Header/util.h&quot;</code><br/>
 <code>#include &quot;Header/mapa.h&quot;</code><br/>
 <code>#include &lt;math.h&gt;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mapa_8c.html#aeb6f83a4072371e761bcc686043590e7">Mapa_iniciar</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Inicia o mapa com configuracões padrões.  <a href="#aeb6f83a4072371e761bcc686043590e7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mapa_8c.html#ad636a509279773eb658fc8d4dc9712b8">Mapa_calculaEixoMax</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Acha o maior e o menor eixo.  <a href="#ad636a509279773eb658fc8d4dc9712b8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mapa_8c.html#ad2fc875c4bfe962b86115983bc1135a3">Mapa_visao</a> (double x, double y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mapa_8c.html#ab862783a04c63b4f9d64f3135a4e3fb3">Mapa_setVisao</a> (Ponto min, Ponto max)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Seta a visão do mapa.  <a href="#ab862783a04c63b4f9d64f3135a4e3fb3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mapa_8c.html#aa38c94979de099aa48b27bf5c62c4947">Mapa_deslocarVisao</a> (double x, double y)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Desloca a visão do mapa.  <a href="#aa38c94979de099aa48b27bf5c62c4947"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mapa_8c.html#aa04961c9cd214b8408bd605b2cfae4cf">Mapa_calcularVisaoMaximo</a> (int w, int h, double *mx, double *my)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calcula a visão maxima apartir do tamanho da tela, para manter a proporção.  <a href="#aa04961c9cd214b8408bd605b2cfae4cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="mapa_8c.html#ab753bb72831aef00df45a14c79a653ec">Mapa_mousePosicao</a> (GtkWidget *widget, double mouseX, double mouseY, double *posX, double *posY)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Calcula a posição do mouse relativa no mapa.  <a href="#ab753bb72831aef00df45a14c79a653ec"></a><br/></td></tr>
 </table>
 <hr/><h2>Funções</h2>
 <a class="anchor" id="ad636a509279773eb658fc8d4dc9712b8"></a><!-- doxytag: member="mapa.c::Mapa_calculaEixoMax" ref="ad636a509279773eb658fc8d4dc9712b8" args="()" -->
@@ -54,12 +62,62 @@
 
 </div>
 </div>
-<a class="anchor" id="ad2fc875c4bfe962b86115983bc1135a3"></a><!-- doxytag: member="mapa.c::Mapa_visao" ref="ad2fc875c4bfe962b86115983bc1135a3" args="(double x, double y)" -->
+<a class="anchor" id="aa04961c9cd214b8408bd605b2cfae4cf"></a><!-- doxytag: member="mapa.c::Mapa_calcularVisaoMaximo" ref="aa04961c9cd214b8408bd605b2cfae4cf" args="(int w, int h, double *mx, double *my)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Mapa_visao </td>
+          <td class="memname">void Mapa_calcularVisaoMaximo </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>mx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>my</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calcula a visão maxima apartir do tamanho da tela, para manter a proporção. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>w</em>&nbsp;</td><td>Largura da tela de desenho </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>h</em>&nbsp;</td><td>Altura da tela de desenho </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mx</em>&nbsp;</td><td>Retorno da visão maxima em x </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>my</em>&nbsp;</td><td>Retorno da visão maxima em y </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa38c94979de099aa48b27bf5c62c4947"></a><!-- doxytag: member="mapa.c::Mapa_deslocarVisao" ref="aa38c94979de099aa48b27bf5c62c4947" args="(double x, double y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mapa_deslocarVisao </td>
           <td>(</td>
           <td class="paramtype">double&nbsp;</td>
           <td class="paramname"> <em>x</em>, </td>
@@ -79,10 +137,131 @@
 </div>
 <div class="memdoc">
 
+<p>Desloca a visão do mapa. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>Deslocamento x </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>Deslocamento y </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb6f83a4072371e761bcc686043590e7"></a><!-- doxytag: member="mapa.c::Mapa_iniciar" ref="aeb6f83a4072371e761bcc686043590e7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mapa_iniciar </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Inicia o mapa com configuracões padrões. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab753bb72831aef00df45a14c79a653ec"></a><!-- doxytag: member="mapa.c::Mapa_mousePosicao" ref="ab753bb72831aef00df45a14c79a653ec" args="(GtkWidget *widget, double mouseX, double mouseY, double *posX, double *posY)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mapa_mousePosicao </td>
+          <td>(</td>
+          <td class="paramtype">GtkWidget *&nbsp;</td>
+          <td class="paramname"> <em>widget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>mouseX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>mouseY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>posX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>posY</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calcula a posição do mouse relativa no mapa. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>widget</em>&nbsp;</td><td>Widget da tela de desenho </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mouseX</em>&nbsp;</td><td>Posicao x do mouse no widget </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mouseY</em>&nbsp;</td><td>Posicao y do mouse no widget </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posX</em>&nbsp;</td><td>Retorno da posição x do mouse no mapa </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posY</em>&nbsp;</td><td>Retorno da posição y do mouse no mapa </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab862783a04c63b4f9d64f3135a4e3fb3"></a><!-- doxytag: member="mapa.c::Mapa_setVisao" ref="ab862783a04c63b4f9d64f3135a4e3fb3" args="(Ponto min, Ponto max)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mapa_setVisao </td>
+          <td>(</td>
+          <td class="paramtype">Ponto&nbsp;</td>
+          <td class="paramname"> <em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto&nbsp;</td>
+          <td class="paramname"> <em>max</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Seta a visão do mapa. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>min</em>&nbsp;</td><td>Menor ponto vizivel do mapa </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>max</em>&nbsp;</td><td>Maior ponto vizivel do mapa </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Mon Aug 9 21:22:44 2010 para Morphometrics por&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 12 17:40:21 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

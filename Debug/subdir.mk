@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../conjdis.c \
+../editar.c \
 ../estruturas.c \
 ../grafo.c \
 ../heap.c \
@@ -16,11 +17,11 @@ C_SRCS += \
 ../opengl.c \
 ../ponto.c \
 ../selecionarArquivo.c \
-../sinais.c \
 ../util.c 
 
 OBJS += \
 ./conjdis.o \
+./editar.o \
 ./estruturas.o \
 ./grafo.o \
 ./heap.o \
@@ -32,11 +33,11 @@ OBJS += \
 ./opengl.o \
 ./ponto.o \
 ./selecionarArquivo.o \
-./sinais.o \
 ./util.o 
 
 C_DEPS += \
 ./conjdis.d \
+./editar.d \
 ./estruturas.d \
 ./grafo.d \
 ./heap.d \
@@ -48,7 +49,6 @@ C_DEPS += \
 ./opengl.d \
 ./ponto.d \
 ./selecionarArquivo.d \
-./sinais.d \
 ./util.d 
 
 

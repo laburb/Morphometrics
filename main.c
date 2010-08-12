@@ -10,6 +10,7 @@
 #include "Header/interface.h"
 #include "Header/importar.h"
 #include "Header/grafo.h"
+#include "Header/mapa.h"
 #include "Header/util.h"
 
 /**
@@ -17,7 +18,8 @@
  */
 
 int main(int argc, char *argv[]) {
-  grafo=Grafo_iniciar();
+  mapa.grafo=Grafo_iniciar();
+  Mapa_iniciar();
 
   Interface_iniciar();
 
