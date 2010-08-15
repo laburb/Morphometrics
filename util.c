@@ -8,8 +8,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 
+#include "Header/ponto.h"
 #include "Header/util.h"
+
 
 /**
  *  Posiciona o 'cursor' do arquivo depois da string procurada.

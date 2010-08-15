@@ -25,14 +25,21 @@
 <div class="contents">
 <h1>Referência do Arquivo opengl.c</h1><code>#include &lt;GL/gl.h&gt;</code><br/>
 <code>#include &lt;GL/glu.h&gt;</code><br/>
+<code>#include &lt;gtk/gtkgl.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
 <code>#include &lt;math.h&gt;</code><br/>
 <code>#include &quot;Header/ponto.h&quot;</code><br/>
 <code>#include &quot;Header/util.h&quot;</code><br/>
 <code>#include &quot;Header/grafo.h&quot;</code><br/>
 <code>#include &quot;Header/mapa.h&quot;</code><br/>
+<code>#include &quot;Header/math2.h&quot;</code><br/>
 <code>#include &quot;Header/opengl.h&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#aa3ac7316317ec901d3b3a8022d90047e">Opengl_carregarFonte</a> (char *fonte)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Carrega uma fonte.  <a href="#aa3ac7316317ec901d3b3a8022d90047e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#a87c1d6db9ce028f3e73cd7a29bc0d89f">Opengl_drawTexto</a> (double posX, double posY, char *mesg,...)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Escreve um texto na tela.  <a href="#a87c1d6db9ce028f3e73cd7a29bc0d89f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#ab278934d69be80ca59b1fe9156123305">Opengl_configTela</a> (int w, int h)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reconfigura a vião do OpenGL.  <a href="#ab278934d69be80ca59b1fe9156123305"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#a4e86ed04fa1b9c188764b7d6b0db69d2">Opengl_iniciar</a> (int w, int h)</td></tr>
@@ -47,6 +54,10 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Desenha.  <a href="#a6dac1f7203186d38e126e6b4d10423e8"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Variáveis</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#a0de89eeb3ec737922a7df6d3359b9fd9">openglDesenharAtivo</a> = 1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#ad8dfa2643f3ce54ed1aea2ed0b7384ed">telaH</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#ae391607c63212ad9955778049da1672b">telaW</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">GLuint&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#addb9a70774984ba932e7169cd4f94d9b">font_list_base</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="opengl_8c.html#ab6893108626b4ffa1a745a68ce88b376">font_height</a></td></tr>
 </table>
 <hr/><h2>Funções</h2>
 <a class="anchor" id="a6d8172ff94deb4375cad1bdb436731e2"></a><!-- doxytag: member="opengl.c::DrawLineXOR" ref="a6d8172ff94deb4375cad1bdb436731e2" args="(double x1, double y1, double x2, double y2)" -->
@@ -131,6 +142,32 @@
 
 </div>
 </div>
+<a class="anchor" id="aa3ac7316317ec901d3b3a8022d90047e"></a><!-- doxytag: member="opengl.c::Opengl_carregarFonte" ref="aa3ac7316317ec901d3b3a8022d90047e" args="(char *fonte)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Opengl_carregarFonte </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>fonte</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Carrega uma fonte. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>fonte</em>&nbsp;</td><td>Fonte e tamanho. ex.: "courier 10" </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ab278934d69be80ca59b1fe9156123305"></a><!-- doxytag: member="opengl.c::Opengl_configTela" ref="ab278934d69be80ca59b1fe9156123305" args="(int w, int h)" -->
 <div class="memitem">
 <div class="memproto">
@@ -183,6 +220,55 @@
 <div class="memdoc">
 
 <p>Desenha. </p>
+
+</div>
+</div>
+<a class="anchor" id="a87c1d6db9ce028f3e73cd7a29bc0d89f"></a><!-- doxytag: member="opengl.c::Opengl_drawTexto" ref="a87c1d6db9ce028f3e73cd7a29bc0d89f" args="(double posX, double posY, char *mesg,...)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Opengl_drawTexto </td>
+          <td>(</td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>posX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>posY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>mesg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>...</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Escreve um texto na tela. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>posX</em>&nbsp;</td><td>Posição x do texto </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posY</em>&nbsp;</td><td>Posição y do texto </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mesg</em>&nbsp;</td><td>Formato do texto </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -259,6 +345,32 @@
 </div>
 </div>
 <hr/><h2>Variáveis</h2>
+<a class="anchor" id="ab6893108626b4ffa1a745a68ce88b376"></a><!-- doxytag: member="opengl.c::font_height" ref="ab6893108626b4ffa1a745a68ce88b376" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="opengl_8c.html#ab6893108626b4ffa1a745a68ce88b376">font_height</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="addb9a70774984ba932e7169cd4f94d9b"></a><!-- doxytag: member="opengl.c::font_list_base" ref="addb9a70774984ba932e7169cd4f94d9b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint <a class="el" href="opengl_8c.html#addb9a70774984ba932e7169cd4f94d9b">font_list_base</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0de89eeb3ec737922a7df6d3359b9fd9"></a><!-- doxytag: member="opengl.c::openglDesenharAtivo" ref="a0de89eeb3ec737922a7df6d3359b9fd9" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -272,8 +384,34 @@
 
 </div>
 </div>
+<a class="anchor" id="ad8dfa2643f3ce54ed1aea2ed0b7384ed"></a><!-- doxytag: member="opengl.c::telaH" ref="ad8dfa2643f3ce54ed1aea2ed0b7384ed" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="opengl_8c.html#ad8dfa2643f3ce54ed1aea2ed0b7384ed">telaH</a></td>
+        </tr>
+      </table>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 12 17:40:21 2010 para Morphometrics por&nbsp;
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae391607c63212ad9955778049da1672b"></a><!-- doxytag: member="opengl.c::telaW" ref="ae391607c63212ad9955778049da1672b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="opengl_8c.html#ae391607c63212ad9955778049da1672b">telaW</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Sun Aug 15 15:59:58 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

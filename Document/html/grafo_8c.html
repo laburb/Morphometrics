@@ -25,7 +25,7 @@
 <div class="contents">
 <h1>Referência do Arquivo grafo.c</h1><code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="grafo_8c.html">Header/util.h</a>&quot;</code><br/>
+<code>#include &quot;Header/util.h&quot;</code><br/>
 <code>#include &quot;Header/grafo.h&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Funções</h2></td></tr>
@@ -35,14 +35,14 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adiciona vertice ao grafo.  <a href="#a64f8a2dff98a0d01860efc2afa1db935"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#aed077809cbd2dc7fe07f04d56c22f5aa">Grafo_deletar</a> (Grafo **grafo)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libera grafo da memória.  <a href="#aed077809cbd2dc7fe07f04d56c22f5aa"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#aebbc32c233cde8025bb199d51f3a70a1">Grafo_adicionarAresta</a> (Grafo *grafo, int a, int b, enum ArestaTipo tipo, int valor)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adiciona aresta entre o vertice 'a' e o 'b'.  <a href="#aebbc32c233cde8025bb199d51f3a70a1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a478db7324fdc12392316039356177069">Grafo_removerAresta</a> (Grafo *grafo, int a, int b)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Remove aresta entre 'a' e 'b' se for BIDIRECIONADA remove tambem de 'b' para 'a'.  <a href="#a478db7324fdc12392316039356177069"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#aed586affb47396d47950919280bbbfc6">Grafo_isAdjacente</a> (Grafo *grafo, int a, int b)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verifica se o vertice 'a' é adjacente ao 'b'.  <a href="#aed586affb47396d47950919280bbbfc6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Arestas *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a2e690ef24d96d19e75484064e6f7988e">Grafo_getAresta</a> (Grafo *grafo, int a, int b)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retorna o vertice de 'a' para 'b'.  <a href="#a2e690ef24d96d19e75484064e6f7988e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a3f488b2c756a8314a6aaf487b2c2b8b4">Grafo_adicionarAresta</a> (Grafo *grafo, Nodo *a, Nodo *b, enum ArestaTipo tipo, int valor)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Adiciona aresta entre o vertice 'a' e o 'b'.  <a href="#a3f488b2c756a8314a6aaf487b2c2b8b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#ad099fae030df0fd75c8046e28e8a2adb">Grafo_removerAresta</a> (Grafo *grafo, Nodo *a, Nodo *b)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Remove aresta entre 'a' e 'b' se for BIDIRECIONADA remove tambem de 'b' para 'a'.  <a href="#ad099fae030df0fd75c8046e28e8a2adb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a0bda260099ea7703460142398aa2c111">Grafo_isAdjacente</a> (Grafo *grafo, Nodo *a, Nodo *b)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verifica se o vertice 'a' é adjacente ao 'b'.  <a href="#a0bda260099ea7703460142398aa2c111"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Arestas *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a3ddfbccd8036e027f4b472a316559971">Grafo_getAresta</a> (Grafo *grafo, Nodo *a, Nodo *b)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retorna o vertice de 'a' para 'b'.  <a href="#a3ddfbccd8036e027f4b472a316559971"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Nodo *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a967b86c9a3eef8bc2543ef24906e8b6c">Grafo_getNodo</a> (Grafo *grafo, int valor)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retorna o nodo.  <a href="#a967b86c9a3eef8bc2543ef24906e8b6c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#a4165f1aacd2bc69965c5543c8aeb3aac">Grafo_setNodosAux</a> (Grafo *grafo, int valor)</td></tr>
@@ -55,7 +55,7 @@
 <tr><td class="memItemLeft" align="right" valign="top">Nodo *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="grafo_8c.html#aa153f326ffafd314c1b256fdecb37ee4">nodoAtual</a></td></tr>
 </table>
 <hr/><h2>Funções</h2>
-<a class="anchor" id="aebbc32c233cde8025bb199d51f3a70a1"></a><!-- doxytag: member="grafo.c::Grafo_adicionarAresta" ref="aebbc32c233cde8025bb199d51f3a70a1" args="(Grafo *grafo, int a, int b, enum ArestaTipo tipo, int valor)" -->
+<a class="anchor" id="a3f488b2c756a8314a6aaf487b2c2b8b4"></a><!-- doxytag: member="grafo.c::Grafo_adicionarAresta" ref="a3f488b2c756a8314a6aaf487b2c2b8b4" args="(Grafo *grafo, Nodo *a, Nodo *b, enum ArestaTipo tipo, int valor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -68,13 +68,13 @@
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
           <td class="paramname"> <em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
           <td class="paramname"> <em>b</em>, </td>
         </tr>
         <tr>
@@ -204,7 +204,7 @@
 
 </div>
 </div>
-<a class="anchor" id="a2e690ef24d96d19e75484064e6f7988e"></a><!-- doxytag: member="grafo.c::Grafo_getAresta" ref="a2e690ef24d96d19e75484064e6f7988e" args="(Grafo *grafo, int a, int b)" -->
+<a class="anchor" id="a3ddfbccd8036e027f4b472a316559971"></a><!-- doxytag: member="grafo.c::Grafo_getAresta" ref="a3ddfbccd8036e027f4b472a316559971" args="(Grafo *grafo, Nodo *a, Nodo *b)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -217,13 +217,13 @@
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
           <td class="paramname"> <em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
           <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -319,7 +319,7 @@
 
 </div>
 </div>
-<a class="anchor" id="aed586affb47396d47950919280bbbfc6"></a><!-- doxytag: member="grafo.c::Grafo_isAdjacente" ref="aed586affb47396d47950919280bbbfc6" args="(Grafo *grafo, int a, int b)" -->
+<a class="anchor" id="a0bda260099ea7703460142398aa2c111"></a><!-- doxytag: member="grafo.c::Grafo_isAdjacente" ref="a0bda260099ea7703460142398aa2c111" args="(Grafo *grafo, Nodo *a, Nodo *b)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -332,13 +332,13 @@
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
           <td class="paramname"> <em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
           <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -369,7 +369,7 @@
 
 </div>
 </div>
-<a class="anchor" id="a478db7324fdc12392316039356177069"></a><!-- doxytag: member="grafo.c::Grafo_removerAresta" ref="a478db7324fdc12392316039356177069" args="(Grafo *grafo, int a, int b)" -->
+<a class="anchor" id="ad099fae030df0fd75c8046e28e8a2adb"></a><!-- doxytag: member="grafo.c::Grafo_removerAresta" ref="ad099fae030df0fd75c8046e28e8a2adb" args="(Grafo *grafo, Nodo *a, Nodo *b)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -382,13 +382,13 @@
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
           <td class="paramname"> <em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
           <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
         </tr>
         <tr>
@@ -499,7 +499,7 @@
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 12 17:40:21 2010 para Morphometrics por&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Sun Aug 15 15:59:58 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

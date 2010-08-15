@@ -24,20 +24,26 @@
 </div>
 <div class="contents">
 <h1>Referência do Arquivo editar.c</h1><code>#include &lt;GL/gl.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="editar_8c.html">Header/interface.h</a>&quot;</code><br/>
-<code>#include &lt;gtk/gtk.h&gt;</code><br/>
-<code>#include &quot;estruturas.h&quot;</code><br/>
-<code>#include &quot;ponto.h&quot;</code><br/>
 <code>#include &lt;math.h&gt;</code><br/>
+<code>#include &quot;Header/interface.h&quot;</code><br/>
+<code>#include &quot;<a class="el" href="editar_8c.html">Header/opengl.h</a>&quot;</code><br/>
+<code>#include &quot;Header/grafo.h&quot;</code><br/>
+<code>#include &quot;Header/mapa.h&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Funções</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#a53eacd62d9375293c2c8261eb6edecce">Editar_melhorVisao</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Seta a melhor visão do mapa.  <a href="#a53eacd62d9375293c2c8261eb6edecce"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#ac553e42c0700057d09dcfd181c42ad4d">Editar_mouseMove</a> (double mouseX, double mouseY)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Função chamada quando o mouse é movido.  <a href="#ac553e42c0700057d09dcfd181c42ad4d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#a30e5235fd401b3d4f8d4443db305d7a1">Editar_mousePressiona</a> (int botao, double mouseX, double mouseY)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Função chamada quando o mouse é pressionado.  <a href="#a30e5235fd401b3d4f8d4443db305d7a1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#a39f15f7cfdc4c750dd098bca8d53ab14">Editar_mouseLibera</a> (int botao, double mouseX, double mouseY)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Função chamada quando o mouse é liberado.  <a href="#a39f15f7cfdc4c750dd098bca8d53ab14"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">GdkCursorType&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#a4322d22cdc8c5efb5f0f15b1c278e468">Mapa_cursor</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verifica qual cursor deve ser usado.  <a href="#a4322d22cdc8c5efb5f0f15b1c278e468"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Variáveis</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum TipoFerramenta&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#aea2056ddd9094c1cca4fea678b98d205">ferramentaAtiva</a> = FERRAMENTA_NAVEGAR</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum TipoFerramenta&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="editar_8c.html#ab1e94fa2722a3aee12f0f3fe551931c3">ferramentaAnt</a> = FERRAMENTA_NAVEGAR</td></tr>
 </table>
 <hr/><h2>Funções</h2>
 <a class="anchor" id="a53eacd62d9375293c2c8261eb6edecce"></a><!-- doxytag: member="editar.c::Editar_melhorVisao" ref="a53eacd62d9375293c2c8261eb6edecce" args="()" -->
@@ -54,6 +60,8 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Seta a melhor visão do mapa. </p>
 
 </div>
 </div>
@@ -88,6 +96,16 @@
 </div>
 <div class="memdoc">
 
+<p>Função chamada quando o mouse é liberado. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>botao</em>&nbsp;</td><td>Botão do mouse liberado </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mouseX</em>&nbsp;</td><td>Posição x do mouse no mapa </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mouseY</em>&nbsp;</td><td>Posição y do mouse no mapa </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ac553e42c0700057d09dcfd181c42ad4d"></a><!-- doxytag: member="editar.c::Editar_mouseMove" ref="ac553e42c0700057d09dcfd181c42ad4d" args="(double mouseX, double mouseY)" -->
@@ -114,6 +132,15 @@
       </table>
 </div>
 <div class="memdoc">
+
+<p>Função chamada quando o mouse é movido. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>mouseX</em>&nbsp;</td><td>Posição x do mouse no mapa </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mouseY</em>&nbsp;</td><td>Posição y do mouse no mapa </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -148,6 +175,16 @@
 </div>
 <div class="memdoc">
 
+<p>Função chamada quando o mouse é pressionado. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>botao</em>&nbsp;</td><td>Botão do mouse pressionado </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mouseX</em>&nbsp;</td><td>Posição x do mouse no mapa </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mouseY</em>&nbsp;</td><td>Posição y do mouse no mapa </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="a4322d22cdc8c5efb5f0f15b1c278e468"></a><!-- doxytag: member="editar.c::Mapa_cursor" ref="a4322d22cdc8c5efb5f0f15b1c278e468" args="()" -->
@@ -165,9 +202,25 @@
 </div>
 <div class="memdoc">
 
+<p>Verifica qual cursor deve ser usado. </p>
+<dl class="return"><dt><b>Retorna:</b></dt><dd>Retorna o curso ideal </dd></dl>
+
 </div>
 </div>
 <hr/><h2>Variáveis</h2>
+<a class="anchor" id="ab1e94fa2722a3aee12f0f3fe551931c3"></a><!-- doxytag: member="editar.c::ferramentaAnt" ref="ab1e94fa2722a3aee12f0f3fe551931c3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum TipoFerramenta <a class="el" href="editar_8c.html#ab1e94fa2722a3aee12f0f3fe551931c3">ferramentaAnt</a> = FERRAMENTA_NAVEGAR</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aea2056ddd9094c1cca4fea678b98d205"></a><!-- doxytag: member="editar.c::ferramentaAtiva" ref="aea2056ddd9094c1cca4fea678b98d205" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +235,7 @@
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 12 17:40:21 2010 para Morphometrics por&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Sun Aug 15 15:59:58 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

@@ -7,15 +7,77 @@
 
 #include <GL/gl.h>
 #include <GL/glu.h>
+#include <gtk/gtkgl.h>
+#include <string.h>
 #include <math.h>
 
 #include "Header/ponto.h"
 #include "Header/util.h"
 #include "Header/grafo.h"
 #include "Header/mapa.h"
+#include "Header/math2.h"
 #include "Header/opengl.h"
 
 char openglDesenharAtivo=1;
+int telaH, telaW;
+
+GLuint font_list_base;
+int font_height;
+
+/**
+ * Carrega uma fonte.
+ * @param fonte Fonte e tamanho. ex.: "courier 10"
+ *
+ */
+
+void Opengl_carregarFonte(char * fonte) {
+  PangoFontDescription *font_desc;
+  PangoFont *font;
+  PangoFontMetrics *font_metrics;
+
+  font_list_base = glGenLists(128);
+  font_desc = pango_font_description_from_string (fonte);
+
+  font = gdk_gl_font_use_pango_font(font_desc, 0, 128, font_list_base);
+  if (font == NULL)
+    g_print ("*** Can't load font '%s'\n", fonte);
+
+  font_metrics = pango_font_get_metrics (font, NULL);
+
+  font_height = pango_font_metrics_get_ascent(font_metrics) + pango_font_metrics_get_descent(font_metrics);
+  font_height = PANGO_PIXELS(font_height);
+
+  pango_font_description_free (font_desc);
+  pango_font_metrics_unref (font_metrics);
+}
+
+/**
+ * Escreve um texto na tela.
+ *
+ * @param posX Posição x do texto
+ * @param posY Posição y do texto
+ * @param mesg Formato do texto
+ *
+ */
+
+void Opengl_drawTexto(double posX, double posY, char *mesg, ...) {
+  char texto[256];
+  char *mPont;
+  va_list ap;
+
+  va_start(ap, mesg);
+    vsprintf(texto, mesg, ap);
+  va_end(ap);
+
+  glLoadIdentity();
+
+  glColor3ub(97, 49, 49);
+  glRasterPos2d(posX,posY );
+
+
+  for (mPont=texto; *mPont ;mPont++)
+    glCallList (font_list_base+*mPont);
+}
 
 /**
  *  Reconfigura a vião do OpenGL
@@ -30,6 +92,9 @@ void Opengl_configTela(int w, int h) {
 
   if ( w <= 0 || h <= 0 )
     return;
+
+  telaH=h;
+  telaW=w;
 
   glViewport(0, 0, w, h);
 
@@ -57,13 +122,15 @@ void Opengl_configTela(int w, int h) {
 
 void Opengl_iniciar(int w, int h) {
   glClearColor( 0.72f, 0.72f, 0.72f, 0.0f );
-  glEnable( GL_LINE_SMOOTH );
+  /*glEnable( GL_LINE_SMOOTH );
   glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
 
   glEnable(GL_BLEND);
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
 
   Opengl_configTela(w,h);
+
+  Opengl_carregarFonte("courier 10");
 }
 
 /**
@@ -132,10 +199,34 @@ static void DrawLine(double x1, double y1, double x2, double y2) {
 }
 
 /**
+ * Verifica se esta dentro da area de visão
+ */
+
+static int Opengl_verificaDentroVisao(Ponto pIni, Ponto pFIm, double mx, double my) {
+  double pIniX=MIN(pIni.x,pFIm.x);
+  double pFImX=MAX(pIni.x,pFIm.x);
+
+  double pIniY=MIN(pIni.y,pFIm.y);
+  double pFImY=MAX(pIni.y,pFIm.y);
+
+  if (mx < pIniX)
+    return 0;
+  if (mapa.visaoMinimo.x > pFImX)
+    return 0;
+  if (my < pIniY)
+    return 0;
+  if (mapa.visaoMinimo.y > pFImY)
+    return 0;
+
+  return 1;
+}
+
+/**
  *  Desenha
  */
 
 void Opengl_desenha() {
+  double mx, my, medioX, medioY;
   if (!openglDesenharAtivo)
     return;
 
@@ -143,6 +234,15 @@ void Opengl_desenha() {
 
   glLoadIdentity();
 
-  forList(Nodo *, nodoPerc, mapa.grafo->nodos)
-    DrawLine(nodoPerc->p1.x,nodoPerc->p1.y,nodoPerc->p2.x,nodoPerc->p2.y);
+  Mapa_calcularVisaoMaximo(telaW, telaH, &mx, &my);
+
+  forList(Nodo *, nodoPerc, mapa.grafo->nodos) {
+    if (Opengl_verificaDentroVisao(nodoPerc->p1,nodoPerc->p2, mx, my)) {
+      if (mapa.exibirLabel) {
+        pontoMedio(&nodoPerc->p1,&nodoPerc->p2, &medioX, &medioY);
+        Opengl_drawTexto(medioX, medioY, "%d", nodoPerc->valor);
+      }
+      DrawLine(nodoPerc->p1.x,nodoPerc->p1.y,nodoPerc->p2.x,nodoPerc->p2.y);
+    }
+  }
 }

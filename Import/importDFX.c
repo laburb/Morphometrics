@@ -31,23 +31,25 @@ static void obterLine(FILE *fp) {
 
   Arquivo_acharString(fp, "21", 0);
   fscanf(fp, "%lf", &nodoAtual->p2.y);
-
-#ifdef DEBUG
-  printf("%lf %lf %lf %lf\n", nodoAtual->p1.x, nodoAtual->p1.y, nodoAtual->p2.x, nodoAtual->p2.y);
-#endif
 }
 
 static void obterPolyLine(FILE *fp, int versao) {
   Nodo *nodoAtual=NULL;
   Nodo *nodoAtualAnt=NULL;
   Ponto pTmp;
+  int ok=0;
 
   char strTmp[256];
 
-  Arquivo_acharString(fp, ((versao >= 14)?"43":"VERTEX"), 0);
+  if (versao < 14) {
+    ok=1;
+    Arquivo_acharString(fp, "VERTEX", 0);
+  }
 
   while (fscanf(fp, "%s", strTmp) != EOF) {
-    if (!strcmp(((versao >= 14)?"0":"SEQEND"), strTmp)) {
+    if (!strcmp("AutoCAD", strTmp))
+      break;
+    if ((ok) && (!strcmp(((versao >= 14)?"0":"SEQEND"), strTmp))) {
       if (nodoAtualAnt) {
         nodoAtualAnt->p2.x=pTmp.x;
         nodoAtualAnt->p2.y=pTmp.y;
@@ -56,6 +58,8 @@ static void obterPolyLine(FILE *fp, int versao) {
       break;
     }
     else if (!strcmp("10", strTmp)) {
+      ok=1;
+
       nodoAtual=Grafo_adicionarNodo(mapa.grafo);
 
       fscanf(fp, "%lf", &nodoAtual->p1.x);

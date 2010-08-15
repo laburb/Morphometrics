@@ -10,6 +10,7 @@
 
   #include <gtk/gtk.h>
   #include "ponto.h"
+  #include "grafo.h"
 
   typedef struct {
     Ponto eixoMinimo;

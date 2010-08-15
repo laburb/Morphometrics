@@ -179,8 +179,21 @@
             <child>
               <object class="GtkMenuItem" id="menuitem3">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">_Ver</property>
+                <property name="label" translatable="yes">_Calcular</property>
                 <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu" id="menu6">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkMenuItem" id="mbCalcularConectividade">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Conectividade</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="on_mbCalcularConectividade_activate"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
               </object>
             </child>
             <child>
@@ -429,6 +442,7 @@
                             <property name="label" translatable="yes">Exibir Label</property>
                             <property name="use_underline">True</property>
                             <property name="stock_id">gtk-index</property>
+                            <signal name="toggled" handler="on_tbExibirLabel_toggled"/>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -540,24 +554,54 @@
               </packing>
             </child>
             <child>
-              <object class="GtkScrolledWindow" id="scrollDraw">
+              <object class="GtkVBox" id="vbox2">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="hadjustment">ajustScrollHorizGL</property>
-                <property name="vadjustment">ajustScrollVertGL</property>
                 <child>
-                  <object class="GtkDrawingArea" id="drawOpengl">
+                  <object class="GtkScrolledWindow" id="scrollDraw">
                     <property name="visible">True</property>
-                    <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_MOTION_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON2_MOTION_MASK | GDK_BUTTON3_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK | GDK_VISIBILITY_NOTIFY_MASK | GDK_PROXIMITY_IN_MASK | GDK_PROXIMITY_OUT_MASK | GDK_SUBSTRUCTURE_MASK | GDK_SCROLL_MASK</property>
-                    <signal name="configure_event" handler="on_drawOpengl_configure_event"/>
-                    <signal name="realize" handler="on_drawOpengl_realize"/>
-                    <signal name="expose_event" handler="on_drawOpengl_expose_event"/>
-                    <signal name="button_press_event" handler="on_drawOpengl_button_press_event"/>
-                    <signal name="motion_notify_event" handler="on_drawOpengl_motion_notify_event"/>
-                    <signal name="button_release_event" handler="on_drawOpengl_button_release_event"/>
-                    <signal name="enter_notify_event" handler="on_drawOpengl_enter_notify_event"/>
-                    <signal name="leave_notify_event" handler="on_drawOpengl_leave_notify_event"/>
+                    <property name="can_focus">True</property>
+                    <property name="hadjustment">ajustScrollHorizGL</property>
+                    <property name="vadjustment">ajustScrollVertGL</property>
+                    <child>
+                      <object class="GtkDrawingArea" id="drawOpengl">
+                        <property name="visible">True</property>
+                        <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_MOTION_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON2_MOTION_MASK | GDK_BUTTON3_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK | GDK_VISIBILITY_NOTIFY_MASK | GDK_PROXIMITY_IN_MASK | GDK_PROXIMITY_OUT_MASK | GDK_SUBSTRUCTURE_MASK | GDK_SCROLL_MASK</property>
+                        <signal name="configure_event" handler="on_drawOpengl_configure_event"/>
+                        <signal name="realize" handler="on_drawOpengl_realize"/>
+                        <signal name="expose_event" handler="on_drawOpengl_expose_event"/>
+                        <signal name="button_press_event" handler="on_drawOpengl_button_press_event"/>
+                        <signal name="motion_notify_event" handler="on_drawOpengl_motion_notify_event"/>
+                        <signal name="button_release_event" handler="on_drawOpengl_button_release_event"/>
+                        <signal name="enter_notify_event" handler="on_drawOpengl_enter_notify_event"/>
+                        <signal name="leave_notify_event" handler="on_drawOpengl_leave_notify_event"/>
+                      </object>
+                    </child>
                   </object>
+                  <packing>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFrame" id="frameProgresso">
+                    <property name="label_xalign">0</property>
+                    <property name="shadow_type">none</property>
+                    <child>
+                      <object class="GtkProgressBar" id="progressbar">
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                    <child type="label">
+                      <object class="GtkLabel" id="labelProgresso">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">&lt;b&gt;Aguarde calculando....&lt;/b&gt;</property>
+                        <property name="use_markup">True</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="position">1</property>
+                  </packing>
                 </child>
               </object>
               <packing>

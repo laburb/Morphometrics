@@ -8,6 +8,7 @@
 #include <gtk/gtk.h>
 
 #include "../Header/interface.h"
+#include "../Header/mapa.h"
 #include "../Header/editar.h"
 
 static void desmarcar() {
@@ -113,4 +114,11 @@ G_MODULE_EXPORT void on_tbReduzir_toggled(GtkObject *object, gpointer user_data)
 
 G_MODULE_EXPORT void on_tbMelhorAjuste_clicked(GtkObject *object, gpointer user_data) {
   Editar_melhorVisao();
+}
+
+G_MODULE_EXPORT void on_tbExibirLabel_toggled(GtkObject *object, gpointer user_data) {
+  gboolean estado=gtk_toggle_tool_button_get_active(GTK_TOGGLE_TOOL_BUTTON(object));
+
+  mapa.exibirLabel=estado;
+  Interface_atualizaOpengl();
 }

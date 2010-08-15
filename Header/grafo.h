@@ -21,7 +21,7 @@
   };
 
   struct arestas {
-    int valor;
+    long int valor;
     Nodo *nodoBase;
     Nodo *nodo;
     Arestas *prox;
@@ -29,18 +29,18 @@
   };
 
   typedef struct {
-    int tamanho;
+    long int tamanho;
     Lista *nodos;
   } Grafo;
 
   Grafo *Grafo_iniciar();
   void Grafo_deletar(Grafo **grafo);
   Nodo *Grafo_adicionarNodo(Grafo *grafo);
-  void Grafo_adicionarAresta(Grafo *grafo, int a, int b, enum ArestaTipo tipo, int valor);
-  void Grafo_removerAresta(Grafo *grafo, int a, int b);
-  int Grafo_isAdjacente(Grafo *grafo, int a, int b);
+  void Grafo_adicionarAresta(Grafo *grafo, Nodo *a, Nodo *b, enum ArestaTipo tipo, int valor);
+  void Grafo_removerAresta(Grafo *grafo, Nodo *a, Nodo *b);
+  int Grafo_isAdjacente(Grafo *grafo, Nodo *a, Nodo *b);
 
-  Arestas *Grafo_getAresta(Grafo *grafo, int a, int b);
+  Arestas *Grafo_getAresta(Grafo *grafo, Nodo *a, Nodo *b);
   Nodo *Grafo_getNodo(Grafo *grafo, int nodo);
 
   void Grafo_setNodosAux(Grafo *grafo, int valor);

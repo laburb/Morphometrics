@@ -103,21 +103,19 @@ void Grafo_deletar(Grafo **grafo) {
  *
  */
 
-void Grafo_adicionarAresta(Grafo *grafo, int a, int b, enum ArestaTipo tipo, int valor) {
-  if ((a > grafo->tamanho) || (b > grafo->tamanho) || (Grafo_isAdjacente(grafo, a, b)))
+void Grafo_adicionarAresta(Grafo *grafo, Nodo *a, Nodo *b, enum ArestaTipo tipo, int valor) {
+  if ((a == NULL) || (b == NULL) || (Grafo_isAdjacente(grafo, a, b)))
     return;
-
-  nodoAtual=Grafo_getNodo(grafo,a);
 
   Arestas *aresta=calloc(1, sizeof(Arestas));
   aresta->valor=valor;
-  aresta->nodo=Grafo_getNodo(grafo,b);
-  aresta->nodoBase=nodoAtual;
+  aresta->nodo=b;
+  aresta->nodoBase=a;
   aresta->tipo=tipo;
 
-  Arestas *perc=nodoAtual->arestas;
+  Arestas *perc=a->arestas;
   if (perc == NULL)
-    nodoAtual->arestas=aresta;
+    a->arestas=aresta;
   else {
     while (perc->prox != NULL)
       perc=perc->prox;
@@ -138,20 +136,19 @@ void Grafo_adicionarAresta(Grafo *grafo, int a, int b, enum ArestaTipo tipo, int
  *
  */
 
-void Grafo_removerAresta(Grafo *grafo, int a, int b) {
-  if ((a > grafo->tamanho) || (b > grafo->tamanho) || (!Grafo_isAdjacente(grafo, a, b)))
+void Grafo_removerAresta(Grafo *grafo, Nodo *a, Nodo *b) {
+  if ((a == NULL) || (b == NULL) || (!Grafo_isAdjacente(grafo, a, b)))
     return;
 
   enum ArestaTipo tipo=DIRECIONADA;
 
-  nodoAtual=Grafo_getNodo(grafo,a);
-  Arestas *perc=nodoAtual->arestas;
+  Arestas *perc=a->arestas;
   Arestas *ant=NULL;
 
   while (perc != NULL) {
-    if (perc->nodo->valor == b) {
+    if (perc->nodo->valor == b->valor) {
       if (ant == NULL)
-        nodoAtual->arestas=perc->prox;
+        a->arestas=perc->prox;
       else
         ant->prox=perc->prox;
 
@@ -179,7 +176,7 @@ void Grafo_removerAresta(Grafo *grafo, int a, int b) {
  *
  */
 
-int Grafo_isAdjacente(Grafo *grafo, int a, int b) {
+int Grafo_isAdjacente(Grafo *grafo, Nodo *a, Nodo *b) {
   return (Grafo_getAresta(grafo,a,b) != NULL);
 }
 
@@ -197,15 +194,14 @@ int Grafo_isAdjacente(Grafo *grafo, int a, int b) {
  *
  */
 
-Arestas *Grafo_getAresta(Grafo *grafo, int a, int b) {
-  if ((a > grafo->tamanho) || (b > grafo->tamanho))
+Arestas *Grafo_getAresta(Grafo *grafo, Nodo *a, Nodo *b) {
+  if ((a == NULL) || (b == NULL))
     return NULL;
 
-  nodoAtual=Grafo_getNodo(grafo,a);
-  Arestas *perc=nodoAtual->arestas;
+  Arestas *perc=a->arestas;
 
   while (perc != NULL) {
-    if (perc->nodo->valor == b)
+    if (perc->nodo->valor == b->valor)
       return perc;
 
     perc=perc->prox;
@@ -289,7 +285,7 @@ Grafo *Grafo_duplicar(Grafo *base) {
     perc=nodoPerc->arestas;
 
     while (perc != NULL) {
-      Grafo_adicionarAresta(clone, nodoPerc->valor, perc->nodo->valor, DIRECIONADA, perc->valor);
+      Grafo_adicionarAresta(clone, nodoPerc, perc->nodo, DIRECIONADA, perc->valor);
       perc=perc->prox;
     }
   }

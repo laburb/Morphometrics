@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência do Arquivo math2.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência do Arquivo math2.c</h1><code>#include &lt;math.h&gt;</code><br/>
+<code>#include &quot;Header/ponto.h&quot;</code><br/>
+<code>#include &quot;Header/math2.h&quot;</code><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Definições e Macros</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#afa99ec4acc4ecb2dc3c2d05da15d0e3f">MAX</a>(a, b)&nbsp;&nbsp;&nbsp;(((a) &gt; (b)) ? (a) : (b))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(a, b)&nbsp;&nbsp;&nbsp;(((a) &lt; (b)) ? (a) : (b))</td></tr>
+<tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a3a1767c84741e653fb35ff9fde448561">interseccao</a> (Ponto *p1Ini, Ponto *p1Fim, Ponto *p2Ini, Ponto *p2Fim)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verifica se os dois eixos possuem interseccao.  <a href="#a3a1767c84741e653fb35ff9fde448561"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a0f7f9205e681501d91de785a7978e096">pontoMedio</a> (Ponto *ptIni, Ponto *ptFim, double *medioX, double *medioY)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retorna o ponto medio do eixo.  <a href="#a0f7f9205e681501d91de785a7978e096"></a><br/></td></tr>
+</table>
+<hr/><h2>Definições e macros</h2>
+<a class="anchor" id="afa99ec4acc4ecb2dc3c2d05da15d0e3f"></a><!-- doxytag: member="math2.c::MAX" ref="afa99ec4acc4ecb2dc3c2d05da15d0e3f" args="(a, b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX</td>
+          <td>(</td>
+          <td class="paramtype">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;(((a) &gt; (b)) ? (a) : (b))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3acffbd305ee72dcd4593c0d8af64a4f"></a><!-- doxytag: member="math2.c::MIN" ref="a3acffbd305ee72dcd4593c0d8af64a4f" args="(a, b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN</td>
+          <td>(</td>
+          <td class="paramtype">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;(((a) &lt; (b)) ? (a) : (b))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="a3a1767c84741e653fb35ff9fde448561"></a><!-- doxytag: member="math2.c::interseccao" ref="a3a1767c84741e653fb35ff9fde448561" args="(Ponto *p1Ini, Ponto *p1Fim, Ponto *p2Ini, Ponto *p2Fim)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int interseccao </td>
+          <td>(</td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>p1Ini</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>p1Fim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>p2Ini</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>p2Fim</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Verifica se os dois eixos possuem interseccao. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>p1Ini</em>&nbsp;</td><td>Ponto inicial do eixo 1 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>p1Fim</em>&nbsp;</td><td>Ponto final do eixo 1 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>p2Ini</em>&nbsp;</td><td>Ponto inicial do eixo 2 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>p2Fim</em>&nbsp;</td><td>Ponto inicial do eixo 2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f7f9205e681501d91de785a7978e096"></a><!-- doxytag: member="math2.c::pontoMedio" ref="a0f7f9205e681501d91de785a7978e096" args="(Ponto *ptIni, Ponto *ptFim, double *medioX, double *medioY)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pontoMedio </td>
+          <td>(</td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>ptIni</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>ptFim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>medioX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>medioY</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retorna o ponto medio do eixo. </p>
+<dl><dt><b>Parâmetros:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ptIni</em>&nbsp;</td><td>Ponto inicial do eixo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ptFim</em>&nbsp;</td><td>Ponto final do eixo </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>medioX</em>&nbsp;</td><td>Ponteiro para o retorno do resultado </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>medioY</em>&nbsp;</td><td>Ponteiro para o retorno do resultado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Sun Aug 15 15:59:58 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

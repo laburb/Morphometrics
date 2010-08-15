@@ -26,6 +26,7 @@ void Mapa_iniciar() {
  mapa.limiteMinimo.y = 6491010.0;
 
  mapa.CamadaAtual=0;
+ mapa.exibirLabel=0;
 
  Mapa_setVisao(mapa.eixoMinimo,mapa.eixoMaximo);
 }

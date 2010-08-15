@@ -6,6 +6,7 @@
  */
 
 #include <GL/gl.h>
+#include <math.h>
 
 #include "Header/interface.h"
 #include "Header/opengl.h"
@@ -13,19 +14,32 @@
 #include "Header/mapa.h"
 #include "Header/editar.h"
 
-#include <math.h>
-
 enum TipoFerramenta ferramentaAtiva=FERRAMENTA_NAVEGAR;
+enum TipoFerramenta ferramentaAnt=FERRAMENTA_NAVEGAR;
+
 static char mapaClickAdd=0;
 static Ponto mouseClick;
 static Ponto mouseClickAnt={-999,-999};
 
+/**
+ * Seta a melhor visão do mapa.
+ */
 
 void Editar_melhorVisao() {
+  Mapa_calculaEixoMax();
   Mapa_setVisao(mapa.eixoMinimo, mapa.eixoMaximo);
 
   Interface_atualizaOpengl();
 }
+
+/**
+ * Da zoom na mapa e centraliza apartir do mouse.
+ *
+ * @param ampliar Se 1 amplia\nSe -1 reduz
+ * @param mouseX Posição x do mouse no mapa
+ * @param mouseY Posição y do mouse no mapa
+ *
+ */
 
 static void Editar_zoom(int ampliar, double mouseX, double mouseY) {
   double visaoW=mapa.visaoMaximo.x-mapa.visaoMinimo.x;
@@ -46,6 +60,9 @@ static void Editar_zoom(int ampliar, double mouseX, double mouseY) {
   Interface_atualizaOpengl();
 }
 
+/**
+ * Verifica se o zoom é normal ou é para mostra a area delimitada pelo retangulo.
+ */
 static int Editar_verifZoomAmpliar(double x, double x2, double y, double y2) {
   double visaoW=mapa.visaoMaximo.x-mapa.visaoMinimo.x;
   double visaoH=mapa.visaoMaximo.y-mapa.visaoMinimo.y;
@@ -58,6 +75,10 @@ static int Editar_verifZoomAmpliar(double x, double x2, double y, double y2) {
   return 1;
 }
 
+/**
+ * Desloca a visão do mapa.
+ */
+
 static void Editar_moverMapa(double deslocX, double deslocY) {
   Ponto viMin={mapa.visaoMinimo.x-deslocX, mapa.visaoMinimo.y-deslocY};
   Ponto viMax={mapa.visaoMaximo.x-deslocX, mapa.visaoMaximo.y-deslocY};
@@ -65,12 +86,23 @@ static void Editar_moverMapa(double deslocX, double deslocY) {
   Mapa_setVisao(viMin, viMax);
 }
 
+/**
+ * Função chamada quando o mouse é movido.
+ *
+ * @param mouseX Posição x do mouse no mapa
+ * @param mouseY Posição y do mouse no mapa
+ *
+ */
+
 void Editar_mouseMove(double mouseX, double mouseY) {
   if (mapaClickAdd) {
     if (ferramentaAtiva == FERRAMENTA_NAVEGAR) {
       if (mouseClickAnt.x != -999) {
         Editar_moverMapa(mouseX-mouseClickAnt.x,mouseY-mouseClickAnt.y);
         Interface_atualizaOpengl();
+
+        mouseClickAnt.x=-999;
+        return;
       }
     }
     else if (ferramentaAtiva == FERRAMENTA_ADD_ENTIDADE) {
@@ -96,6 +128,15 @@ void Editar_mouseMove(double mouseX, double mouseY) {
   }
 }
 
+/**
+ * Função chamada quando o mouse é pressionado.
+ *
+ * @param botao Botão do mouse pressionado
+ * @param mouseX Posição x do mouse no mapa
+ * @param mouseY Posição y do mouse no mapa
+ *
+ */
+
 void Editar_mousePressiona(int botao, double mouseX, double mouseY) {
   if (botao == 1) {
     if (ferramentaAtiva == FERRAMENTA_NAVEGAR)
@@ -109,7 +150,22 @@ void Editar_mousePressiona(int botao, double mouseX, double mouseY) {
 
     mapaClickAdd=1;
   }
+  else if (botao == 2) {
+    ferramentaAnt=ferramentaAtiva;
+    ferramentaAtiva=FERRAMENTA_NAVEGAR;
+    Interface_mudarMouse(GDK_FLEUR);
+    mapaClickAdd=1;
+  }
 }
+
+/**
+ * Função chamada quando o mouse é liberado.
+ *
+ * @param botao Botão do mouse liberado
+ * @param mouseX Posição x do mouse no mapa
+ * @param mouseY Posição y do mouse no mapa
+ *
+ */
 
 void Editar_mouseLibera(int botao, double mouseX, double mouseY) {
   if (botao == 1) {
@@ -146,8 +202,20 @@ void Editar_mouseLibera(int botao, double mouseX, double mouseY) {
     mouseClickAnt.x=-999;
     mapaClickAdd=0;
   }
+  else if (botao == 2) {
+    ferramentaAtiva=ferramentaAnt;
+    Interface_mudarMouse(Mapa_cursor());
+    mapaClickAdd=0;
+    mouseClickAnt.x=-999;
+  }
 }
 
+/**
+ * Verifica qual cursor deve ser usado.
+ *
+ * @return Retorna o curso ideal
+ *
+ */
 GdkCursorType Mapa_cursor() {
   if (ferramentaAtiva == FERRAMENTA_NAVEGAR) return GDK_HAND1;
   else if (ferramentaAtiva == FERRAMENTA_ADD_ENTIDADE) return GDK_CROSS;
