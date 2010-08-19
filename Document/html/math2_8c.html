@@ -24,17 +24,29 @@
 </div>
 <div class="contents">
 <h1>Referência do Arquivo math2.c</h1><code>#include &lt;math.h&gt;</code><br/>
+<code>#include &quot;Header/grafo.h&quot;</code><br/>
 <code>#include &quot;Header/ponto.h&quot;</code><br/>
 <code>#include &quot;Header/math2.h&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Definições e Macros</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#afa99ec4acc4ecb2dc3c2d05da15d0e3f">MAX</a>(a, b)&nbsp;&nbsp;&nbsp;(((a) &gt; (b)) ? (a) : (b))</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(a, b)&nbsp;&nbsp;&nbsp;(((a) &lt; (b)) ? (a) : (b))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a52d61606d693796b09a4154e9741be6d">ZERO_TOLERANCE</a>&nbsp;&nbsp;&nbsp;1e-06f</td></tr>
 <tr><td colspan="2"><h2>Funções</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a3a1767c84741e653fb35ff9fde448561">interseccao</a> (Ponto *p1Ini, Ponto *p1Fim, Ponto *p2Ini, Ponto *p2Fim)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verifica se os dois eixos possuem interseccao.  <a href="#a3a1767c84741e653fb35ff9fde448561"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a0f7f9205e681501d91de785a7978e096">pontoMedio</a> (Ponto *ptIni, Ponto *ptFim, double *medioX, double *medioY)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retorna o ponto medio do eixo.  <a href="#a0f7f9205e681501d91de785a7978e096"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a6213822444f78ca798c6f7b00ebbe447">Math2_interseccao</a> (Nodo *nodo1, Nodo *nodo2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#ab293f3ce7d2755ae47bf1fc67224007c">Math2_intrSegmentoRetas</a> (Ponto *p1Ini, Ponto *p1Fim, Ponto *p2Ini, Ponto *p2Fim)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verifica se os dois eixos possuem intersecção.  <a href="#ab293f3ce7d2755ae47bf1fc67224007c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a57359391512fef4432f5179dd0749351">Math2_intrLinhaCirculo</a> (Ponto *origem, Ponto *direcao, Ponto *centro, double raio, int *quantidade, double t[2])</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#ae02760cf86c871245c55652d8027ec00">Math2_ArcoContemPonto</a> (Arc *arco, Ponto *ponto)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a84493be455b8f0b0d135ca3b70f3f010">Math2_produtoEscalar</a> (Ponto p1, Ponto p2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#ae1fd191015fb851fee62b40ae5f45e82">Math2_intrSegmentoRetaCirculo</a> (Line *linha, Ponto *centro, double raio)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#aa06dd86b064faea78bacb0cbbab684bc">Math2_intrSegmentoRetaArco</a> (Line *linha, Arc *arco)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a0dd5d4c5fd75f2f69c4d6c9c1063e171">Math2_pontoMedio</a> (Nodo *nodo, double *medioX, double *medioY)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retorna o ponto medio da entidade.  <a href="#a0dd5d4c5fd75f2f69c4d6c9c1063e171"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#ab39ad2e6c7a965ec841a99cd78d14673">Math2_pontoMedioSegmentoReta</a> (Ponto *p1, Ponto *p2, double *medioX, double *medioY)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a08f0d4f82d5c61c3ef489737b5a9ee37">Math2_comprimento</a> (Nodo *nodo)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#ad9981604b833e7050c2685f1eeee1a29">Math2_distanciaPontos</a> (Ponto *ptIni, Ponto *ptFim)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="math2_8c.html#a010f3ab0febf4a83e3dbf8f83da2a417">Math2_extremos</a> (Nodo *nodo, double *p1x, double *p1y, double *p2x, double *p2y)</td></tr>
 </table>
 <hr/><h2>Definições e macros</h2>
 <a class="anchor" id="afa99ec4acc4ecb2dc3c2d05da15d0e3f"></a><!-- doxytag: member="math2.c::MAX" ref="afa99ec4acc4ecb2dc3c2d05da15d0e3f" args="(a, b)" -->
@@ -83,13 +95,281 @@
 
 </div>
 </div>
-<hr/><h2>Funções</h2>
-<a class="anchor" id="a3a1767c84741e653fb35ff9fde448561"></a><!-- doxytag: member="math2.c::interseccao" ref="a3a1767c84741e653fb35ff9fde448561" args="(Ponto *p1Ini, Ponto *p1Fim, Ponto *p2Ini, Ponto *p2Fim)" -->
+<a class="anchor" id="a52d61606d693796b09a4154e9741be6d"></a><!-- doxytag: member="math2.c::ZERO_TOLERANCE" ref="a52d61606d693796b09a4154e9741be6d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int interseccao </td>
+          <td class="memname">#define ZERO_TOLERANCE&nbsp;&nbsp;&nbsp;1e-06f</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="ae02760cf86c871245c55652d8027ec00"></a><!-- doxytag: member="math2.c::Math2_ArcoContemPonto" ref="ae02760cf86c871245c55652d8027ec00" args="(Arc *arco, Ponto *ponto)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Math2_ArcoContemPonto </td>
+          <td>(</td>
+          <td class="paramtype">Arc *&nbsp;</td>
+          <td class="paramname"> <em>arco</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>ponto</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a08f0d4f82d5c61c3ef489737b5a9ee37"></a><!-- doxytag: member="math2.c::Math2_comprimento" ref="a08f0d4f82d5c61c3ef489737b5a9ee37" args="(Nodo *nodo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Math2_comprimento </td>
+          <td>(</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
+          <td class="paramname"> <em>nodo</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad9981604b833e7050c2685f1eeee1a29"></a><!-- doxytag: member="math2.c::Math2_distanciaPontos" ref="ad9981604b833e7050c2685f1eeee1a29" args="(Ponto *ptIni, Ponto *ptFim)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Math2_distanciaPontos </td>
+          <td>(</td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>ptIni</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>ptFim</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a010f3ab0febf4a83e3dbf8f83da2a417"></a><!-- doxytag: member="math2.c::Math2_extremos" ref="a010f3ab0febf4a83e3dbf8f83da2a417" args="(Nodo *nodo, double *p1x, double *p1y, double *p2x, double *p2y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Math2_extremos </td>
+          <td>(</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
+          <td class="paramname"> <em>nodo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>p1x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>p1y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>p2x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>p2y</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6213822444f78ca798c6f7b00ebbe447"></a><!-- doxytag: member="math2.c::Math2_interseccao" ref="a6213822444f78ca798c6f7b00ebbe447" args="(Nodo *nodo1, Nodo *nodo2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Math2_interseccao </td>
+          <td>(</td>
+          <td class="paramtype">Nodo *&nbsp;</td>
+          <td class="paramname"> <em>nodo1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Nodo *&nbsp;</td>
+          <td class="paramname"> <em>nodo2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a57359391512fef4432f5179dd0749351"></a><!-- doxytag: member="math2.c::Math2_intrLinhaCirculo" ref="a57359391512fef4432f5179dd0749351" args="(Ponto *origem, Ponto *direcao, Ponto *centro, double raio, int *quantidade, double t[2])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Math2_intrLinhaCirculo </td>
+          <td>(</td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>origem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>direcao</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>centro</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>raio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&nbsp;</td>
+          <td class="paramname"> <em>quantidade</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>t</em>[2]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa06dd86b064faea78bacb0cbbab684bc"></a><!-- doxytag: member="math2.c::Math2_intrSegmentoRetaArco" ref="aa06dd86b064faea78bacb0cbbab684bc" args="(Line *linha, Arc *arco)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Math2_intrSegmentoRetaArco </td>
+          <td>(</td>
+          <td class="paramtype">Line *&nbsp;</td>
+          <td class="paramname"> <em>linha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Arc *&nbsp;</td>
+          <td class="paramname"> <em>arco</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae1fd191015fb851fee62b40ae5f45e82"></a><!-- doxytag: member="math2.c::Math2_intrSegmentoRetaCirculo" ref="ae1fd191015fb851fee62b40ae5f45e82" args="(Line *linha, Ponto *centro, double raio)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Math2_intrSegmentoRetaCirculo </td>
+          <td>(</td>
+          <td class="paramtype">Line *&nbsp;</td>
+          <td class="paramname"> <em>linha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>centro</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>raio</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab293f3ce7d2755ae47bf1fc67224007c"></a><!-- doxytag: member="math2.c::Math2_intrSegmentoRetas" ref="ab293f3ce7d2755ae47bf1fc67224007c" args="(Ponto *p1Ini, Ponto *p1Fim, Ponto *p2Ini, Ponto *p2Fim)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Math2_intrSegmentoRetas </td>
           <td>(</td>
           <td class="paramtype">Ponto *&nbsp;</td>
           <td class="paramname"> <em>p1Ini</em>, </td>
@@ -121,7 +401,7 @@
 </div>
 <div class="memdoc">
 
-<p>Verifica se os dois eixos possuem interseccao. </p>
+<p>Verifica se os dois eixos possuem intersecção. </p>
 <dl><dt><b>Parâmetros:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>p1Ini</em>&nbsp;</td><td>Ponto inicial do eixo 1 </td></tr>
@@ -134,21 +414,15 @@
 
 </div>
 </div>
-<a class="anchor" id="a0f7f9205e681501d91de785a7978e096"></a><!-- doxytag: member="math2.c::pontoMedio" ref="a0f7f9205e681501d91de785a7978e096" args="(Ponto *ptIni, Ponto *ptFim, double *medioX, double *medioY)" -->
+<a class="anchor" id="a0dd5d4c5fd75f2f69c4d6c9c1063e171"></a><!-- doxytag: member="math2.c::Math2_pontoMedio" ref="a0dd5d4c5fd75f2f69c4d6c9c1063e171" args="(Nodo *nodo, double *medioX, double *medioY)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void pontoMedio </td>
+          <td class="memname">void Math2_pontoMedio </td>
           <td>(</td>
-          <td class="paramtype">Ponto *&nbsp;</td>
-          <td class="paramname"> <em>ptIni</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Ponto *&nbsp;</td>
-          <td class="paramname"> <em>ptFim</em>, </td>
+          <td class="paramtype">Nodo *&nbsp;</td>
+          <td class="paramname"> <em>nodo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -171,7 +445,7 @@
 </div>
 <div class="memdoc">
 
-<p>Retorna o ponto medio do eixo. </p>
+<p>Retorna o ponto medio da entidade. </p>
 <dl><dt><b>Parâmetros:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>ptIni</em>&nbsp;</td><td>Ponto inicial do eixo </td></tr>
@@ -184,8 +458,74 @@
 
 </div>
 </div>
+<a class="anchor" id="ab39ad2e6c7a965ec841a99cd78d14673"></a><!-- doxytag: member="math2.c::Math2_pontoMedioSegmentoReta" ref="ab39ad2e6c7a965ec841a99cd78d14673" args="(Ponto *p1, Ponto *p2, double *medioX, double *medioY)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Math2_pontoMedioSegmentoReta </td>
+          <td>(</td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto *&nbsp;</td>
+          <td class="paramname"> <em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>medioX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&nbsp;</td>
+          <td class="paramname"> <em>medioY</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Sun Aug 15 15:59:58 2010 para Morphometrics por&nbsp;
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a84493be455b8f0b0d135ca3b70f3f010"></a><!-- doxytag: member="math2.c::Math2_produtoEscalar" ref="a84493be455b8f0b0d135ca3b70f3f010" args="(Ponto p1, Ponto p2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Math2_produtoEscalar </td>
+          <td>(</td>
+          <td class="paramtype">Ponto&nbsp;</td>
+          <td class="paramname"> <em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Ponto&nbsp;</td>
+          <td class="paramname"> <em>p2</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 19 20:39:49 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

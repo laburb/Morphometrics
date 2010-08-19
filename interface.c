@@ -10,6 +10,7 @@
 #include <gtk/gtkgl.h>
 
 #include "Header/opengl.h"
+#include "Header/projeto.h"
 #include "Header/interface.h"
 
 #define INTERFACE_CAMINHO "Interface/"
@@ -138,4 +139,66 @@ void Interface_atualizaOpengl() {
 
   gdk_window_invalidate_rect (drawOpengl->window, &drawOpengl->allocation, FALSE);
   gdk_window_process_updates (drawOpengl->window, FALSE);
+}
+
+
+
+void Interface_resultados() {
+  GtkBuilder *buildResult=Interface_carregarXML("resultados.glade");
+  GtkWidget *window = GTK_WIDGET(gtk_builder_get_object (buildResult, "window"));
+  GtkComboBox *combo = GTK_COMBO_BOX(gtk_builder_get_object (buildResult, "combobox"));
+  GtkListStore *listaCombo = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_INT);
+  GtkTreeIter iter;
+
+  gtk_builder_connect_signals(builderPrincipal, NULL);
+  gtk_widget_show(window);
+
+  gtk_list_store_append (listaCombo, &iter);
+
+  if (Projeto_verificarExisteTabela("conectividade")) {
+    gtk_list_store_set (listaCombo, &iter,
+                        0, "Conectividade",
+                        1, 1,
+                        -1);
+    gtk_list_store_append (listaCombo, &iter);
+  }
+
+  if (Projeto_verificarExisteTabela("acess_geo")) {
+    gtk_list_store_set (listaCombo, &iter,
+                        0, "Acessibilidade Geometrica",
+                        1, 2,
+                        -1);
+    gtk_list_store_append (listaCombo, &iter);
+  }
+
+  if (Projeto_verificarExisteTabela("acess_topo")) {
+    gtk_list_store_set (listaCombo, &iter,
+                        0, "Acessibilidade Topologica",
+                        1, 3,
+                        -1);
+    gtk_list_store_append (listaCombo, &iter);
+  }
+
+
+  gtk_combo_box_set_model(combo, GTK_TREE_MODEL(listaCombo));
+  GtkCellRenderer *cell_renderer = gtk_cell_renderer_text_new ();
+  gtk_cell_layout_pack_start (GTK_CELL_LAYOUT(combo), cell_renderer, TRUE);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT(combo), cell_renderer, "text", 0, NULL);
+  gtk_combo_box_set_active_iter (GTK_COMBO_BOX(combo), &iter);
+
+
+  /*if (Projeto_verificarExisteTabela("conectividade")) {
+    gtk_combo_box_append_text(combo, "Conectividade");
+  }*/
+  /*gtk_combo_box_append_text(combo, "Conectividade");
+  gtk_combo_box_append_text(combo, "Conectividade2");
+  gtk_combo_box_append_text(combo, "sdfsdfsd");*/
+/*
+  if (Projeto_verificarExisteTabela("acess_geo"))
+      gtk_combo_box_append_text(combo, "Acessibilidade Geometrica");
+
+  if (Projeto_verificarExisteTabela("acess_topo"))
+        gtk_combo_box_append_text(combo, "Acessibilidade Topologica");
+*/
+  g_object_unref(G_OBJECT(buildResult));
 }

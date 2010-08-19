@@ -12,16 +12,33 @@
     BIDIRECIONADA
   };
 
-  struct nodo {
-    int valor;
-    int aux;
+  enum EntidadeTipo {
+    ENTIDADE_LINE,
+    ENTIDADE_ARC
+  };
+
+  typedef struct {
     Ponto p1;
     Ponto p2;
+  } Line;
+
+  typedef struct {
+    Ponto centro;
+    double raio;
+    double anguloInicial;
+    double anguloFinal;
+  } Arc;
+
+  struct nodo {
+    int id;
+    void *d;
+    enum EntidadeTipo tipo;
+    double impedancia;
     Arestas *arestas;
   };
 
   struct arestas {
-    long int valor;
+    int valor;
     Nodo *nodoBase;
     Nodo *nodo;
     Arestas *prox;
@@ -35,15 +52,14 @@
 
   Grafo *Grafo_iniciar();
   void Grafo_deletar(Grafo **grafo);
-  Nodo *Grafo_adicionarNodo(Grafo *grafo);
+  Nodo *Grafo_adicionarNodo(Grafo *grafo, enum EntidadeTipo tipo);
   void Grafo_adicionarAresta(Grafo *grafo, Nodo *a, Nodo *b, enum ArestaTipo tipo, int valor);
   void Grafo_removerAresta(Grafo *grafo, Nodo *a, Nodo *b);
   int Grafo_isAdjacente(Grafo *grafo, Nodo *a, Nodo *b);
 
   Arestas *Grafo_getAresta(Grafo *grafo, Nodo *a, Nodo *b);
-  Nodo *Grafo_getNodo(Grafo *grafo, int nodo);
+  Nodo *Grafo_getNodo(Grafo *grafo, int id);
 
-  void Grafo_setNodosAux(Grafo *grafo, int valor);
   void Grafo_setArestasValor(Grafo *grafo, int valor);
 
   Grafo *Grafo_duplicar(Grafo *base);

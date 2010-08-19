@@ -29,6 +29,7 @@
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
+                        <property name="accel_group">accelgroup1</property>
                         <property name="always_show_image">True</property>
                       </object>
                     </child>
@@ -38,6 +39,7 @@
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
+                        <property name="accel_group">accelgroup1</property>
                         <property name="always_show_image">True</property>
                       </object>
                     </child>
@@ -187,9 +189,57 @@
                     <child>
                       <object class="GtkMenuItem" id="mbCalcularConectividade">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Conectividade</property>
+                        <property name="label" translatable="yes">C_onectividade</property>
                         <property name="use_underline">True</property>
                         <signal name="activate" handler="on_mbCalcularConectividade_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="mbCalcularAcessibilidade">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Ac_essibilidade</property>
+                        <property name="use_underline">True</property>
+                        <child type="submenu">
+                          <object class="GtkMenu" id="menu8">
+                            <property name="visible">True</property>
+                            <child>
+                              <object class="GtkMenuItem" id="mbAcessibilidadeTopo">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Topologica</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="on_mbAcessibilidadeTopo_activate"/>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkMenuItem" id="mbAcessibilidadeGeo">
+                                <property name="visible">True</property>
+                                <property name="label" translatable="yes">Geometrica</property>
+                                <property name="use_underline">True</property>
+                                <signal name="activate" handler="on_mbAcessibilidadeGeo_activate"/>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="menuitem1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Resultados</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu" id="menu7">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkMenuItem" id="mbResultadosAcessibilidade">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Acessibilidade</property>
+                        <property name="use_underline">True</property>
+                        <signal name="activate" handler="on_mbResultadosAcessibilidade_activate"/>
                       </object>
                     </child>
                   </object>
@@ -682,4 +732,5 @@
     <property name="visible">True</property>
     <property name="stock">gtk-missing-image</property>
   </object>
+  <object class="GtkAccelGroup" id="accelgroup1"/>
 </interface>

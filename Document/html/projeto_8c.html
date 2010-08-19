@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência do Arquivo projeto.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;de&nbsp;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Globais</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência do Arquivo projeto.c</h1><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;locale.h&gt;</code><br/>
+<code>#include &lt;sqlite3.h&gt;</code><br/>
+<code>#include &quot;Header/mensagens.h&quot;</code><br/>
+<code>#include &quot;Header/acessibilidade.h&quot;</code><br/>
+<code>#include &quot;Header/projeto.h&quot;</code><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Funções</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#ae113f780ede4e0a0f25969796a69e2cb">Projeto_novo</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a49c3bd6e9282da8c722b3d41200fcb1c">Projeto_abrir</a> (char *nome)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a2d99f75e026cfdcf7056480c870de0fe">Projeto_salvar</a> (char *nome)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a21dc663ccb4b707ce6ad95972a7ee3a8">Projeto_iniciarTransacao</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a311cae565e53a8a53318eddfce442ca1">Projeto_terminarTransacao</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#ac04892ef177a83d2b79765d1f6f2fcc8">Projeto_verificarExisteTabela</a> (char *tabela)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a494d3d153f49db3c7e53210cd09acc53">Projeto_zeraAcessibilidade</a> (enum TipoAcessibilidade tipo)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#ab3b2d233a81207c1501123bef481baa3">Projeto_addAcessibilidade</a> (enum TipoAcessibilidade tipo, int id, double absoluta)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#ab4cf2293e90038084c0ae4bccbd198cc">Projeto_zeraConectividade</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a9eadafa07a38d08e38ac58c22a057cfa">Projeto_addConectividade</a> (int id, int conct)</td></tr>
+<tr><td colspan="2"><h2>Variáveis</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a4c6d616bb59ec585c3fd26c96570242b">projetoAtual</a> = &quot;Projetos/teste.morph&quot;</td></tr>
+</table>
+<hr/><h2>Funções</h2>
+<a class="anchor" id="a49c3bd6e9282da8c722b3d41200fcb1c"></a><!-- doxytag: member="projeto.c::Projeto_abrir" ref="a49c3bd6e9282da8c722b3d41200fcb1c" args="(char *nome)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projeto_abrir </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>nome</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab3b2d233a81207c1501123bef481baa3"></a><!-- doxytag: member="projeto.c::Projeto_addAcessibilidade" ref="ab3b2d233a81207c1501123bef481baa3" args="(enum TipoAcessibilidade tipo, int id, double absoluta)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Projeto_addAcessibilidade </td>
+          <td>(</td>
+          <td class="paramtype">enum TipoAcessibilidade&nbsp;</td>
+          <td class="paramname"> <em>tipo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&nbsp;</td>
+          <td class="paramname"> <em>absoluta</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9eadafa07a38d08e38ac58c22a057cfa"></a><!-- doxytag: member="projeto.c::Projeto_addConectividade" ref="a9eadafa07a38d08e38ac58c22a057cfa" args="(int id, int conct)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Projeto_addConectividade </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>conct</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a21dc663ccb4b707ce6ad95972a7ee3a8"></a><!-- doxytag: member="projeto.c::Projeto_iniciarTransacao" ref="a21dc663ccb4b707ce6ad95972a7ee3a8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Projeto_iniciarTransacao </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae113f780ede4e0a0f25969796a69e2cb"></a><!-- doxytag: member="projeto.c::Projeto_novo" ref="ae113f780ede4e0a0f25969796a69e2cb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projeto_novo </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d99f75e026cfdcf7056480c870de0fe"></a><!-- doxytag: member="projeto.c::Projeto_salvar" ref="a2d99f75e026cfdcf7056480c870de0fe" args="(char *nome)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projeto_salvar </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>nome</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a311cae565e53a8a53318eddfce442ca1"></a><!-- doxytag: member="projeto.c::Projeto_terminarTransacao" ref="a311cae565e53a8a53318eddfce442ca1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Projeto_terminarTransacao </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac04892ef177a83d2b79765d1f6f2fcc8"></a><!-- doxytag: member="projeto.c::Projeto_verificarExisteTabela" ref="ac04892ef177a83d2b79765d1f6f2fcc8" args="(char *tabela)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Projeto_verificarExisteTabela </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>tabela</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a494d3d153f49db3c7e53210cd09acc53"></a><!-- doxytag: member="projeto.c::Projeto_zeraAcessibilidade" ref="a494d3d153f49db3c7e53210cd09acc53" args="(enum TipoAcessibilidade tipo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Projeto_zeraAcessibilidade </td>
+          <td>(</td>
+          <td class="paramtype">enum TipoAcessibilidade&nbsp;</td>
+          <td class="paramname"> <em>tipo</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab4cf2293e90038084c0ae4bccbd198cc"></a><!-- doxytag: member="projeto.c::Projeto_zeraConectividade" ref="ab4cf2293e90038084c0ae4bccbd198cc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Projeto_zeraConectividade </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Variáveis</h2>
+<a class="anchor" id="a4c6d616bb59ec585c3fd26c96570242b"></a><!-- doxytag: member="projeto.c::projetoAtual" ref="a4c6d616bb59ec585c3fd26c96570242b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="projeto_8c.html#a4c6d616bb59ec585c3fd26c96570242b">projetoAtual</a> = &quot;Projetos/teste.morph&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 19 20:39:49 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -198,16 +198,49 @@ static void DrawLine(double x1, double y1, double x2, double y2) {
   glEnable(GL_TEXTURE_2D);
 }
 
+void DrawArc(double x, double y, double raio, double inicial, double final) {
+  double deltaAngle, anguloInicial, anguloFinal, angulo;
+  double tmp;
+
+  tmp=inicial;
+  inicial=360-final;
+  final=360-tmp;
+
+  deltaAngle=20.0/raio;
+  anguloInicial=inicial *(2.0 * M_PI / 360.0);
+  anguloFinal=final *(2.0 * M_PI / 360.0);
+  if (inicial > final) {
+    anguloFinal += (2.0 * M_PI);
+  }
+
+  glColor3ub(0, 0, 0);
+  glBegin(GL_LINE_STRIP);
+  angulo = anguloInicial;
+  while (angulo <= anguloFinal) {
+    glVertex2f(x + raio * cos(angulo), y + raio * sin(angulo));
+
+    angulo += deltaAngle;
+  }
+
+  if (angulo-deltaAngle < anguloFinal)
+    glVertex2f(x + raio * cos(anguloFinal), y + raio * sin(anguloFinal));
+
+  glEnd();
+}
 /**
  * Verifica se esta dentro da area de visão
  */
 
-static int Opengl_verificaDentroVisao(Ponto pIni, Ponto pFIm, double mx, double my) {
-  double pIniX=MIN(pIni.x,pFIm.x);
-  double pFImX=MAX(pIni.x,pFIm.x);
+static int Opengl_verificaDentroVisao(Nodo *nodo, double mx, double my) {
+  double p1x, p1y, p2x, p2y;
 
-  double pIniY=MIN(pIni.y,pFIm.y);
-  double pFImY=MAX(pIni.y,pFIm.y);
+  Math2_extremos(nodo, &p1x, &p1y, &p2x, &p2y);
+
+  double pIniX=MIN(p1x, p2x);
+  double pFImX=MAX(p1x, p2x);
+
+  double pIniY=MIN(p1y, p2y);
+  double pFImY=MAX(p1y, p2y);
 
   if (mx < pIniX)
     return 0;
@@ -227,6 +260,9 @@ static int Opengl_verificaDentroVisao(Ponto pIni, Ponto pFIm, double mx, double 
 
 void Opengl_desenha() {
   double mx, my, medioX, medioY;
+  Line *line;
+  Arc *arc;
+
   if (!openglDesenharAtivo)
     return;
 
@@ -237,12 +273,23 @@ void Opengl_desenha() {
   Mapa_calcularVisaoMaximo(telaW, telaH, &mx, &my);
 
   forList(Nodo *, nodoPerc, mapa.grafo->nodos) {
-    if (Opengl_verificaDentroVisao(nodoPerc->p1,nodoPerc->p2, mx, my)) {
+    if (Opengl_verificaDentroVisao(nodoPerc, mx, my)) {
       if (mapa.exibirLabel) {
-        pontoMedio(&nodoPerc->p1,&nodoPerc->p2, &medioX, &medioY);
-        Opengl_drawTexto(medioX, medioY, "%d", nodoPerc->valor);
+        Math2_pontoMedio(nodoPerc, &medioX, &medioY);
+
+        Opengl_drawTexto(medioX, medioY, "%d", nodoPerc->id);
       }
-      DrawLine(nodoPerc->p1.x,nodoPerc->p1.y,nodoPerc->p2.x,nodoPerc->p2.y);
+      /*if (nodoPerc->id == 1988) {
+        printf("%lf %lf %lf %lf\n",nodoPerc->p1.x,nodoPerc->p1.y,nodoPerc->p2.x,nodoPerc->p2.y);
+      }*/
+      if (nodoPerc->tipo == ENTIDADE_LINE) {
+        line=(Line *) nodoPerc->d;
+        DrawLine(line->p1.x,line->p1.y,line->p2.x,line->p2.y);
+      }
+      else if (nodoPerc->tipo == ENTIDADE_ARC) {
+        arc=(Arc *) nodoPerc->d;
+        DrawArc(arc->centro.x, arc->centro.y, arc->raio, arc->anguloInicial, arc->anguloFinal);
+      }
     }
   }
 }

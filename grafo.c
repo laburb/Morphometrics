@@ -7,7 +7,7 @@
 Nodo *nodoAtual;
 
 static int Grafo_nodoAcao(Grafo *grafo, int id,char acao) {
-  static int opcao=NAO_MUDAR_ID;
+  static int opcao=NAO_MUDAR_ID|ADD_CERTO;
   Lista **primNodo=&grafo->nodos;
 
   if (acao=='n') {
@@ -19,8 +19,12 @@ static int Grafo_nodoAcao(Grafo *grafo, int id,char acao) {
     if (nodoAtual) grafo->tamanho--;
   }
   else if (acao=='z') {
-    while (*primNodo != NULL)
+    while (*primNodo != NULL) {
+      Nodo *nodo=(Nodo *) (*primNodo)->d;
+      free(nodo->d);
+
       Grafo_nodoAcao(grafo,(*primNodo)->id,'d');
+    }
 
     grafo->tamanho=0;
   }
@@ -57,9 +61,16 @@ Grafo *Grafo_iniciar() {
  *
  */
 
-Nodo *Grafo_adicionarNodo(Grafo *grafo) {
+Nodo *Grafo_adicionarNodo(Grafo *grafo, enum EntidadeTipo tipo) {
   Grafo_nodoAcao(grafo, grafo->tamanho+1, 'n');
-  nodoAtual->valor=grafo->tamanho;
+  nodoAtual->id=grafo->tamanho;
+  nodoAtual->impedancia=1.0;
+  nodoAtual->tipo=tipo;
+
+  if (tipo == ENTIDADE_LINE)
+    nodoAtual->d=calloc(1, sizeof(Line));
+  else if (tipo == ENTIDADE_ARC)
+    nodoAtual->d=calloc(1, sizeof(Arc));
 
   return nodoAtual;
 }
@@ -146,7 +157,7 @@ void Grafo_removerAresta(Grafo *grafo, Nodo *a, Nodo *b) {
   Arestas *ant=NULL;
 
   while (perc != NULL) {
-    if (perc->nodo->valor == b->valor) {
+    if (perc->nodo->id == b->id) {
       if (ant == NULL)
         a->arestas=perc->prox;
       else
@@ -201,7 +212,7 @@ Arestas *Grafo_getAresta(Grafo *grafo, Nodo *a, Nodo *b) {
   Arestas *perc=a->arestas;
 
   while (perc != NULL) {
-    if (perc->nodo->valor == b->valor)
+    if (perc->nodo->id == b->id)
       return perc;
 
     perc=perc->prox;
@@ -223,26 +234,13 @@ Arestas *Grafo_getAresta(Grafo *grafo, Nodo *a, Nodo *b) {
  *
  */
 
-Nodo *Grafo_getNodo(Grafo *grafo, int valor) {
+Nodo *Grafo_getNodo(Grafo *grafo, int id) {
   forList(Nodo *, nodoPerc, grafo->nodos) {
-    if (nodoPerc->valor == valor)
+    if (nodoPerc->id == id)
       return nodoPerc;
   }
 
   return NULL;
-}
-
-/**
- *  Seta o valor da variavel aux de todos os vertices.
- *
- *  @param grafo Estrutura do grafo
- *  @param valor Valor
- *
- */
-
-void Grafo_setNodosAux(Grafo *grafo, int valor) {
-  forList(Nodo *, nodoPerc, grafo->nodos)
-    nodoPerc->aux=valor;
 }
 
 /**

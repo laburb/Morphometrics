@@ -21,4 +21,6 @@
 
     void Interface_atualizaOpengl();
 
+    void Interface_resultados();
+
 #endif /* INTERFACE_H_ */

@@ -7,6 +7,7 @@
 
 #include "Header/grafo.h"
 #include "Header/util.h"
+#include "Header/math2.h"
 #include "Header/mapa.h"
 
 #include <math.h>
@@ -36,6 +37,8 @@ void Mapa_iniciar() {
  */
 
 void Mapa_calculaEixoMax() {
+  double p1x, p1y, p2x, p2y;
+
   Ponto eixoMax;
   Ponto eixoMin;
 
@@ -44,36 +47,40 @@ void Mapa_calculaEixoMax() {
   if (!primNodo)
     return;
 
-   eixoMax.x=primNodo->p1.x;
-   eixoMin.x=primNodo->p1.x;
-   eixoMax.y=primNodo->p1.y;
-   eixoMin.y=primNodo->p1.y;
+  Math2_extremos(primNodo, &p1x, &p1y, &p2x, &p2y);
+
+   eixoMax.x=p1x;
+   eixoMin.x=p1x;
+   eixoMax.y=p1y;
+   eixoMin.y=p1y;
 
 
   forList(Nodo *, nodoPerc, mapa.grafo->nodos) {
-    if (nodoPerc->p1.x > eixoMax.x)
-      eixoMax.x=nodoPerc->p1.x;
+    Math2_extremos(nodoPerc, &p1x, &p1y, &p2x, &p2y);
 
-    if (nodoPerc->p2.x > eixoMax.x)
-      eixoMax.x=nodoPerc->p2.x;
+    if (p1x > eixoMax.x)
+      eixoMax.x=p1x;
 
-    if (nodoPerc->p1.y > eixoMax.y)
-      eixoMax.y=nodoPerc->p1.y;
+    if (p2x > eixoMax.x)
+      eixoMax.x=p2x;
 
-    if (nodoPerc->p2.y > eixoMax.y)
-      eixoMax.y=nodoPerc->p2.y;
+    if (p1y > eixoMax.y)
+      eixoMax.y=p1y;
 
-    if (nodoPerc->p1.x < eixoMin.x)
-      eixoMin.x=nodoPerc->p1.x;
+    if (p2y > eixoMax.y)
+      eixoMax.y=p2y;
 
-    if (nodoPerc->p2.x < eixoMin.x)
-      eixoMin.x=nodoPerc->p2.x;
+    if (p1x < eixoMin.x)
+      eixoMin.x=p1x;
 
-    if (nodoPerc->p1.y < eixoMin.y)
-      eixoMin.y=nodoPerc->p1.y;
+    if (p2x < eixoMin.x)
+      eixoMin.x=p2x;
 
-    if (nodoPerc->p2.y < eixoMin.y)
-      eixoMin.y=nodoPerc->p2.y;
+    if (p1y < eixoMin.y)
+      eixoMin.y=p1y;
+
+    if (p2y < eixoMin.y)
+      eixoMin.y=p2y;
   }
 
   mapa.eixoMaximo.x=eixoMax.x;

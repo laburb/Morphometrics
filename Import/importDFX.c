@@ -18,66 +18,88 @@
 //#define DEBUG
 
 static void obterLine(FILE *fp) {
-  Nodo *nodoAtual=Grafo_adicionarNodo(mapa.grafo);
+  Nodo *nodoAtual=Grafo_adicionarNodo(mapa.grafo, ENTIDADE_LINE);
+  Line *line=(Line *) nodoAtual->d;
+
+  //ignora o id
+  fscanf(fp, "%*d %*d");
 
   Arquivo_acharString(fp, "10", 0);
-  fscanf(fp, "%lf", &nodoAtual->p1.x);
+  fscanf(fp, "%lf", &line->p1.x);
 
   Arquivo_acharString(fp, "20", 0);
-  fscanf(fp, "%lf", &nodoAtual->p1.y);
+  fscanf(fp, "%lf", &line->p1.y);
 
   Arquivo_acharString(fp, "11", 0);
-  fscanf(fp, "%lf", &nodoAtual->p2.x);
+  fscanf(fp, "%lf", &line->p2.x);
 
   Arquivo_acharString(fp, "21", 0);
-  fscanf(fp, "%lf", &nodoAtual->p2.y);
+  fscanf(fp, "%lf", &line->p2.y);
 }
 
 static void obterPolyLine(FILE *fp, int versao) {
   Nodo *nodoAtual=NULL;
-  Nodo *nodoAtualAnt=NULL;
   Ponto pTmp;
+  Ponto pTmpAnt;
+  Line *line;
+
   int ok=0;
 
   char strTmp[256];
 
-  if (versao < 14) {
-    ok=1;
-    Arquivo_acharString(fp, "VERTEX", 0);
-  }
+  if (versao < 14)
+      Arquivo_acharString(fp, "VERTEX", 0);
 
   while (fscanf(fp, "%s", strTmp) != EOF) {
     if (!strcmp("AutoCAD", strTmp))
       break;
-    if ((ok) && (!strcmp(((versao >= 14)?"0":"SEQEND"), strTmp))) {
-      if (nodoAtualAnt) {
-        nodoAtualAnt->p2.x=pTmp.x;
-        nodoAtualAnt->p2.y=pTmp.y;
-      }
-      nodoAtualAnt=NULL;
+    if ((ok) && (!strcmp(((versao >= 14)?"0":"SEQEND"), strTmp)))
       break;
-    }
     else if (!strcmp("10", strTmp)) {
-      ok=1;
-
-      nodoAtual=Grafo_adicionarNodo(mapa.grafo);
-
-      fscanf(fp, "%lf", &nodoAtual->p1.x);
+      fscanf(fp, "%lf", &pTmp.x);
 
       Arquivo_acharString(fp, "20", 0);
-      fscanf(fp, "%lf", &nodoAtual->p1.y);
+      fscanf(fp, "%lf", &pTmp.y);
 
-      pTmp.x=nodoAtual->p1.x;
-      pTmp.y=nodoAtual->p1.y;
+      if (ok) {
+        nodoAtual=Grafo_adicionarNodo(mapa.grafo, ENTIDADE_LINE);
+        line=(Line *) nodoAtual->d;
 
-      if (nodoAtualAnt) {
-        nodoAtualAnt->p2.x=pTmp.x;
-        nodoAtualAnt->p2.y=pTmp.y;
+        line->p1.x=pTmpAnt.x;
+        line->p1.y=pTmpAnt.y;
+        line->p2.x=pTmp.x;
+        line->p2.y=pTmp.y;
       }
 
-      nodoAtualAnt=nodoAtual;
+      pTmpAnt.x=pTmp.x;
+      pTmpAnt.y=pTmp.y;
+
+      ok=1;
     }
   }
+}
+
+static void obterArc(FILE *fp) {
+  Nodo *nodoAtual=Grafo_adicionarNodo(mapa.grafo, ENTIDADE_ARC);
+  Arc *arc=(Arc *) nodoAtual->d;
+
+  //ignora o id
+  fscanf(fp, "%*d %*d");
+
+  Arquivo_acharString(fp, "10", 0);
+  fscanf(fp, "%lf", &arc->centro.x);
+
+  Arquivo_acharString(fp, "20", 0);
+  fscanf(fp, "%lf", &arc->centro.y);
+
+  Arquivo_acharString(fp, "40", 0);
+  fscanf(fp, "%lf", &arc->raio);
+
+  Arquivo_acharString(fp, "50", 0);
+  fscanf(fp, "%lf", &arc->anguloInicial);
+
+  Arquivo_acharString(fp, "51", 0);
+  fscanf(fp, "%lf", &arc->anguloFinal);
 }
 
 /**
@@ -155,8 +177,10 @@ int importDFX(char *arquivo) {
   while (fscanf(fp, "%s",strTmp) != EOF) {
     if (!strcmp("LINE",strTmp))
       obterLine(fp);
-    if ((!strcmp("AcDbPolyline",strTmp)) || (!strcmp("POLYLINE",strTmp)))
+    else if ((!strcmp("AcDbPolyline",strTmp)) || (!strcmp("POLYLINE",strTmp)))
       obterPolyLine(fp,versao);
+    else if (!strcmp("ARC",strTmp))
+      obterArc(fp);
   }
 
   Mapa_calculaEixoMax();

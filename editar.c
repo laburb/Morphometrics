@@ -172,11 +172,12 @@ void Editar_mouseLibera(int botao, double mouseX, double mouseY) {
     Interface_mudarMouse(Mapa_cursor());
 
     if (ferramentaAtiva == FERRAMENTA_ADD_ENTIDADE) {
-      Nodo *nodoAtual=Grafo_adicionarNodo(mapa.grafo);
-      nodoAtual->p1.x=mouseClick.x;
-      nodoAtual->p1.y=mouseClick.y;
-      nodoAtual->p2.x=mouseX;
-      nodoAtual->p2.y=mouseY;
+      Nodo *nodoAtual=Grafo_adicionarNodo(mapa.grafo, ENTIDADE_LINE);
+      Line *line=(Line *) nodoAtual->d;
+      line->p1.x=mouseClick.x;
+      line->p1.y=mouseClick.y;
+      line->p2.x=mouseX;
+      line->p2.y=mouseY;
 
       openglDesenharAtivo=1;
 

@@ -31,7 +31,7 @@
  */
 
 int Arquivo_acharString(FILE *fp, char *str, int inicio) {
-  char strTmp[256];
+  char strTmp[512];
 
   long posic=ftell(fp);
 

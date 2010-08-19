@@ -12,6 +12,7 @@
 #include "Header/math2.h"
 #include "Header/util.h"
 #include "Header/interface.h"
+#include "Header/projeto.h"
 #include "Header/conexoes.h"
 
 /**
@@ -19,9 +20,12 @@
  */
 
 void Conexoes_verificar() {
-  long int total=mapa.grafo->tamanho;
-  long int cont=0;
-  long int ant=-1;
+  int total=mapa.grafo->tamanho*2;
+  int cont=0, conectividade;
+  int ant=-1;
+
+  if (!Projeto_zeraConectividade())
+    return;
 
   GtkWidget *frameProgresso=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "frameProgresso"));
   GtkProgressBar *progress=GTK_PROGRESS_BAR(gtk_builder_get_object(builderPrincipal, "progressbar"));
@@ -30,10 +34,10 @@ void Conexoes_verificar() {
   forList(Nodo *, nodoPerc, mapa.grafo->nodos) {
     forList(Nodo *, nodoPerc2, nodoPercPercorre) {
 
-      if (nodoPerc->valor == nodoPerc2->valor)
+      if (nodoPerc->id == nodoPerc2->id)
         continue;
 
-      if (interseccao(&nodoPerc->p1, &nodoPerc->p2, &nodoPerc2->p1, &nodoPerc2->p2))
+      if (Math2_interseccao(nodoPerc, nodoPerc2))
         Grafo_adicionarAresta(mapa.grafo, nodoPerc, nodoPerc2, BIDIRECIONADA, 10);
 
       if (ant < cont*100/total) {
@@ -47,6 +51,37 @@ void Conexoes_verificar() {
     }
     cont++;
   }
+
+  Arestas *perc;
+
+  if (!Projeto_iniciarTransacao())
+    return;
+
+  forList(Nodo *, nodoPerc3, mapa.grafo->nodos) {
+    perc=nodoPerc3->arestas;
+    conectividade=0;
+    while (perc != NULL) {
+      conectividade++;
+      perc=perc->prox;
+    }
+
+    if (!Projeto_addConectividade(nodoPerc3->id, conectividade))
+      break;
+
+    if (ant < cont*100/total) {
+      gtk_progress_bar_set_fraction(progress,((double)(cont))/total);
+
+      while(gtk_events_pending())
+          gtk_main_iteration();
+
+      ant=cont*100/total;
+    }
+
+    cont++;
+  }
+
+  if (!Projeto_terminarTransacao())
+      return;
 
   gtk_widget_hide(frameProgresso);
 

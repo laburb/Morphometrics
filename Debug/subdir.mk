@@ -4,8 +4,10 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../acessibilidade.c \
 ../conexoes.c \
 ../conjdis.c \
+../dijkstra.c \
 ../editar.c \
 ../estruturas.c \
 ../grafo.c \
@@ -18,12 +20,15 @@ C_SRCS += \
 ../mensagens.c \
 ../opengl.c \
 ../ponto.c \
+../projeto.c \
 ../selecionarArquivo.c \
 ../util.c 
 
 OBJS += \
+./acessibilidade.o \
 ./conexoes.o \
 ./conjdis.o \
+./dijkstra.o \
 ./editar.o \
 ./estruturas.o \
 ./grafo.o \
@@ -36,12 +41,15 @@ OBJS += \
 ./mensagens.o \
 ./opengl.o \
 ./ponto.o \
+./projeto.o \
 ./selecionarArquivo.o \
 ./util.o 
 
 C_DEPS += \
+./acessibilidade.d \
 ./conexoes.d \
 ./conjdis.d \
+./dijkstra.d \
 ./editar.d \
 ./estruturas.d \
 ./grafo.d \
@@ -54,6 +62,7 @@ C_DEPS += \
 ./mensagens.d \
 ./opengl.d \
 ./ponto.d \
+./projeto.d \
 ./selecionarArquivo.d \
 ./util.d 
 

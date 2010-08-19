@@ -6,6 +6,7 @@
  */
 
 #include <gtk/gtk.h>
+#include <locale.h>
 
 #include "Header/interface.h"
 #include "Header/importar.h"
