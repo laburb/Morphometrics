@@ -10,7 +10,38 @@
 
     #include <gtk/gtk.h>
 
-    GtkBuilder *builderPrincipal;
+    GtkWidget *drawOpengl;
+    GtkWidget *frameProgresso;
+    GtkProgressBar *progress;
+    GtkLabel *labelPosicaoXY;
+
+    GtkAdjustment *ajustScrollHorizGL;
+    GtkAdjustment *ajustScrollVertGL;
+
+    GtkToggleToolButton *tbAddEntidade;
+    GtkToggleToolButton *tbAddImagem;
+    GtkToggleToolButton *tbAddTexto;
+    GtkToggleToolButton *tbAmpliar;
+    GtkToggleToolButton *tbReduzir;
+
+    GtkWidget *frameFerramentas;
+
+    GtkComboBox *comboResultados;
+
+    struct resultaInter {
+      //Nome da tabela no banco de dados
+      char *tabela;
+      //Nome que ira aparecer na combobox
+      char *nome;
+      //Nome que ira aparecer na coluna resultado
+      char *colResult;
+      //Nome da coluna principal que ira ser usada para visualizacao
+      char *colPrincipal;
+      //Colunas viziveis
+      gboolean colunasViziveis[5];
+    };
+
+    struct resultaInter listaResult[4];
 
     void Interface_iniciar();
     void Interface_finalizar();

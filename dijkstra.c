@@ -6,7 +6,7 @@
  */
 
 #include <stdlib.h>
-#include <limits.h>
+#include <float.h>
 
 #include "Header/heap.h"
 #include "Header/grafo.h"
@@ -58,7 +58,7 @@ DijksDados *dijkstra(Grafo *grafo, int origem, int tipo) {
     dijkAtual=&dados[percorreNodo->id-1];
 
     dijkAtual->nodo=percorreNodo;
-    dijkAtual->custo=(percorreNodo->id != origem)? INT_MAX:0;
+    dijkAtual->custo=(percorreNodo->id != origem)? DBL_MAX:0;
 
     Heap_adicionar(Q, dijkAtual);
   }

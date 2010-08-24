@@ -12,11 +12,9 @@
 #include "../Header/interface.h"
 
 G_MODULE_EXPORT void on_tbEditar_toggled(GtkObject *object, gpointer user_data) {
-  GtkWidget *frame=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "frameFerramentas"));
-
-  if (!GTK_WIDGET_VISIBLE(frame))
-    gtk_widget_show(frame);
+  if (!GTK_WIDGET_VISIBLE(frameFerramentas))
+    gtk_widget_show(frameFerramentas);
   else
-    gtk_widget_hide(frame);
+    gtk_widget_hide(frameFerramentas);
   //gtk_widget_set_visible(frame, !gtk_widget_get_visible(frame));
 }

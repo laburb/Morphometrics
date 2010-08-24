@@ -56,6 +56,7 @@ Grafo *Grafo_iniciar() {
  *  Adiciona vertice ao grafo
  *
  *  @param grafo Estrutura do grafo
+ *  @param tipo Tipo da entidade
  *
  *  @return Nodo criado
  *
@@ -66,6 +67,10 @@ Nodo *Grafo_adicionarNodo(Grafo *grafo, enum EntidadeTipo tipo) {
   nodoAtual->id=grafo->tamanho;
   nodoAtual->impedancia=1.0;
   nodoAtual->tipo=tipo;
+
+  nodoAtual->cor.r=0;
+  nodoAtual->cor.g=0;
+  nodoAtual->cor.b=0;
 
   if (tipo == ENTIDADE_LINE)
     nodoAtual->d=calloc(1, sizeof(Line));
@@ -225,7 +230,7 @@ Arestas *Grafo_getAresta(Grafo *grafo, Nodo *a, Nodo *b) {
  *  Retorna o nodo.
  *
  *  @param grafo Estrutura do grafo
- *  @param valor Id do vertice
+ *  @param id Id do vertice
  *
  *  @return Estrutura do vertice
  *

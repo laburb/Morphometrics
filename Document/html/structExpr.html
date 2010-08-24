@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência da Estrutura Expr</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="functions.html"><span>Campos&nbsp;de&nbsp;Dados</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Estrutura Expr</h1><!-- doxytag: class="Expr" --><table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Campos de Dados</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#a101c55ddb6c149d95f0327831eb78225">op</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#aeb51b76e606d6fbae234e38473bf3dc9">affinity</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a20f2299e322dcbde37cb07b16910b843">u16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#ad6013561807a4a5182ce928f263bc3bf">flags</a></td></tr>
+<tr><td class="memItemLeft" >union {</td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;char *&nbsp;&nbsp;&nbsp;<a class="el" href="structExpr.html#af1f6b0c5fcfdd18a41f682b74e13c950">zToken</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;<a class="el" href="structExpr.html#a9ea4dff760e0008488807701c6102605">iValue</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#aef8fabc8205ec52067df9c9b3db8588b">u</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structExpr.html">Expr</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#a0a78282ae0d696f4a25013a12e38b1ba">pLeft</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structExpr.html">Expr</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#aa08c218d5b0b6f8882e8bf9ec8822a08">pRight</a></td></tr>
+<tr><td class="memItemLeft" >union {</td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structExprList.html">ExprList</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structExpr.html#ac7107bf192a8080b919350925cc35dd8">pList</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structSelect.html">Select</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structExpr.html#a54e5186fdf157f8b4ae178919d8ff6b3">pSelect</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#a2d0647c6c3e3c69c72b73f38ec33fc2e">x</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollSeq.html">CollSeq</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#a4ef09e21aaa9d61567b89714e25abfb9">pColl</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#af8e273f4d7d173bfb5996ed09054611c">iTable</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a8f09a8707e1c321e17c3625018c599ce">ynVar</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#ad19251a8eb6db3cf0bdffe0dcb07eeba">iColumn</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a7b32340f65cd15f029caad258fb3355c">i16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#a9fe0ed6360b0a4cf5b67ab8def922033">iAgg</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a7b32340f65cd15f029caad258fb3355c">i16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#aa49b76f3628a7bf2b0997c33461cc651">iRightJoinTable</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#af8d40f8e74d07557e89cfffeef3657e9">flags2</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#a0eacba0a2a6977e434b096b1cb9d5b9e">op2</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structAggInfo.html">AggInfo</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#a4fde82477256ee85f3a906263549082a">pAggInfo</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTable.html">Table</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#a27c8824b41d853eeeebe61cf3ac1ae5a">pTab</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExpr.html#a5a893ea309f801f23404e7e5ac02732b">nHeight</a></td></tr>
+</table>
+<hr/><h2>Campos</h2>
+<a class="anchor" id="aeb51b76e606d6fbae234e38473bf3dc9"></a><!-- doxytag: member="Expr::affinity" ref="aeb51b76e606d6fbae234e38473bf3dc9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char <a class="el" href="structExpr.html#aeb51b76e606d6fbae234e38473bf3dc9">Expr::affinity</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6013561807a4a5182ce928f263bc3bf"></a><!-- doxytag: member="Expr::flags" ref="ad6013561807a4a5182ce928f263bc3bf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a20f2299e322dcbde37cb07b16910b843">u16</a> <a class="el" href="structExpr.html#ad6013561807a4a5182ce928f263bc3bf">Expr::flags</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af8d40f8e74d07557e89cfffeef3657e9"></a><!-- doxytag: member="Expr::flags2" ref="af8d40f8e74d07557e89cfffeef3657e9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structExpr.html#af8d40f8e74d07557e89cfffeef3657e9">Expr::flags2</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9fe0ed6360b0a4cf5b67ab8def922033"></a><!-- doxytag: member="Expr::iAgg" ref="a9fe0ed6360b0a4cf5b67ab8def922033" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a7b32340f65cd15f029caad258fb3355c">i16</a> <a class="el" href="structExpr.html#a9fe0ed6360b0a4cf5b67ab8def922033">Expr::iAgg</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad19251a8eb6db3cf0bdffe0dcb07eeba"></a><!-- doxytag: member="Expr::iColumn" ref="ad19251a8eb6db3cf0bdffe0dcb07eeba" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a8f09a8707e1c321e17c3625018c599ce">ynVar</a> <a class="el" href="structExpr.html#ad19251a8eb6db3cf0bdffe0dcb07eeba">Expr::iColumn</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa49b76f3628a7bf2b0997c33461cc651"></a><!-- doxytag: member="Expr::iRightJoinTable" ref="aa49b76f3628a7bf2b0997c33461cc651" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a7b32340f65cd15f029caad258fb3355c">i16</a> <a class="el" href="structExpr.html#aa49b76f3628a7bf2b0997c33461cc651">Expr::iRightJoinTable</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af8e273f4d7d173bfb5996ed09054611c"></a><!-- doxytag: member="Expr::iTable" ref="af8e273f4d7d173bfb5996ed09054611c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structExpr.html#af8e273f4d7d173bfb5996ed09054611c">Expr::iTable</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9ea4dff760e0008488807701c6102605"></a><!-- doxytag: member="Expr::iValue" ref="a9ea4dff760e0008488807701c6102605" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structExpr.html#a9ea4dff760e0008488807701c6102605">Expr::iValue</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a893ea309f801f23404e7e5ac02732b"></a><!-- doxytag: member="Expr::nHeight" ref="a5a893ea309f801f23404e7e5ac02732b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structExpr.html#a5a893ea309f801f23404e7e5ac02732b">Expr::nHeight</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a101c55ddb6c149d95f0327831eb78225"></a><!-- doxytag: member="Expr::op" ref="a101c55ddb6c149d95f0327831eb78225" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structExpr.html#a101c55ddb6c149d95f0327831eb78225">Expr::op</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0eacba0a2a6977e434b096b1cb9d5b9e"></a><!-- doxytag: member="Expr::op2" ref="a0eacba0a2a6977e434b096b1cb9d5b9e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structExpr.html#a0eacba0a2a6977e434b096b1cb9d5b9e">Expr::op2</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4fde82477256ee85f3a906263549082a"></a><!-- doxytag: member="Expr::pAggInfo" ref="a4fde82477256ee85f3a906263549082a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structAggInfo.html">AggInfo</a>* <a class="el" href="structExpr.html#a4fde82477256ee85f3a906263549082a">Expr::pAggInfo</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4ef09e21aaa9d61567b89714e25abfb9"></a><!-- doxytag: member="Expr::pColl" ref="a4ef09e21aaa9d61567b89714e25abfb9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCollSeq.html">CollSeq</a>* <a class="el" href="structExpr.html#a4ef09e21aaa9d61567b89714e25abfb9">Expr::pColl</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0a78282ae0d696f4a25013a12e38b1ba"></a><!-- doxytag: member="Expr::pLeft" ref="a0a78282ae0d696f4a25013a12e38b1ba" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structExpr.html">Expr</a>* <a class="el" href="structExpr.html#a0a78282ae0d696f4a25013a12e38b1ba">Expr::pLeft</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac7107bf192a8080b919350925cc35dd8"></a><!-- doxytag: member="Expr::pList" ref="ac7107bf192a8080b919350925cc35dd8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structExprList.html">ExprList</a>* <a class="el" href="structExpr.html#ac7107bf192a8080b919350925cc35dd8">Expr::pList</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa08c218d5b0b6f8882e8bf9ec8822a08"></a><!-- doxytag: member="Expr::pRight" ref="aa08c218d5b0b6f8882e8bf9ec8822a08" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structExpr.html">Expr</a>* <a class="el" href="structExpr.html#aa08c218d5b0b6f8882e8bf9ec8822a08">Expr::pRight</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a54e5186fdf157f8b4ae178919d8ff6b3"></a><!-- doxytag: member="Expr::pSelect" ref="a54e5186fdf157f8b4ae178919d8ff6b3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSelect.html">Select</a>* <a class="el" href="structExpr.html#a54e5186fdf157f8b4ae178919d8ff6b3">Expr::pSelect</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a27c8824b41d853eeeebe61cf3ac1ae5a"></a><!-- doxytag: member="Expr::pTab" ref="a27c8824b41d853eeeebe61cf3ac1ae5a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTable.html">Table</a>* <a class="el" href="structExpr.html#a27c8824b41d853eeeebe61cf3ac1ae5a">Expr::pTab</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aef8fabc8205ec52067df9c9b3db8588b"></a><!-- doxytag: member="Expr::u" ref="aef8fabc8205ec52067df9c9b3db8588b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... }   <a class="el" href="structExpr.html#aef8fabc8205ec52067df9c9b3db8588b">Expr::u</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2d0647c6c3e3c69c72b73f38ec33fc2e"></a><!-- doxytag: member="Expr::x" ref="a2d0647c6c3e3c69c72b73f38ec33fc2e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... }   <a class="el" href="structExpr.html#a2d0647c6c3e3c69c72b73f38ec33fc2e">Expr::x</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1f6b0c5fcfdd18a41f682b74e13c950"></a><!-- doxytag: member="Expr::zToken" ref="af1f6b0c5fcfdd18a41f682b74e13c950" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structExpr.html#af1f6b0c5fcfdd18a41f682b74e13c950">Expr::zToken</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte arquivo:<ul>
+<li><a class="el" href="sqlite3_8c.html">sqlite3.c</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Tue Aug 24 18:13:45 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

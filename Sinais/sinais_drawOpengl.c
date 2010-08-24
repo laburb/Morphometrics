@@ -83,14 +83,12 @@ G_MODULE_EXPORT gboolean on_drawOpengl_motion_notify_event(GtkWidget *widget, Gd
   double mouseX,mouseY;
   char str[256];
 
-  GtkLabel *label=GTK_LABEL(gtk_builder_get_object(builderPrincipal, "labelPosicaoXY"));
-
   Mapa_mousePosicao(widget, event->x, event->y, &mouseX, &mouseY);
 
-  Editar_mouseMove(mouseX,mouseY);
+  Editar_mouseMove(event->x, event->y, mouseX,mouseY);
 
   sprintf(str,"%lf - %lf",mouseX,mouseY);
-  gtk_label_set_text(label, str);
+  gtk_label_set_text(labelPosicaoXY, str);
 
   return TRUE;
 }
@@ -117,10 +115,6 @@ G_MODULE_EXPORT gboolean on_drawOpengl_button_release_event(GtkWidget *widget, G
 G_MODULE_EXPORT void on_ajustScroll_value_changed(GtkObject *object, gpointer user_data) {
   static double antHoriz=0;
   static double antVert=0;
-
-  GtkAdjustment *ajustScrollHorizGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollHorizGL"));
-  GtkAdjustment *ajustScrollVertGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollVertGL"));
-
 
   Mapa_deslocarVisao(-gtk_adjustment_get_value(ajustScrollHorizGL)-antHoriz,gtk_adjustment_get_value(ajustScrollVertGL)-antVert);
 

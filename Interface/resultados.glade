@@ -7,24 +7,23 @@
       <!-- column-name colLabel -->
       <column type="gint"/>
       <!-- column-name colResult -->
-      <column type="gchararray"/>
+      <column type="gfloat"/>
+      <!-- column-name colAbsoluto -->
+      <column type="gfloat"/>
+      <!-- column-name colRelativo -->
+      <column type="gfloat"/>
+      <!-- column-name colRaioPelaMedia -->
+      <column type="gfloat"/>
     </columns>
-    <data>
-      <row>
-        <col id="0">1</col>
-        <col id="1" translatable="yes">sdfsdfsdfs</col>
-      </row>
-      <row>
-        <col id="0">50</col>
-        <col id="1" translatable="yes">sdf sdfsdfs</col>
-      </row>
-    </data>
+  </object>
+  <object class="GtkTreeModelSort" id="treeOrdenar">
+    <property name="model">liststore</property>
   </object>
   <object class="GtkWindow" id="window">
     <property name="title" translatable="yes">Resultados</property>
     <property name="modal">True</property>
     <property name="window_position">center-on-parent</property>
-    <property name="default_width">450</property>
+    <property name="default_width">480</property>
     <property name="default_height">300</property>
     <child>
       <object class="GtkVBox" id="vbox1">
@@ -72,39 +71,91 @@
             <property name="left_padding">4</property>
             <property name="right_padding">4</property>
             <child>
-              <object class="GtkTreeView" id="treeview">
+              <object class="GtkScrolledWindow" id="scrolledwindow1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="model">liststore</property>
-                <property name="expander_column">colResult</property>
-                <property name="reorderable">True</property>
-                <property name="search_column">0</property>
+                <property name="hadjustment">scrollHorizontal</property>
+                <property name="vadjustment">scrollVertical</property>
+                <property name="hscrollbar_policy">automatic</property>
+                <property name="vscrollbar_policy">automatic</property>
                 <child>
-                  <object class="GtkTreeViewColumn" id="colLabel">
-                    <property name="resizable">True</property>
-                    <property name="title">Label</property>
-                    <property name="clickable">True</property>
-                    <property name="sort_indicator">True</property>
+                  <object class="GtkTreeView" id="treeview">
+                    <property name="height_request">245</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="model">liststore</property>
+                    <property name="hadjustment">scrollHorizontal</property>
+                    <property name="vadjustment">scrollVertical</property>
+                    <property name="search_column">0</property>
                     <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext1"/>
-                      <attributes>
-                        <attribute name="text">0</attribute>
-                      </attributes>
+                      <object class="GtkTreeViewColumn" id="colEntidade">
+                        <property name="resizable">True</property>
+                        <property name="title">Entidade</property>
+                        <property name="clickable">True</property>
+                        <signal name="clicked" handler="on_colOrdenar_clicked"/>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext1"/>
+                          <attributes>
+                            <attribute name="text">0</attribute>
+                          </attributes>
+                        </child>
+                      </object>
                     </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkTreeViewColumn" id="colResult">
-                    <property name="resizable">True</property>
-                    <property name="title">Resultado</property>
-                    <property name="clickable">True</property>
-                    <property name="reorderable">True</property>
-                    <property name="sort_indicator">True</property>
                     <child>
-                      <object class="GtkCellRendererText" id="cellrenderertext2"/>
-                      <attributes>
-                        <attribute name="text">1</attribute>
-                      </attributes>
+                      <object class="GtkTreeViewColumn" id="colResult">
+                        <property name="resizable">True</property>
+                        <property name="title">resultado</property>
+                        <property name="clickable">True</property>
+                        <signal name="clicked" handler="on_colOrdenar_clicked"/>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext2"/>
+                          <attributes>
+                            <attribute name="text">1</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="colAbsoluta">
+                        <property name="resizable">True</property>
+                        <property name="title">Absoluta</property>
+                        <property name="clickable">True</property>
+                        <signal name="clicked" handler="on_colOrdenar_clicked"/>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext3"/>
+                          <attributes>
+                            <attribute name="text">2</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="colRelativo">
+                        <property name="resizable">True</property>
+                        <property name="title">Relativo</property>
+                        <property name="clickable">True</property>
+                        <signal name="clicked" handler="on_colOrdenar_clicked"/>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext4"/>
+                          <attributes>
+                            <attribute name="text">3</attribute>
+                          </attributes>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkTreeViewColumn" id="colRazao">
+                        <property name="resizable">True</property>
+                        <property name="title">Raz&#xE3;o da media</property>
+                        <property name="clickable">True</property>
+                        <signal name="clicked" handler="on_colOrdenar_clicked"/>
+                        <child>
+                          <object class="GtkCellRendererText" id="cellrenderertext5"/>
+                          <attributes>
+                            <attribute name="text">4</attribute>
+                          </attributes>
+                        </child>
+                      </object>
                     </child>
                   </object>
                 </child>
@@ -130,6 +181,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <signal name="clicked" handler="on_btVisualizar_clicked"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -143,6 +195,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <signal name="clicked" handler="on_btExportar_clicked"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -157,6 +210,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="use_stock">True</property>
+                    <signal name="clicked" handler="gtk_widget_destroy" object="window"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -174,5 +228,17 @@
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkAdjustment" id="scrollHorizontal">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+    <property name="page_size">10</property>
+  </object>
+  <object class="GtkAdjustment" id="scrollVertical">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+    <property name="page_size">10</property>
   </object>
 </interface>

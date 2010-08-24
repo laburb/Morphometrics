@@ -29,6 +29,6 @@ G_MODULE_EXPORT void on_mbAcessibilidadeGeo_activate(GtkObject *object, gpointer
   Acessibilidade_calcular(ACESS_GEOMETRICA);
 }
 
-G_MODULE_EXPORT void on_mbResultadosAcessibilidade_activate(GtkObject *object, gpointer user_data) {
+G_MODULE_EXPORT void on_mbCalcularResultados_activate(GtkObject *object, gpointer user_data) {
   Interface_resultados();
 }

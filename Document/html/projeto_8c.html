@@ -27,7 +27,8 @@
 <code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;string.h&gt;</code><br/>
 <code>#include &lt;locale.h&gt;</code><br/>
-<code>#include &lt;sqlite3.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="projeto_8c.html">Header/sqlite3.h</a>&quot;</code><br/>
+<code>#include &lt;stdarg.h&gt;</code><br/>
 <code>#include &quot;Header/mensagens.h&quot;</code><br/>
 <code>#include &quot;Header/acessibilidade.h&quot;</code><br/>
 <code>#include &quot;Header/projeto.h&quot;</code><br/>
@@ -43,6 +44,9 @@
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#ab3b2d233a81207c1501123bef481baa3">Projeto_addAcessibilidade</a> (enum TipoAcessibilidade tipo, int id, double absoluta)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#ab4cf2293e90038084c0ae4bccbd198cc">Projeto_zeraConectividade</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a9eadafa07a38d08e38ac58c22a057cfa">Projeto_addConectividade</a> (int id, int conct)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a665be0b64843fe0853d64799be0353e5">Projeto_lista</a> (int(*callback)(void *, int, char **, char **), void *parm, char *tabela, char *ordemCol, int ordem)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a5859e17ff0b2c62cc012a1cd8d25e8b6">Projeto_fechar</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ArrayValor *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#ad258e85aa76ce906b229f579a62da43e">Projeto_getArrayValor</a> (char *tabela, char *coluna, int ordem, int mostraErro)</td></tr>
 <tr><td colspan="2"><h2>Variáveis</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="projeto_8c.html#a4c6d616bb59ec585c3fd26c96570242b">projetoAtual</a> = &quot;Projetos/teste.morph&quot;</td></tr>
 </table>
@@ -125,6 +129,62 @@
 
 </div>
 </div>
+<a class="anchor" id="a5859e17ff0b2c62cc012a1cd8d25e8b6"></a><!-- doxytag: member="projeto.c::Projeto_fechar" ref="a5859e17ff0b2c62cc012a1cd8d25e8b6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projeto_fechar </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad258e85aa76ce906b229f579a62da43e"></a><!-- doxytag: member="projeto.c::Projeto_getArrayValor" ref="ad258e85aa76ce906b229f579a62da43e" args="(char *tabela, char *coluna, int ordem, int mostraErro)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ArrayValor* Projeto_getArrayValor </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>tabela</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>coluna</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ordem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>mostraErro</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a21dc663ccb4b707ce6ad95972a7ee3a8"></a><!-- doxytag: member="projeto.c::Projeto_iniciarTransacao" ref="a21dc663ccb4b707ce6ad95972a7ee3a8" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -135,6 +195,51 @@
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a665be0b64843fe0853d64799be0353e5"></a><!-- doxytag: member="projeto.c::Projeto_lista" ref="a665be0b64843fe0853d64799be0353e5" args="(int(*callback)(void *, int, char **, char **), void *parm, char *tabela, char *ordemCol, int ordem)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Projeto_lista </td>
+          <td>(</td>
+          <td class="paramtype">int(*)(void *, int, char **, char **)&nbsp;</td>
+          <td class="paramname"> <em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>parm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>tabela</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>ordemCol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>ordem</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
@@ -262,7 +367,7 @@
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Gerado em Thu Aug 19 20:39:49 2010 para Morphometrics por&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Tue Aug 24 18:16:42 2010 para Morphometrics por&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

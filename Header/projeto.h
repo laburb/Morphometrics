@@ -10,6 +10,13 @@
 
   #include "acessibilidade.h"
 
+  typedef struct {
+    int id;
+    double valor;
+  } ArrayValor;
+
+  void Projeto_fechar();
+
   int Projeto_verificarExisteTabela(char *tabela);
 
   int Projeto_zeraAcessibilidade(enum TipoAcessibilidade tipo);
@@ -18,8 +25,12 @@
   int Projeto_zeraConectividade();
   int Projeto_addConectividade(int id, int conct);
 
+  int Projeto_lista(int(*callback)(void*, int, char**, char**), void *parm, char *tabela, char *ordemCol, int ordem);
+
   int Projeto_iniciarTransacao();
   int Projeto_terminarTransacao();
+
+  ArrayValor *Projeto_getArrayValor(char *tabela, char *coluna, int ordem, int mostraErro);
 
   char *projetoAtual;
 

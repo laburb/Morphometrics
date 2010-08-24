@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência da Estrutura VdbeOp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="functions.html"><span>Campos&nbsp;de&nbsp;Dados</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Estrutura VdbeOp</h1><!-- doxytag: class="VdbeOp" --><table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Campos de Dados</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVdbeOp.html#ae12a8e7a8f5f7ba39fa379c9ad287837">opcode</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">signed char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVdbeOp.html#a124dee58d3e0d73c7dfaf811a3311023">p4type</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVdbeOp.html#a169a7bbe99a90c26ee01833723750b1d">opflags</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVdbeOp.html#a5e807981f52d29c06a5b6d4a8f2f4595">p5</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVdbeOp.html#a17c8326a1e3ac5612d4aaaa88f383b3b">p1</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVdbeOp.html#aba021fa9d30343c16794d9b76d8bffcd">p2</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVdbeOp.html#ad7ef3319da20d5423b8cc5da6995d193">p3</a></td></tr>
+<tr><td class="memItemLeft" >union {</td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#a69efeafb8cb87ea2a6feed61e877869a">i</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;void *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#a27a7eaab2fd6a79638f134576847f446">p</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;char *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#aa9221aa6dd0a193b1760e4ecfc7376a7">z</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="sqlite3_8c.html#a2a0f0f4ae7001eb54351f77ea1cdbcfd">i64</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#aca64f9003a7490b02e08d790a7680fc3">pI64</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;double *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#a627ba5846cb35734a01493acd010a9a0">pReal</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structFuncDef.html">FuncDef</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#a041e9019dd14f775e7dc639e35127d39">pFunc</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeFunc.html">VdbeFunc</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#a4091014dd0f37dfb31fb6e75f42f06ec">pVdbeFunc</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structCollSeq.html">CollSeq</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#aaf1833fde93e43f42bac11511a0e9910">pColl</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structMem.html">Mem</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#ae4fe6fe3da8afb8d946df3676d766bb7">pMem</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structVTable.html">VTable</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#a4582906f096cea569015aee8b4b8423f">pVtab</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structKeyInfo.html">KeyInfo</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#a531b315fc943dd3990adb10e687ba737">pKeyInfo</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;int *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#ad04f10290bdb4d5f6378df4b5b4022d5">ai</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structSubProgram.html">SubProgram</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structVdbeOp.html#a1b6ce4c666583dc4136c6747b0c9679c">pProgram</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVdbeOp.html#ad12005effc92477a2fb99b0cadb3b5e0">p4</a></td></tr>
+</table>
+<hr/><h2>Campos</h2>
+<a class="anchor" id="ad04f10290bdb4d5f6378df4b5b4022d5"></a><!-- doxytag: member="VdbeOp::ai" ref="ad04f10290bdb4d5f6378df4b5b4022d5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* <a class="el" href="structVdbeOp.html#ad04f10290bdb4d5f6378df4b5b4022d5">VdbeOp::ai</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a69efeafb8cb87ea2a6feed61e877869a"></a><!-- doxytag: member="VdbeOp::i" ref="a69efeafb8cb87ea2a6feed61e877869a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structVdbeOp.html#a69efeafb8cb87ea2a6feed61e877869a">VdbeOp::i</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae12a8e7a8f5f7ba39fa379c9ad287837"></a><!-- doxytag: member="VdbeOp::opcode" ref="ae12a8e7a8f5f7ba39fa379c9ad287837" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structVdbeOp.html#ae12a8e7a8f5f7ba39fa379c9ad287837">VdbeOp::opcode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a169a7bbe99a90c26ee01833723750b1d"></a><!-- doxytag: member="VdbeOp::opflags" ref="a169a7bbe99a90c26ee01833723750b1d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structVdbeOp.html#a169a7bbe99a90c26ee01833723750b1d">VdbeOp::opflags</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a27a7eaab2fd6a79638f134576847f446"></a><!-- doxytag: member="VdbeOp::p" ref="a27a7eaab2fd6a79638f134576847f446" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="structVdbeOp.html#a27a7eaab2fd6a79638f134576847f446">VdbeOp::p</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a17c8326a1e3ac5612d4aaaa88f383b3b"></a><!-- doxytag: member="VdbeOp::p1" ref="a17c8326a1e3ac5612d4aaaa88f383b3b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structVdbeOp.html#a17c8326a1e3ac5612d4aaaa88f383b3b">VdbeOp::p1</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aba021fa9d30343c16794d9b76d8bffcd"></a><!-- doxytag: member="VdbeOp::p2" ref="aba021fa9d30343c16794d9b76d8bffcd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structVdbeOp.html#aba021fa9d30343c16794d9b76d8bffcd">VdbeOp::p2</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad7ef3319da20d5423b8cc5da6995d193"></a><!-- doxytag: member="VdbeOp::p3" ref="ad7ef3319da20d5423b8cc5da6995d193" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structVdbeOp.html#ad7ef3319da20d5423b8cc5da6995d193">VdbeOp::p3</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad12005effc92477a2fb99b0cadb3b5e0"></a><!-- doxytag: member="VdbeOp::p4" ref="ad12005effc92477a2fb99b0cadb3b5e0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... }   <a class="el" href="structVdbeOp.html#ad12005effc92477a2fb99b0cadb3b5e0">VdbeOp::p4</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a124dee58d3e0d73c7dfaf811a3311023"></a><!-- doxytag: member="VdbeOp::p4type" ref="a124dee58d3e0d73c7dfaf811a3311023" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">signed char <a class="el" href="structVdbeOp.html#a124dee58d3e0d73c7dfaf811a3311023">VdbeOp::p4type</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5e807981f52d29c06a5b6d4a8f2f4595"></a><!-- doxytag: member="VdbeOp::p5" ref="a5e807981f52d29c06a5b6d4a8f2f4595" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structVdbeOp.html#a5e807981f52d29c06a5b6d4a8f2f4595">VdbeOp::p5</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaf1833fde93e43f42bac11511a0e9910"></a><!-- doxytag: member="VdbeOp::pColl" ref="aaf1833fde93e43f42bac11511a0e9910" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCollSeq.html">CollSeq</a>* <a class="el" href="structVdbeOp.html#aaf1833fde93e43f42bac11511a0e9910">VdbeOp::pColl</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a041e9019dd14f775e7dc639e35127d39"></a><!-- doxytag: member="VdbeOp::pFunc" ref="a041e9019dd14f775e7dc639e35127d39" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFuncDef.html">FuncDef</a>* <a class="el" href="structVdbeOp.html#a041e9019dd14f775e7dc639e35127d39">VdbeOp::pFunc</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aca64f9003a7490b02e08d790a7680fc3"></a><!-- doxytag: member="VdbeOp::pI64" ref="aca64f9003a7490b02e08d790a7680fc3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a2a0f0f4ae7001eb54351f77ea1cdbcfd">i64</a>* <a class="el" href="structVdbeOp.html#aca64f9003a7490b02e08d790a7680fc3">VdbeOp::pI64</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a531b315fc943dd3990adb10e687ba737"></a><!-- doxytag: member="VdbeOp::pKeyInfo" ref="a531b315fc943dd3990adb10e687ba737" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structKeyInfo.html">KeyInfo</a>* <a class="el" href="structVdbeOp.html#a531b315fc943dd3990adb10e687ba737">VdbeOp::pKeyInfo</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae4fe6fe3da8afb8d946df3676d766bb7"></a><!-- doxytag: member="VdbeOp::pMem" ref="ae4fe6fe3da8afb8d946df3676d766bb7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMem.html">Mem</a>* <a class="el" href="structVdbeOp.html#ae4fe6fe3da8afb8d946df3676d766bb7">VdbeOp::pMem</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1b6ce4c666583dc4136c6747b0c9679c"></a><!-- doxytag: member="VdbeOp::pProgram" ref="a1b6ce4c666583dc4136c6747b0c9679c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSubProgram.html">SubProgram</a>* <a class="el" href="structVdbeOp.html#a1b6ce4c666583dc4136c6747b0c9679c">VdbeOp::pProgram</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a627ba5846cb35734a01493acd010a9a0"></a><!-- doxytag: member="VdbeOp::pReal" ref="a627ba5846cb35734a01493acd010a9a0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* <a class="el" href="structVdbeOp.html#a627ba5846cb35734a01493acd010a9a0">VdbeOp::pReal</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4091014dd0f37dfb31fb6e75f42f06ec"></a><!-- doxytag: member="VdbeOp::pVdbeFunc" ref="a4091014dd0f37dfb31fb6e75f42f06ec" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVdbeFunc.html">VdbeFunc</a>* <a class="el" href="structVdbeOp.html#a4091014dd0f37dfb31fb6e75f42f06ec">VdbeOp::pVdbeFunc</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4582906f096cea569015aee8b4b8423f"></a><!-- doxytag: member="VdbeOp::pVtab" ref="a4582906f096cea569015aee8b4b8423f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structVTable.html">VTable</a>* <a class="el" href="structVdbeOp.html#a4582906f096cea569015aee8b4b8423f">VdbeOp::pVtab</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa9221aa6dd0a193b1760e4ecfc7376a7"></a><!-- doxytag: member="VdbeOp::z" ref="aa9221aa6dd0a193b1760e4ecfc7376a7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="structVdbeOp.html#aa9221aa6dd0a193b1760e4ecfc7376a7">VdbeOp::z</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte arquivo:<ul>
+<li><a class="el" href="sqlite3_8c.html">sqlite3.c</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Tue Aug 24 18:13:45 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

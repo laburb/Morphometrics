@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência da Estrutura Wal</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="functions.html"><span>Campos&nbsp;de&nbsp;Dados</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Estrutura Wal</h1><!-- doxytag: class="Wal" --><table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Campos de Dados</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlite3__vfs.html">sqlite3_vfs</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#a5431b060acbc998a7e3710587abaa11e">pVfs</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlite3__file.html">sqlite3_file</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#a3a4d051c55228e554b36691c5095ed14">pDbFd</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlite3__file.html">sqlite3_file</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#aea2a72ead42cfe57e3a6809e80884397">pWalFd</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a03ad5adfaeb9b7640dde78a0cc390319">u32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#aae230a2317817739a5f08ebb28b644b0">iCallback</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#ae3e69420adab92acd90dd7c03d37815f">nWiData</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="sqlite3_8c.html#a03ad5adfaeb9b7640dde78a0cc390319">u32</a> **&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#a2b0078e3adfd1fb21794561bb12bbfac">apWiData</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a20f2299e322dcbde37cb07b16910b843">u16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#a3faedc93387990c8924fa3f2f17919bb">szPage</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a7b32340f65cd15f029caad258fb3355c">i16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#a260550c859ac7224fbdad0586dca664a">readLock</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#ada255c96ca65d9d8955bbf139af4e6f4">exclusiveMode</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#ad7f4ba84f07115b7ce3a6133479c9d24">writeLock</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#a29153bfb37a9a32f1171e5c1d10994d2">ckptLock</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#a38f0810e34bdc89acdf27574473c0495">readOnly</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWalIndexHdr.html">WalIndexHdr</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#adbeef9e632541fbf07c926652b165906">hdr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#ac54961758701702d67eaf3ce15c69ea5">zWalName</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a03ad5adfaeb9b7640dde78a0cc390319">u32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWal.html#a8fbe9b014342db76d8167b518b70acad">nCkpt</a></td></tr>
+</table>
+<hr/><h2>Campos</h2>
+<a class="anchor" id="a2b0078e3adfd1fb21794561bb12bbfac"></a><!-- doxytag: member="Wal::apWiData" ref="a2b0078e3adfd1fb21794561bb12bbfac" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="sqlite3_8c.html#a03ad5adfaeb9b7640dde78a0cc390319">u32</a>** <a class="el" href="structWal.html#a2b0078e3adfd1fb21794561bb12bbfac">Wal::apWiData</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29153bfb37a9a32f1171e5c1d10994d2"></a><!-- doxytag: member="Wal::ckptLock" ref="a29153bfb37a9a32f1171e5c1d10994d2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structWal.html#a29153bfb37a9a32f1171e5c1d10994d2">Wal::ckptLock</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ada255c96ca65d9d8955bbf139af4e6f4"></a><!-- doxytag: member="Wal::exclusiveMode" ref="ada255c96ca65d9d8955bbf139af4e6f4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structWal.html#ada255c96ca65d9d8955bbf139af4e6f4">Wal::exclusiveMode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adbeef9e632541fbf07c926652b165906"></a><!-- doxytag: member="Wal::hdr" ref="adbeef9e632541fbf07c926652b165906" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structWalIndexHdr.html">WalIndexHdr</a> <a class="el" href="structWal.html#adbeef9e632541fbf07c926652b165906">Wal::hdr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aae230a2317817739a5f08ebb28b644b0"></a><!-- doxytag: member="Wal::iCallback" ref="aae230a2317817739a5f08ebb28b644b0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a03ad5adfaeb9b7640dde78a0cc390319">u32</a> <a class="el" href="structWal.html#aae230a2317817739a5f08ebb28b644b0">Wal::iCallback</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8fbe9b014342db76d8167b518b70acad"></a><!-- doxytag: member="Wal::nCkpt" ref="a8fbe9b014342db76d8167b518b70acad" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a03ad5adfaeb9b7640dde78a0cc390319">u32</a> <a class="el" href="structWal.html#a8fbe9b014342db76d8167b518b70acad">Wal::nCkpt</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae3e69420adab92acd90dd7c03d37815f"></a><!-- doxytag: member="Wal::nWiData" ref="ae3e69420adab92acd90dd7c03d37815f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structWal.html#ae3e69420adab92acd90dd7c03d37815f">Wal::nWiData</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3a4d051c55228e554b36691c5095ed14"></a><!-- doxytag: member="Wal::pDbFd" ref="a3a4d051c55228e554b36691c5095ed14" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsqlite3__file.html">sqlite3_file</a>* <a class="el" href="structWal.html#a3a4d051c55228e554b36691c5095ed14">Wal::pDbFd</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5431b060acbc998a7e3710587abaa11e"></a><!-- doxytag: member="Wal::pVfs" ref="a5431b060acbc998a7e3710587abaa11e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsqlite3__vfs.html">sqlite3_vfs</a>* <a class="el" href="structWal.html#a5431b060acbc998a7e3710587abaa11e">Wal::pVfs</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea2a72ead42cfe57e3a6809e80884397"></a><!-- doxytag: member="Wal::pWalFd" ref="aea2a72ead42cfe57e3a6809e80884397" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsqlite3__file.html">sqlite3_file</a>* <a class="el" href="structWal.html#aea2a72ead42cfe57e3a6809e80884397">Wal::pWalFd</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a260550c859ac7224fbdad0586dca664a"></a><!-- doxytag: member="Wal::readLock" ref="a260550c859ac7224fbdad0586dca664a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a7b32340f65cd15f029caad258fb3355c">i16</a> <a class="el" href="structWal.html#a260550c859ac7224fbdad0586dca664a">Wal::readLock</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a38f0810e34bdc89acdf27574473c0495"></a><!-- doxytag: member="Wal::readOnly" ref="a38f0810e34bdc89acdf27574473c0495" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structWal.html#a38f0810e34bdc89acdf27574473c0495">Wal::readOnly</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3faedc93387990c8924fa3f2f17919bb"></a><!-- doxytag: member="Wal::szPage" ref="a3faedc93387990c8924fa3f2f17919bb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a20f2299e322dcbde37cb07b16910b843">u16</a> <a class="el" href="structWal.html#a3faedc93387990c8924fa3f2f17919bb">Wal::szPage</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad7f4ba84f07115b7ce3a6133479c9d24"></a><!-- doxytag: member="Wal::writeLock" ref="ad7f4ba84f07115b7ce3a6133479c9d24" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structWal.html#ad7f4ba84f07115b7ce3a6133479c9d24">Wal::writeLock</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac54961758701702d67eaf3ce15c69ea5"></a><!-- doxytag: member="Wal::zWalName" ref="ac54961758701702d67eaf3ce15c69ea5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="structWal.html#ac54961758701702d67eaf3ce15c69ea5">Wal::zWalName</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte arquivo:<ul>
+<li><a class="el" href="sqlite3_8c.html">sqlite3.c</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Tue Aug 24 18:13:45 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

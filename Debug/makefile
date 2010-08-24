@@ -11,6 +11,7 @@ RM := rm -rf
 -include subdir.mk
 -include Sinais/subdir.mk
 -include Import/subdir.mk
+-include Classificacoes/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)

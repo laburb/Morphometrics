@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência da Estrutura sqlite3_mutex_methods</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="functions.html"><span>Campos&nbsp;de&nbsp;Dados</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Estrutura sqlite3_mutex_methods</h1><!-- doxytag: class="sqlite3_mutex_methods" --><table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Campos de Dados</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__mutex__methods.html#af0a78d79b6029444d4a2ac7c474030d4">xMutexInit</a> )(void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__mutex__methods.html#a4963efb4bfede244d4d2a14510dbfe68">xMutexEnd</a> )(void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__mutex__methods.html#a6c99ad4448a6c269f80074e6645eb4a6">xMutexAlloc</a> )(int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__mutex__methods.html#a4e58d446a7225ce91073eb0af91d219a">xMutexFree</a> )(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__mutex__methods.html#ac60f7bb165e9770949a8a2b2c2632830">xMutexEnter</a> )(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__mutex__methods.html#a45682df41bdfcb267a696090c80ebd06">xMutexTry</a> )(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__mutex__methods.html#acfa193f9130bfc68caf7f1849bcd0dac">xMutexLeave</a> )(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__mutex__methods.html#a5d30a95c614bc08fe156c9ea0f0d88e8">xMutexHeld</a> )(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__mutex__methods.html#a7bc1edfd01c67c6dcee26299bc31a7bf">xMutexNotheld</a> )(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td></tr>
+</table>
+<hr/><h2>Campos</h2>
+<a class="anchor" id="a6c99ad4448a6c269f80074e6645eb4a6"></a><!-- doxytag: member="sqlite3_mutex_methods::xMutexAlloc" ref="a6c99ad4448a6c269f80074e6645eb4a6" args=")(int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a>*(* <a class="el" href="structsqlite3__mutex__methods.html#a6c99ad4448a6c269f80074e6645eb4a6">sqlite3_mutex_methods::xMutexAlloc</a>)(int)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4963efb4bfede244d4d2a14510dbfe68"></a><!-- doxytag: member="sqlite3_mutex_methods::xMutexEnd" ref="a4963efb4bfede244d4d2a14510dbfe68" args=")(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__mutex__methods.html#a4963efb4bfede244d4d2a14510dbfe68">sqlite3_mutex_methods::xMutexEnd</a>)(void)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac60f7bb165e9770949a8a2b2c2632830"></a><!-- doxytag: member="sqlite3_mutex_methods::xMutexEnter" ref="ac60f7bb165e9770949a8a2b2c2632830" args=")(sqlite3_mutex *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* <a class="el" href="structsqlite3__mutex__methods.html#ac60f7bb165e9770949a8a2b2c2632830">sqlite3_mutex_methods::xMutexEnter</a>)(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4e58d446a7225ce91073eb0af91d219a"></a><!-- doxytag: member="sqlite3_mutex_methods::xMutexFree" ref="a4e58d446a7225ce91073eb0af91d219a" args=")(sqlite3_mutex *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* <a class="el" href="structsqlite3__mutex__methods.html#a4e58d446a7225ce91073eb0af91d219a">sqlite3_mutex_methods::xMutexFree</a>)(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5d30a95c614bc08fe156c9ea0f0d88e8"></a><!-- doxytag: member="sqlite3_mutex_methods::xMutexHeld" ref="a5d30a95c614bc08fe156c9ea0f0d88e8" args=")(sqlite3_mutex *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__mutex__methods.html#a5d30a95c614bc08fe156c9ea0f0d88e8">sqlite3_mutex_methods::xMutexHeld</a>)(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af0a78d79b6029444d4a2ac7c474030d4"></a><!-- doxytag: member="sqlite3_mutex_methods::xMutexInit" ref="af0a78d79b6029444d4a2ac7c474030d4" args=")(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__mutex__methods.html#af0a78d79b6029444d4a2ac7c474030d4">sqlite3_mutex_methods::xMutexInit</a>)(void)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acfa193f9130bfc68caf7f1849bcd0dac"></a><!-- doxytag: member="sqlite3_mutex_methods::xMutexLeave" ref="acfa193f9130bfc68caf7f1849bcd0dac" args=")(sqlite3_mutex *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* <a class="el" href="structsqlite3__mutex__methods.html#acfa193f9130bfc68caf7f1849bcd0dac">sqlite3_mutex_methods::xMutexLeave</a>)(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7bc1edfd01c67c6dcee26299bc31a7bf"></a><!-- doxytag: member="sqlite3_mutex_methods::xMutexNotheld" ref="a7bc1edfd01c67c6dcee26299bc31a7bf" args=")(sqlite3_mutex *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__mutex__methods.html#a7bc1edfd01c67c6dcee26299bc31a7bf">sqlite3_mutex_methods::xMutexNotheld</a>)(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a45682df41bdfcb267a696090c80ebd06"></a><!-- doxytag: member="sqlite3_mutex_methods::xMutexTry" ref="a45682df41bdfcb267a696090c80ebd06" args=")(sqlite3_mutex *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__mutex__methods.html#a45682df41bdfcb267a696090c80ebd06">sqlite3_mutex_methods::xMutexTry</a>)(<a class="el" href="structsqlite3__mutex.html">sqlite3_mutex</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte arquivo:<ul>
+<li><a class="el" href="sqlite3_8c.html">sqlite3.c</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Tue Aug 24 18:13:45 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

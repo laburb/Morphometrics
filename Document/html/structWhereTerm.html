@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência da Estrutura WhereTerm</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="functions.html"><span>Campos&nbsp;de&nbsp;Dados</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Estrutura WhereTerm</h1><!-- doxytag: class="WhereTerm" --><table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Campos de Dados</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structExpr.html">Expr</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#af5ec32fe3a2e4623c900cb91aa86bc9d">pExpr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#aa45e0b271713e429fbeba433941d2e22">iParent</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#a82bb97ef4285d75b1b9c4fcd2025aaf7">leftCursor</a></td></tr>
+<tr><td class="memItemLeft" >union {</td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;<a class="el" href="structWhereTerm.html#a1f6e520bd34633ebb6001cd0c39eef21">leftColumn</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structWhereOrInfo.html">WhereOrInfo</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structWhereTerm.html#a5f26d197224ff20bc8db4350e6e30c3f">pOrInfo</a></td></tr>
+<tr><td class="memItemLeft" >&nbsp;&nbsp;&nbsp;<a class="el" href="structWhereAndInfo.html">WhereAndInfo</a> *&nbsp;&nbsp;&nbsp;<a class="el" href="structWhereTerm.html#a1c2e013c4628164636e36db73f429dea">pAndInfo</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#ac13387492a5af5cbab6327c636d92b23">u</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a20f2299e322dcbde37cb07b16910b843">u16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#af0b4817bee491fa1ee69a87d8ff580c5">eOperator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#a5a3ba67885262f1bb9169dcaff0f91b1">wtFlags</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#af83cf7bae7760b9b1ca398338a35c32a">nChild</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWhereClause.html">WhereClause</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#a1fb0a9ede5a12d6d2f7886431b348fb3">pWC</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#afa77b629897c4457bfdc47d364ba5c3f">Bitmask</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#a1274011fa1ef0639284b7944f4570e67">prereqRight</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="sqlite3_8c.html#afa77b629897c4457bfdc47d364ba5c3f">Bitmask</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWhereTerm.html#a49b700336b005067352366cfc40de07f">prereqAll</a></td></tr>
+</table>
+<hr/><h2>Campos</h2>
+<a class="anchor" id="af0b4817bee491fa1ee69a87d8ff580c5"></a><!-- doxytag: member="WhereTerm::eOperator" ref="af0b4817bee491fa1ee69a87d8ff580c5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a20f2299e322dcbde37cb07b16910b843">u16</a> <a class="el" href="structWhereTerm.html#af0b4817bee491fa1ee69a87d8ff580c5">WhereTerm::eOperator</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa45e0b271713e429fbeba433941d2e22"></a><!-- doxytag: member="WhereTerm::iParent" ref="aa45e0b271713e429fbeba433941d2e22" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structWhereTerm.html#aa45e0b271713e429fbeba433941d2e22">WhereTerm::iParent</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1f6e520bd34633ebb6001cd0c39eef21"></a><!-- doxytag: member="WhereTerm::leftColumn" ref="a1f6e520bd34633ebb6001cd0c39eef21" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structWhereTerm.html#a1f6e520bd34633ebb6001cd0c39eef21">WhereTerm::leftColumn</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a82bb97ef4285d75b1b9c4fcd2025aaf7"></a><!-- doxytag: member="WhereTerm::leftCursor" ref="a82bb97ef4285d75b1b9c4fcd2025aaf7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structWhereTerm.html#a82bb97ef4285d75b1b9c4fcd2025aaf7">WhereTerm::leftCursor</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af83cf7bae7760b9b1ca398338a35c32a"></a><!-- doxytag: member="WhereTerm::nChild" ref="af83cf7bae7760b9b1ca398338a35c32a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structWhereTerm.html#af83cf7bae7760b9b1ca398338a35c32a">WhereTerm::nChild</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c2e013c4628164636e36db73f429dea"></a><!-- doxytag: member="WhereTerm::pAndInfo" ref="a1c2e013c4628164636e36db73f429dea" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structWhereAndInfo.html">WhereAndInfo</a>* <a class="el" href="structWhereTerm.html#a1c2e013c4628164636e36db73f429dea">WhereTerm::pAndInfo</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af5ec32fe3a2e4623c900cb91aa86bc9d"></a><!-- doxytag: member="WhereTerm::pExpr" ref="af5ec32fe3a2e4623c900cb91aa86bc9d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structExpr.html">Expr</a>* <a class="el" href="structWhereTerm.html#af5ec32fe3a2e4623c900cb91aa86bc9d">WhereTerm::pExpr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5f26d197224ff20bc8db4350e6e30c3f"></a><!-- doxytag: member="WhereTerm::pOrInfo" ref="a5f26d197224ff20bc8db4350e6e30c3f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structWhereOrInfo.html">WhereOrInfo</a>* <a class="el" href="structWhereTerm.html#a5f26d197224ff20bc8db4350e6e30c3f">WhereTerm::pOrInfo</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a49b700336b005067352366cfc40de07f"></a><!-- doxytag: member="WhereTerm::prereqAll" ref="a49b700336b005067352366cfc40de07f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#afa77b629897c4457bfdc47d364ba5c3f">Bitmask</a> <a class="el" href="structWhereTerm.html#a49b700336b005067352366cfc40de07f">WhereTerm::prereqAll</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1274011fa1ef0639284b7944f4570e67"></a><!-- doxytag: member="WhereTerm::prereqRight" ref="a1274011fa1ef0639284b7944f4570e67" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#afa77b629897c4457bfdc47d364ba5c3f">Bitmask</a> <a class="el" href="structWhereTerm.html#a1274011fa1ef0639284b7944f4570e67">WhereTerm::prereqRight</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1fb0a9ede5a12d6d2f7886431b348fb3"></a><!-- doxytag: member="WhereTerm::pWC" ref="a1fb0a9ede5a12d6d2f7886431b348fb3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structWhereClause.html">WhereClause</a>* <a class="el" href="structWhereTerm.html#a1fb0a9ede5a12d6d2f7886431b348fb3">WhereTerm::pWC</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac13387492a5af5cbab6327c636d92b23"></a><!-- doxytag: member="WhereTerm::u" ref="ac13387492a5af5cbab6327c636d92b23" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... }   <a class="el" href="structWhereTerm.html#ac13387492a5af5cbab6327c636d92b23">WhereTerm::u</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a3ba67885262f1bb9169dcaff0f91b1"></a><!-- doxytag: member="WhereTerm::wtFlags" ref="a5a3ba67885262f1bb9169dcaff0f91b1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sqlite3_8c.html#a74a0f6424ae628af25f23f0a35f6ead3">u8</a> <a class="el" href="structWhereTerm.html#a5a3ba67885262f1bb9169dcaff0f91b1">WhereTerm::wtFlags</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte arquivo:<ul>
+<li><a class="el" href="sqlite3_8c.html">sqlite3.c</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Tue Aug 24 18:13:45 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

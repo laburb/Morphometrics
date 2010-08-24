@@ -27,8 +27,6 @@ void Conexoes_verificar() {
   if (!Projeto_zeraConectividade())
     return;
 
-  GtkWidget *frameProgresso=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "frameProgresso"));
-  GtkProgressBar *progress=GTK_PROGRESS_BAR(gtk_builder_get_object(builderPrincipal, "progressbar"));
   gtk_widget_show(frameProgresso);
 
   forList(Nodo *, nodoPerc, mapa.grafo->nodos) {

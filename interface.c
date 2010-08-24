@@ -5,6 +5,7 @@
  *      Author: bruno
  */
 
+#include <stdlib.h>
 #include <string.h>
 #include <gtk/gtk.h>
 #include <gtk/gtkgl.h>
@@ -16,6 +17,15 @@
 #define INTERFACE_CAMINHO "Interface/"
 #define INTERFACE_PRINCIPAL "principal.glade"
 
+struct resultaInter listaResult[4] = {
+    { "conectividade", "Conectividade", "Conexoes", "valor",  { TRUE, TRUE , FALSE, FALSE, FALSE }},
+    { "acess_geo", "Acessibilidade Geometrica", "", "absoluta",  { TRUE, FALSE, TRUE , TRUE , TRUE  }},
+    { "acess_topo", "Acessibilidade Topologica", "", "absoluta", { TRUE, FALSE, TRUE , TRUE , TRUE  }},
+    {""}
+};
+
+static char *colunasResult[] = {"valor", "absoluta", "relativa", "razao", ""};
+
 /**
  *  Inicia o gtk e gtkextgl.
  *
@@ -24,7 +34,6 @@
  */
 
 void Interface_iniciar() {
-  GtkWidget *drawOpengl;
   GtkWidget *window;
   GdkGLConfig *glconfig;
 
@@ -32,9 +41,20 @@ void Interface_iniciar() {
   gtk_gl_init(NULL, NULL);
 
 
-  builderPrincipal=Interface_carregarXML(INTERFACE_PRINCIPAL);
+  GtkBuilder *builderPrincipal=Interface_carregarXML(INTERFACE_PRINCIPAL);
   window = GTK_WIDGET(gtk_builder_get_object (builderPrincipal, "window"));
   drawOpengl=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "drawOpengl"));
+  frameProgresso=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "frameProgresso"));
+  progress=GTK_PROGRESS_BAR(gtk_builder_get_object(builderPrincipal, "progressbar"));
+  labelPosicaoXY=GTK_LABEL(gtk_builder_get_object(builderPrincipal, "labelPosicaoXY"));
+  ajustScrollHorizGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollHorizGL"));
+  ajustScrollVertGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollVertGL"));
+  tbAddEntidade=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAddEntidade"));
+  tbAddImagem=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAddImagem"));
+  tbAddTexto=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAddTexto"));
+  tbAmpliar=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAmpliar"));
+  tbReduzir=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbReduzir"));
+  frameFerramentas=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "frameFerramentas"));
 
   /*gtk_adjustment_set_value(GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollHorizGL")),500);
   gtk_adjustment_set_value(GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollVertGL")),500);*/
@@ -61,6 +81,8 @@ void Interface_iniciar() {
 
   gtk_builder_connect_signals(builderPrincipal, NULL);
   gtk_widget_show(window);
+
+  g_object_unref(G_OBJECT(builderPrincipal));
 }
 
 /**
@@ -69,7 +91,7 @@ void Interface_iniciar() {
  */
 
 void Interface_finalizar() {
-  g_object_unref(G_OBJECT(builderPrincipal));
+
 }
 
 /**
@@ -121,8 +143,6 @@ void Interface_carregaCursor() {
  */
 
 void Interface_mudarMouse(GdkCursorType tipoMouse) {
-  GtkWidget *drawOpengl=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "drawOpengl"));
-
   GdkCursor *cur=gdk_cursor_new(tipoMouse);
   gdk_window_set_cursor(drawOpengl->window, cur );
   gdk_cursor_unref(cur);
@@ -133,72 +153,146 @@ void Interface_mudarMouse(GdkCursorType tipoMouse) {
  */
 
 void Interface_atualizaOpengl() {
-  GtkWidget *drawOpengl=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "drawOpengl"));
-
   Opengl_configTela(drawOpengl->allocation.width, drawOpengl->allocation.height);
 
   gdk_window_invalidate_rect (drawOpengl->window, &drawOpengl->allocation, FALSE);
   gdk_window_process_updates (drawOpengl->window, FALSE);
 }
 
+int getIndex(char *nome) {
+  int i;
+
+  for (i=0; colunasResult[i][0] ;i++)
+    if (!strcmp(nome,colunasResult[i]))
+      return i+1;
+
+  return -1;
+}
+
+static int preencheResultados(void *x, int qtdCol, char **conteudo, char **nomeCol) {
+  int i;
+  GtkTreeIter iter;
+  GtkListStore *listaStore=(GtkListStore *) x;
+
+  gtk_list_store_append(listaStore, &iter);
+
+  gtk_list_store_set(listaStore, &iter, 0, atoi(conteudo[0]), -1);
+
+  for (i=1; i<qtdCol ;i++)
+    gtk_list_store_set(listaStore, &iter, getIndex(nomeCol[i]), atof(conteudo[i]), -1);
+
+  return 0;
+}
+
+static void addItemCombo(GtkListStore *listaCombo, char *nome, int id) {
+  GtkTreeIter iter;
+
+  gtk_list_store_append(listaCombo, &iter);
+
+  gtk_list_store_set(listaCombo, &iter,
+                     0, nome,
+                     1, id,
+                    -1);
+}
+
+void on_combobox_changed(GtkComboBox *combo_box, gpointer user_data) {
+  GtkTreeView *treeview=GTK_TREE_VIEW(user_data);
+  GtkTreeModel *model = gtk_combo_box_get_model(combo_box);
+  GtkListStore *listaStore=GTK_LIST_STORE(gtk_tree_view_get_model(treeview));
+  GtkTreeViewColumn *colTmp;
+  GtkTreeIter iter;
+
+  gint val = 0;
+  int i;
+
+  if (!gtk_combo_box_get_active_iter (combo_box, &iter))
+    return;
+
+  gtk_tree_model_get(model, &iter, 1, &val, -1);
+
+  gtk_list_store_clear(listaStore);
+
+  if (val == -1)
+    return;
+
+  if (listaResult[val].colResult[0]) {
+    GtkTreeViewColumn *colTmp=gtk_tree_view_get_column(treeview, 1);
+
+    gtk_tree_view_column_set_title(colTmp, listaResult[val].colResult);
+  }
+
+  for (i=0; i<5 ;i++) {
+    colTmp=gtk_tree_view_get_column(treeview, i);
+    gtk_tree_view_column_set_visible(colTmp, listaResult[val].colunasViziveis[i]);
+  }
+
+  Projeto_lista(preencheResultados, listaStore, listaResult[val].tabela, listaResult[val].colPrincipal, 1);
+}
+
+
+gint sort_iter_compare_func (GtkTreeModel *model,
+                        GtkTreeIter  *a,
+                        GtkTreeIter  *b,
+                        gpointer      userdata) {
+
+  gint sortcol = GPOINTER_TO_INT(userdata);
+
+  if (sortcol == 0) {
+    gint numero, numero2;
+
+    gtk_tree_model_get(model, a, sortcol, &numero, -1);
+    gtk_tree_model_get(model, b, sortcol, &numero2, -1);
+
+    if (numero != numero2)
+      return (numero>numero2)?1:-1;
+  }
+  else {
+    gfloat numero, numero2;
+
+    gtk_tree_model_get(model, a, sortcol, &numero, -1);
+    gtk_tree_model_get(model, b, sortcol, &numero2, -1);
+
+    if (numero != numero2)
+      return (numero>numero2)?1:-1;
+  }
+
+  return 0;
+}
 
 
 void Interface_resultados() {
+  int i;
   GtkBuilder *buildResult=Interface_carregarXML("resultados.glade");
   GtkWidget *window = GTK_WIDGET(gtk_builder_get_object (buildResult, "window"));
-  GtkComboBox *combo = GTK_COMBO_BOX(gtk_builder_get_object (buildResult, "combobox"));
+  comboResultados = GTK_COMBO_BOX(gtk_builder_get_object (buildResult, "combobox"));
   GtkListStore *listaCombo = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_INT);
-  GtkTreeIter iter;
+  GtkTreeView *treeview = GTK_TREE_VIEW(gtk_builder_get_object (buildResult, "treeview"));
+  GtkTreeSortable *treeOrdenar = GTK_TREE_SORTABLE(gtk_builder_get_object(buildResult, "liststore"));
 
-  gtk_builder_connect_signals(builderPrincipal, NULL);
+  gtk_tree_sortable_set_sort_func(treeOrdenar, 0, sort_iter_compare_func, GINT_TO_POINTER(0), NULL);
+  gtk_tree_sortable_set_sort_func(treeOrdenar, 1, sort_iter_compare_func, GINT_TO_POINTER(1), NULL);
+  gtk_tree_sortable_set_sort_func(treeOrdenar, 2, sort_iter_compare_func, GINT_TO_POINTER(2), NULL);
+  gtk_tree_sortable_set_sort_func(treeOrdenar, 3, sort_iter_compare_func, GINT_TO_POINTER(3), NULL);
+  gtk_tree_sortable_set_sort_func(treeOrdenar, 4, sort_iter_compare_func, GINT_TO_POINTER(4), NULL);
+
+  addItemCombo(listaCombo, "Selecione", -1);
+
+  //Monta combo
+  for (i=0; listaResult[i].tabela[0] ;i++) {
+    if (Projeto_verificarExisteTabela(listaResult[i].tabela))
+      addItemCombo(listaCombo, listaResult[i].nome, i);
+  }
+
+  gtk_combo_box_set_model(comboResultados, GTK_TREE_MODEL(listaCombo));
+  GtkCellRenderer *cell_renderer = gtk_cell_renderer_text_new ();
+  gtk_cell_layout_pack_start (GTK_CELL_LAYOUT(comboResultados), cell_renderer, TRUE);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT(comboResultados), cell_renderer, "text", 0, NULL);
+  gtk_combo_box_set_active(comboResultados,0);
+
+  g_signal_connect (comboResultados, "changed", G_CALLBACK (on_combobox_changed), treeview);
+
+  gtk_builder_connect_signals(buildResult, NULL);
   gtk_widget_show(window);
 
-  gtk_list_store_append (listaCombo, &iter);
-
-  if (Projeto_verificarExisteTabela("conectividade")) {
-    gtk_list_store_set (listaCombo, &iter,
-                        0, "Conectividade",
-                        1, 1,
-                        -1);
-    gtk_list_store_append (listaCombo, &iter);
-  }
-
-  if (Projeto_verificarExisteTabela("acess_geo")) {
-    gtk_list_store_set (listaCombo, &iter,
-                        0, "Acessibilidade Geometrica",
-                        1, 2,
-                        -1);
-    gtk_list_store_append (listaCombo, &iter);
-  }
-
-  if (Projeto_verificarExisteTabela("acess_topo")) {
-    gtk_list_store_set (listaCombo, &iter,
-                        0, "Acessibilidade Topologica",
-                        1, 3,
-                        -1);
-    gtk_list_store_append (listaCombo, &iter);
-  }
-
-
-  gtk_combo_box_set_model(combo, GTK_TREE_MODEL(listaCombo));
-  GtkCellRenderer *cell_renderer = gtk_cell_renderer_text_new ();
-  gtk_cell_layout_pack_start (GTK_CELL_LAYOUT(combo), cell_renderer, TRUE);
-  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT(combo), cell_renderer, "text", 0, NULL);
-  gtk_combo_box_set_active_iter (GTK_COMBO_BOX(combo), &iter);
-
-
-  /*if (Projeto_verificarExisteTabela("conectividade")) {
-    gtk_combo_box_append_text(combo, "Conectividade");
-  }*/
-  /*gtk_combo_box_append_text(combo, "Conectividade");
-  gtk_combo_box_append_text(combo, "Conectividade2");
-  gtk_combo_box_append_text(combo, "sdfsdfsd");*/
-/*
-  if (Projeto_verificarExisteTabela("acess_geo"))
-      gtk_combo_box_append_text(combo, "Acessibilidade Geometrica");
-
-  if (Projeto_verificarExisteTabela("acess_topo"))
-        gtk_combo_box_append_text(combo, "Acessibilidade Topologica");
-*/
   g_object_unref(G_OBJECT(buildResult));
 }

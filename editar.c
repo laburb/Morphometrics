@@ -89,20 +89,21 @@ static void Editar_moverMapa(double deslocX, double deslocY) {
 /**
  * Função chamada quando o mouse é movido.
  *
+ * @param x Posição x
+ * @param y Posição y
  * @param mouseX Posição x do mouse no mapa
  * @param mouseY Posição y do mouse no mapa
  *
  */
 
-void Editar_mouseMove(double mouseX, double mouseY) {
+void Editar_mouseMove(int x, int y, double mouseX, double mouseY) {
   if (mapaClickAdd) {
     if (ferramentaAtiva == FERRAMENTA_NAVEGAR) {
       if (mouseClickAnt.x != -999) {
         Editar_moverMapa(mouseX-mouseClickAnt.x,mouseY-mouseClickAnt.y);
         Interface_atualizaOpengl();
 
-        mouseClickAnt.x=-999;
-        return;
+        Mapa_mousePosicao(drawOpengl, x, y, &mouseX, &mouseY);
       }
     }
     else if (ferramentaAtiva == FERRAMENTA_ADD_ENTIDADE) {

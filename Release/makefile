@@ -9,6 +9,8 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
+-include Sinais/subdir.mk
+-include Import/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -28,7 +30,7 @@ all: Morphometrics
 Morphometrics: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
-	gcc `pkg-config --libs gtkglext-1.0` -o"Morphometrics" $(OBJS) $(USER_OBJS) $(LIBS)
+	gcc  -o"Morphometrics" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

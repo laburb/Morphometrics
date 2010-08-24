@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../acessibilidade.c \
+../classificacao.c \
 ../conexoes.c \
 ../conjdis.c \
 ../dijkstra.c \
@@ -22,10 +23,12 @@ C_SRCS += \
 ../ponto.c \
 ../projeto.c \
 ../selecionarArquivo.c \
+../sqlite3.c \
 ../util.c 
 
 OBJS += \
 ./acessibilidade.o \
+./classificacao.o \
 ./conexoes.o \
 ./conjdis.o \
 ./dijkstra.o \
@@ -43,10 +46,12 @@ OBJS += \
 ./ponto.o \
 ./projeto.o \
 ./selecionarArquivo.o \
+./sqlite3.o \
 ./util.o 
 
 C_DEPS += \
 ./acessibilidade.d \
+./classificacao.d \
 ./conexoes.d \
 ./conjdis.d \
 ./dijkstra.d \
@@ -64,6 +69,7 @@ C_DEPS += \
 ./ponto.d \
 ./projeto.d \
 ./selecionarArquivo.d \
+./sqlite3.d \
 ./util.d 
 
 

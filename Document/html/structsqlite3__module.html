@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Morphometrics: Referência da Estrutura sqlite3_module</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Gerado por Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Página&nbsp;Principal</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="files.html"><span>Arquivos</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Estruturas&nbsp;de&nbsp;Dados</span></a></li>
+      <li><a href="functions.html"><span>Campos&nbsp;de&nbsp;Dados</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Referência da Estrutura sqlite3_module</h1><!-- doxytag: class="sqlite3_module" --><table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Campos de Dados</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a42b11d080dc205aea43581b18f925afe">iVersion</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a95e327c9d32abd731013395d9e12b8f9">xCreate</a> )(<a class="el" href="structsqlite3.html">sqlite3</a> *, void *pAux, int argc, const char *const *argv, <a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> **ppVTab, char **)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#acdd9ccc4a6acff230b2d579172ae32d0">xConnect</a> )(<a class="el" href="structsqlite3.html">sqlite3</a> *, void *pAux, int argc, const char *const *argv, <a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> **ppVTab, char **)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a66577e230ca8de525b30ee6f287eafb1">xBestIndex</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab, <a class="el" href="structsqlite3__index__info.html">sqlite3_index_info</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a5dbaa6ff075eaff25ccfddaedba06934">xDisconnect</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a296dae8dadd4eb1f7d0f1187650c7aa5">xDestroy</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a2cb9f8c149617189efa6ceec0a3211e9">xOpen</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab, <a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> **ppCursor)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a514c66634a5297ca9879947fa6f8f10f">xClose</a> )(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a1ddde32dcae461910096ebb2c42d1a6a">xFilter</a> )(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *, int idxNum, const char *idxStr, int argc, <a class="el" href="structMem.html">sqlite3_value</a> **argv)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#aa739d9a2081db7bf786f1f9fb9d92264">xNext</a> )(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#ae10cf7d9a7edfecf1daa34a214bf6a64">xEof</a> )(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a4c82dc60335ba40c816cdd6c4dce2950">xColumn</a> )(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *, <a class="el" href="structsqlite3__context.html">sqlite3_context</a> *, int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a1e119b28bd3ad706d1982aaa938aac79">xRowid</a> )(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *, <a class="el" href="sqlite3_8c.html#a0a4d3e6c1ad46f90e746b920ab6ca0d2">sqlite3_int64</a> *pRowid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a029d0713dbb3c847a6de773a0a179605">xUpdate</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *, int, <a class="el" href="structMem.html">sqlite3_value</a> **, <a class="el" href="sqlite3_8c.html#a0a4d3e6c1ad46f90e746b920ab6ca0d2">sqlite3_int64</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#af3ea97df2b110da6ceb4797222e6d86f">xBegin</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a895d78529db2e28e13d1d842512770b6">xSync</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a465df78231717713e98677c19e60cece">xCommit</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#a3f8676e941a3080557fe10528e04e2f1">xRollback</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#ae70a020a7dda960b91943e9f67695dbb">xFindFunction</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVtab, int nArg, const char *zName, void(**pxFunc)(<a class="el" href="structsqlite3__context.html">sqlite3_context</a> *, int, <a class="el" href="structMem.html">sqlite3_value</a> **), void **ppArg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int(*&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsqlite3__module.html#af886782e9a1ea5c4b131b2bc373c8092">xRename</a> )(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVtab, const char *zNew)</td></tr>
+</table>
+<hr/><h2>Campos</h2>
+<a class="anchor" id="a42b11d080dc205aea43581b18f925afe"></a><!-- doxytag: member="sqlite3_module::iVersion" ref="a42b11d080dc205aea43581b18f925afe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structsqlite3__module.html#a42b11d080dc205aea43581b18f925afe">sqlite3_module::iVersion</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af3ea97df2b110da6ceb4797222e6d86f"></a><!-- doxytag: member="sqlite3_module::xBegin" ref="af3ea97df2b110da6ceb4797222e6d86f" args=")(sqlite3_vtab *pVTab)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#af3ea97df2b110da6ceb4797222e6d86f">sqlite3_module::xBegin</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a66577e230ca8de525b30ee6f287eafb1"></a><!-- doxytag: member="sqlite3_module::xBestIndex" ref="a66577e230ca8de525b30ee6f287eafb1" args=")(sqlite3_vtab *pVTab, sqlite3_index_info *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a66577e230ca8de525b30ee6f287eafb1">sqlite3_module::xBestIndex</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab, <a class="el" href="structsqlite3__index__info.html">sqlite3_index_info</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a514c66634a5297ca9879947fa6f8f10f"></a><!-- doxytag: member="sqlite3_module::xClose" ref="a514c66634a5297ca9879947fa6f8f10f" args=")(sqlite3_vtab_cursor *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a514c66634a5297ca9879947fa6f8f10f">sqlite3_module::xClose</a>)(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4c82dc60335ba40c816cdd6c4dce2950"></a><!-- doxytag: member="sqlite3_module::xColumn" ref="a4c82dc60335ba40c816cdd6c4dce2950" args=")(sqlite3_vtab_cursor *, sqlite3_context *, int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a4c82dc60335ba40c816cdd6c4dce2950">sqlite3_module::xColumn</a>)(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *, <a class="el" href="structsqlite3__context.html">sqlite3_context</a> *, int)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a465df78231717713e98677c19e60cece"></a><!-- doxytag: member="sqlite3_module::xCommit" ref="a465df78231717713e98677c19e60cece" args=")(sqlite3_vtab *pVTab)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a465df78231717713e98677c19e60cece">sqlite3_module::xCommit</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acdd9ccc4a6acff230b2d579172ae32d0"></a><!-- doxytag: member="sqlite3_module::xConnect" ref="acdd9ccc4a6acff230b2d579172ae32d0" args=")(sqlite3 *, void *pAux, int argc, const char *const *argv, sqlite3_vtab **ppVTab, char **)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#acdd9ccc4a6acff230b2d579172ae32d0">sqlite3_module::xConnect</a>)(<a class="el" href="structsqlite3.html">sqlite3</a> *, void *pAux, int argc, const char *const *argv, <a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> **ppVTab, char **)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a95e327c9d32abd731013395d9e12b8f9"></a><!-- doxytag: member="sqlite3_module::xCreate" ref="a95e327c9d32abd731013395d9e12b8f9" args=")(sqlite3 *, void *pAux, int argc, const char *const *argv, sqlite3_vtab **ppVTab, char **)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a95e327c9d32abd731013395d9e12b8f9">sqlite3_module::xCreate</a>)(<a class="el" href="structsqlite3.html">sqlite3</a> *, void *pAux, int argc, const char *const *argv, <a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> **ppVTab, char **)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a296dae8dadd4eb1f7d0f1187650c7aa5"></a><!-- doxytag: member="sqlite3_module::xDestroy" ref="a296dae8dadd4eb1f7d0f1187650c7aa5" args=")(sqlite3_vtab *pVTab)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a296dae8dadd4eb1f7d0f1187650c7aa5">sqlite3_module::xDestroy</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5dbaa6ff075eaff25ccfddaedba06934"></a><!-- doxytag: member="sqlite3_module::xDisconnect" ref="a5dbaa6ff075eaff25ccfddaedba06934" args=")(sqlite3_vtab *pVTab)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a5dbaa6ff075eaff25ccfddaedba06934">sqlite3_module::xDisconnect</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae10cf7d9a7edfecf1daa34a214bf6a64"></a><!-- doxytag: member="sqlite3_module::xEof" ref="ae10cf7d9a7edfecf1daa34a214bf6a64" args=")(sqlite3_vtab_cursor *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#ae10cf7d9a7edfecf1daa34a214bf6a64">sqlite3_module::xEof</a>)(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1ddde32dcae461910096ebb2c42d1a6a"></a><!-- doxytag: member="sqlite3_module::xFilter" ref="a1ddde32dcae461910096ebb2c42d1a6a" args=")(sqlite3_vtab_cursor *, int idxNum, const char *idxStr, int argc, sqlite3_value **argv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a1ddde32dcae461910096ebb2c42d1a6a">sqlite3_module::xFilter</a>)(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *, int idxNum, const char *idxStr, int argc, <a class="el" href="structMem.html">sqlite3_value</a> **argv)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae70a020a7dda960b91943e9f67695dbb"></a><!-- doxytag: member="sqlite3_module::xFindFunction" ref="ae70a020a7dda960b91943e9f67695dbb" args=")(sqlite3_vtab *pVtab, int nArg, const char *zName, void(**pxFunc)(sqlite3_context *, int, sqlite3_value **), void **ppArg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#ae70a020a7dda960b91943e9f67695dbb">sqlite3_module::xFindFunction</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVtab, int nArg, const char *zName, void(**pxFunc)(<a class="el" href="structsqlite3__context.html">sqlite3_context</a> *, int, <a class="el" href="structMem.html">sqlite3_value</a> **), void **ppArg)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa739d9a2081db7bf786f1f9fb9d92264"></a><!-- doxytag: member="sqlite3_module::xNext" ref="aa739d9a2081db7bf786f1f9fb9d92264" args=")(sqlite3_vtab_cursor *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#aa739d9a2081db7bf786f1f9fb9d92264">sqlite3_module::xNext</a>)(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2cb9f8c149617189efa6ceec0a3211e9"></a><!-- doxytag: member="sqlite3_module::xOpen" ref="a2cb9f8c149617189efa6ceec0a3211e9" args=")(sqlite3_vtab *pVTab, sqlite3_vtab_cursor **ppCursor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a2cb9f8c149617189efa6ceec0a3211e9">sqlite3_module::xOpen</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab, <a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> **ppCursor)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af886782e9a1ea5c4b131b2bc373c8092"></a><!-- doxytag: member="sqlite3_module::xRename" ref="af886782e9a1ea5c4b131b2bc373c8092" args=")(sqlite3_vtab *pVtab, const char *zNew)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#af886782e9a1ea5c4b131b2bc373c8092">sqlite3_module::xRename</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVtab, const char *zNew)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3f8676e941a3080557fe10528e04e2f1"></a><!-- doxytag: member="sqlite3_module::xRollback" ref="a3f8676e941a3080557fe10528e04e2f1" args=")(sqlite3_vtab *pVTab)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a3f8676e941a3080557fe10528e04e2f1">sqlite3_module::xRollback</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1e119b28bd3ad706d1982aaa938aac79"></a><!-- doxytag: member="sqlite3_module::xRowid" ref="a1e119b28bd3ad706d1982aaa938aac79" args=")(sqlite3_vtab_cursor *, sqlite3_int64 *pRowid)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a1e119b28bd3ad706d1982aaa938aac79">sqlite3_module::xRowid</a>)(<a class="el" href="structsqlite3__vtab__cursor.html">sqlite3_vtab_cursor</a> *, <a class="el" href="sqlite3_8c.html#a0a4d3e6c1ad46f90e746b920ab6ca0d2">sqlite3_int64</a> *pRowid)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a895d78529db2e28e13d1d842512770b6"></a><!-- doxytag: member="sqlite3_module::xSync" ref="a895d78529db2e28e13d1d842512770b6" args=")(sqlite3_vtab *pVTab)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a895d78529db2e28e13d1d842512770b6">sqlite3_module::xSync</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *pVTab)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a029d0713dbb3c847a6de773a0a179605"></a><!-- doxytag: member="sqlite3_module::xUpdate" ref="a029d0713dbb3c847a6de773a0a179605" args=")(sqlite3_vtab *, int, sqlite3_value **, sqlite3_int64 *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* <a class="el" href="structsqlite3__module.html#a029d0713dbb3c847a6de773a0a179605">sqlite3_module::xUpdate</a>)(<a class="el" href="structsqlite3__vtab.html">sqlite3_vtab</a> *, int, <a class="el" href="structMem.html">sqlite3_value</a> **, <a class="el" href="sqlite3_8c.html#a0a4d3e6c1ad46f90e746b920ab6ca0d2">sqlite3_int64</a> *)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/>A documentação para esta estrutura foi gerada a partir do seguinte arquivo:<ul>
+<li><a class="el" href="sqlite3_8c.html">sqlite3.c</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Gerado em Tue Aug 24 18:13:45 2010 para Morphometrics por&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

@@ -29,7 +29,6 @@
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <property name="accel_group">accelgroup1</property>
                         <property name="always_show_image">True</property>
                       </object>
                     </child>
@@ -39,7 +38,6 @@
                         <property name="visible">True</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <property name="accel_group">accelgroup1</property>
                         <property name="always_show_image">True</property>
                       </object>
                     </child>
@@ -72,11 +70,9 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImageMenuItem" id="mbArquivoImportar">
-                        <property name="label" translatable="yes">Importar</property>
+                      <object class="GtkMenuItem" id="mbArquivoImportar">
                         <property name="visible">True</property>
-                        <property name="image">image1</property>
-                        <property name="use_stock">False</property>
+                        <property name="label" translatable="yes">Importar</property>
                         <child type="submenu">
                           <object class="GtkMenu" id="menu4">
                             <property name="visible">True</property>
@@ -222,24 +218,17 @@
                         </child>
                       </object>
                     </child>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child>
-              <object class="GtkMenuItem" id="menuitem1">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">_Resultados</property>
-                <property name="use_underline">True</property>
-                <child type="submenu">
-                  <object class="GtkMenu" id="menu7">
-                    <property name="visible">True</property>
                     <child>
-                      <object class="GtkMenuItem" id="mbResultadosAcessibilidade">
+                      <object class="GtkSeparatorMenuItem" id="menuitem6">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Acessibilidade</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="mbCalcularResultados">
+                        <property name="visible">True</property>
+                        <property name="label" translatable="yes">Resultados</property>
                         <property name="use_underline">True</property>
-                        <signal name="activate" handler="on_mbResultadosAcessibilidade_activate"/>
+                        <signal name="activate" handler="on_mbCalcularResultados_activate"/>
                       </object>
                     </child>
                   </object>
@@ -728,9 +717,4 @@
   <object class="GtkMenu" id="menuRefazer">
     <property name="visible">True</property>
   </object>
-  <object class="GtkImage" id="image1">
-    <property name="visible">True</property>
-    <property name="stock">gtk-missing-image</property>
-  </object>
-  <object class="GtkAccelGroup" id="accelgroup1"/>
 </interface>

@@ -12,12 +12,6 @@
 #include "../Header/editar.h"
 
 static void desmarcar() {
-  GtkToggleToolButton *tbAddEntidade=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAddEntidade"));
-  GtkToggleToolButton *tbAddImagem=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAddImagem"));
-  GtkToggleToolButton *tbAddTexto=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAddTexto"));
-  GtkToggleToolButton *tbAmpliar=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAmpliar"));
-  GtkToggleToolButton *tbReduzir=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbReduzir"));
-
   if (ferramentaAtiva != FERRAMENTA_ADD_ENTIDADE) gtk_toggle_tool_button_set_active(tbAddEntidade, FALSE);
   if (ferramentaAtiva != FERRAMENTA_ADD_IMAGEM) gtk_toggle_tool_button_set_active(tbAddImagem, FALSE);
   if (ferramentaAtiva != FERRAMENTA_ADD_TEXTO) gtk_toggle_tool_button_set_active(tbAddTexto, FALSE);

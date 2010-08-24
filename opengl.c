@@ -186,8 +186,8 @@ void DrawQuadradoXOR(double x1, double y1, double x2, double y2) {
   glDisable(GL_LINE_STIPPLE);
 }
 
-static void DrawLine(double x1, double y1, double x2, double y2) {
-  glColor3ub(0, 0, 0);
+static void DrawLine(Cor *cor, double x1, double y1, double x2, double y2) {
+  glColor3ub(cor->r, cor->g, cor->b);
   glDisable(GL_TEXTURE_2D);
 
   glBegin(GL_LINES);
@@ -198,7 +198,7 @@ static void DrawLine(double x1, double y1, double x2, double y2) {
   glEnable(GL_TEXTURE_2D);
 }
 
-void DrawArc(double x, double y, double raio, double inicial, double final) {
+static void DrawArc(Cor *cor, double x, double y, double raio, double inicial, double final) {
   double deltaAngle, anguloInicial, anguloFinal, angulo;
   double tmp;
 
@@ -213,7 +213,7 @@ void DrawArc(double x, double y, double raio, double inicial, double final) {
     anguloFinal += (2.0 * M_PI);
   }
 
-  glColor3ub(0, 0, 0);
+  glColor3ub(cor->r, cor->g, cor->b);
   glBegin(GL_LINE_STRIP);
   angulo = anguloInicial;
   while (angulo <= anguloFinal) {
@@ -279,16 +279,14 @@ void Opengl_desenha() {
 
         Opengl_drawTexto(medioX, medioY, "%d", nodoPerc->id);
       }
-      /*if (nodoPerc->id == 1988) {
-        printf("%lf %lf %lf %lf\n",nodoPerc->p1.x,nodoPerc->p1.y,nodoPerc->p2.x,nodoPerc->p2.y);
-      }*/
+
       if (nodoPerc->tipo == ENTIDADE_LINE) {
         line=(Line *) nodoPerc->d;
-        DrawLine(line->p1.x,line->p1.y,line->p2.x,line->p2.y);
+        DrawLine(&nodoPerc->cor, line->p1.x,line->p1.y,line->p2.x,line->p2.y);
       }
       else if (nodoPerc->tipo == ENTIDADE_ARC) {
         arc=(Arc *) nodoPerc->d;
-        DrawArc(arc->centro.x, arc->centro.y, arc->raio, arc->anguloInicial, arc->anguloFinal);
+        DrawArc(&nodoPerc->cor, arc->centro.x, arc->centro.y, arc->raio, arc->anguloInicial, arc->anguloFinal);
       }
     }
   }

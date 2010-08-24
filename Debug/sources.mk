@@ -16,4 +16,5 @@ SUBDIRS := \
 . \
 Sinais \
 Import \
+Classificacoes \
 

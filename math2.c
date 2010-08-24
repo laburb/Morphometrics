@@ -251,8 +251,7 @@ printf("%lf %lf\n",point.x,point.y);
 /**
  * Retorna o ponto medio da entidade.
  *
- * @param ptIni Ponto inicial do eixo
- * @param ptFim Ponto final do eixo
+ * @param nodo Nodo
  * @param medioX Ponteiro para o retorno do resultado
  * @param medioY Ponteiro para o retorno do resultado
  *

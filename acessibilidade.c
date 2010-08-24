@@ -7,7 +7,7 @@
 
 #include <gtk/gtk.h>
 #include <stdlib.h>
-#include <limits.h>
+#include <float.h>
 
 #include "Header/grafo.h"
 #include "Header/dijkstra.h"
@@ -33,8 +33,6 @@ void Acessibilidade_calcular(enum TipoAcessibilidade tipoAcess) {
   if (!Projeto_iniciarTransacao())
     return;
 
-  GtkWidget *frameProgresso=GTK_WIDGET(gtk_builder_get_object(builderPrincipal, "frameProgresso"));
-  GtkProgressBar *progress=GTK_PROGRESS_BAR(gtk_builder_get_object(builderPrincipal, "progressbar"));
   gtk_widget_show(frameProgresso);
 
   forList(Nodo *, nodoPerc, mapa.grafo->nodos) {
@@ -44,7 +42,7 @@ void Acessibilidade_calcular(enum TipoAcessibilidade tipoAcess) {
 
     //g_print("ID: %d\n",nodoPerc->id);
     for (i=0; i<mapa.grafo->tamanho ;i++) {
-      if (dijksDados[i].custo != INT_MAX) {
+      if (dijksDados[i].custo != DBL_MAX) {
         if ((tipoAcess == ACESS_GEOMETRICA) && (dijksDados[i].geometrico != 0))
           custo+=2/dijksDados[i].geometrico;
         else if ((tipoAcess == ACESS_TOPOLOGICA) && (dijksDados[i].topologico != 0))

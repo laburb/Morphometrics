@@ -41,7 +41,7 @@ void Heap_adicionar(Heap *heap, void *dado) {
 
   heap->numElm++;
 
-  if (heap->numElm > heap->tamanho) {
+  if (heap->numElm >= heap->tamanho) {
     heap->tamanho=20+heap->tamanho*2;
 
     heap->elm=realloc(heap->elm, heap->tamanho * sizeof(void *));

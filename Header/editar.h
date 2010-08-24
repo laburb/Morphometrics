@@ -19,7 +19,7 @@
 
   enum TipoFerramenta ferramentaAtiva;
 
-  void Editar_mouseMove(double mouseX, double mouseY);
+  void Editar_mouseMove(int x, int y, double mouseX, double mouseY);
   void Editar_mousePressiona(int botao, double mouseX, double mouseY);
   void Editar_mouseLibera(int botao, double mouseX, double mouseY);
 
