@@ -47,6 +47,7 @@
   } Mapa;
 
   Mapa mapa;
+  unsigned char corAlpha;
 
   void Mapa_iniciar();
   void Mapa_calculaEixoMax();

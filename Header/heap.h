@@ -29,6 +29,8 @@
 
 
   Heap *Heap_criar(void *funcao);
+  void Heap_deletar(Heap *heap);
+
   void Heap_adicionar(Heap *heap, void *dado);
   void *Heap_remover(Heap *heap);
   int Heap_vazio(Heap *heap);

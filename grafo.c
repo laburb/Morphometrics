@@ -86,9 +86,8 @@ Nodo *Grafo_adicionarNodo(Grafo *grafo, enum EntidadeTipo tipo) {
   nodoAtual->impedancia=1.0;
   nodoAtual->tipo=tipo;
 
-  nodoAtual->cor.r=0;
-  nodoAtual->cor.g=0;
-  nodoAtual->cor.b=0;
+  nodoAtual->cor=-1;
+  nodoAtual->espessura=1;
 
   if (tipo == ENTIDADE_LINE)
     nodoAtual->d=calloc(1, sizeof(Line));

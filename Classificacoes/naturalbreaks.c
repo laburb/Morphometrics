@@ -84,6 +84,9 @@ int *NaturalBreaks(double *data,int numdata, int numclass) {
     kclass[j - 2] = id;
 
     k = (int) mat1[k][j] - 1;
+
+    if (k < 0)
+      break;
   }
 
   for (i=0; i<numdata+1 ;i++) {

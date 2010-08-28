@@ -34,6 +34,8 @@
 #include "Header/grafo.h"
 #include "Header/mapa.h"
 #include "Header/math2.h"
+#include "Header/projeto.h"
+#include "Header/classificacao.h"
 #include "Header/opengl.h"
 
 char openglDesenharAtivo=1;
@@ -142,9 +144,9 @@ void Opengl_iniciar(int w, int h) {
   glClearColor( 0.72f, 0.72f, 0.72f, 0.0f );
   /*glEnable( GL_LINE_SMOOTH );
   glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
-
+*/
   glEnable(GL_BLEND);
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
   Opengl_configTela(w,h);
 
@@ -171,7 +173,8 @@ void DrawLineXOR(double x1, double y1, double x2, double y2) {
   glEnable(GL_COLOR_LOGIC_OP);
   glLogicOp(GL_XOR);
 
-  glColor3ub(255, 255, 255);
+  glLineWidth(1);
+  glColor4ub(255, 255, 255, 255);
   glBegin(GL_LINES);
     glVertex2d(x1, y1);
     glVertex2d(x2, y2);
@@ -191,34 +194,52 @@ void DrawQuadradoXOR(double x1, double y1, double x2, double y2) {
   glEnable(GL_COLOR_LOGIC_OP);
   glLogicOp(GL_XOR);
 
-  glColor3ub(255, 255, 255);
+  glLineWidth(1);
+  glColor4ub(255, 255, 255, 255);
 
   glBegin(GL_LINE_LOOP);
-    glVertex2f(x1, y1);
-    glVertex2f(x2, y1);
-    glVertex2f(x2, y2);
-    glVertex2f(x1, y2);
+    glVertex2d(x1, y1);
+    glVertex2d(x2, y1);
+    glVertex2d(x2, y2);
+    glVertex2d(x1, y2);
   glEnd();
 
   glDisable(GL_COLOR_LOGIC_OP);
   glDisable(GL_LINE_STIPPLE);
 }
 
-static void DrawLine(Cor *cor, double x1, double y1, double x2, double y2) {
-  glColor3ub(cor->r, cor->g, cor->b);
+static void DrawLine(int corNum, int espessura, double x1, double y1, double x2, double y2) {
+  Cor *cor;
+
+  if (corNum == -1)
+    cor=&corPadrao;
+  else
+    cor=&cores[corNum];
+
+  glLineWidth(espessura);
+
+  glColor4ub(cor->r, cor->g, cor->b, corAlpha);
   glDisable(GL_TEXTURE_2D);
 
   glBegin(GL_LINES);
-    glVertex2d(x1, y1);
-    glVertex2d(x2, y2);
+    glVertex3d(x1, y1, espessura*10);
+    glVertex3d(x2, y2, espessura*10);
   glEnd();
 
   glEnable(GL_TEXTURE_2D);
 }
 
-static void DrawArc(Cor *cor, double x, double y, double raio, double inicial, double final) {
+static void DrawArc(int corNum, int espessura, double x, double y, double raio, double inicial, double final) {
   double deltaAngle, anguloInicial, anguloFinal, angulo;
   double tmp;
+  Cor *cor;
+
+  if (corNum == -1)
+    cor=&corPadrao;
+  else
+    cor=&cores[corNum];
+
+  glLineWidth(espessura);
 
   tmp=inicial;
   inicial=360-final;
@@ -231,17 +252,17 @@ static void DrawArc(Cor *cor, double x, double y, double raio, double inicial, d
     anguloFinal += (2.0 * M_PI);
   }
 
-  glColor3ub(cor->r, cor->g, cor->b);
+  glColor4ub(cor->r, cor->g, cor->b, corAlpha);
   glBegin(GL_LINE_STRIP);
   angulo = anguloInicial;
   while (angulo <= anguloFinal) {
-    glVertex2f(x + raio * cos(angulo), y + raio * sin(angulo));
+    glVertex3f(x + raio * cos(angulo), y + raio * sin(angulo), espessura*10);
 
     angulo += deltaAngle;
   }
 
   if (angulo-deltaAngle < anguloFinal)
-    glVertex2f(x + raio * cos(anguloFinal), y + raio * sin(anguloFinal));
+    glVertex3f(x + raio * cos(anguloFinal), y + raio * sin(anguloFinal), espessura*10);
 
   glEnd();
 }
@@ -290,6 +311,8 @@ void Opengl_desenha() {
 
   Mapa_calcularVisaoMaximo(telaW, telaH, &mx, &my);
 
+  glEnable(GL_DEPTH_TEST);
+
   forList(Nodo *, nodoPerc, mapa.grafo->nodos) {
     if (Opengl_verificaDentroVisao(nodoPerc, mx, my)) {
       if (mapa.exibirLabel) {
@@ -300,12 +323,14 @@ void Opengl_desenha() {
 
       if (nodoPerc->tipo == ENTIDADE_LINE) {
         line=(Line *) nodoPerc->d;
-        DrawLine(&nodoPerc->cor, line->p1.x,line->p1.y,line->p2.x,line->p2.y);
+        DrawLine(nodoPerc->cor, nodoPerc->espessura, line->p1.x,line->p1.y,line->p2.x,line->p2.y);
       }
       else if (nodoPerc->tipo == ENTIDADE_ARC) {
         arc=(Arc *) nodoPerc->d;
-        DrawArc(&nodoPerc->cor, arc->centro.x, arc->centro.y, arc->raio, arc->anguloInicial, arc->anguloFinal);
+        DrawArc(nodoPerc->cor, nodoPerc->espessura, arc->centro.x, arc->centro.y, arc->raio, arc->anguloInicial, arc->anguloFinal);
       }
     }
   }
+
+  glDisable(GL_DEPTH_TEST);
 }

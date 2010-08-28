@@ -67,6 +67,7 @@ void Interface_iniciar() {
   labelPosicaoXY=GTK_LABEL(gtk_builder_get_object(builderPrincipal, "labelPosicaoXY"));
   ajustScrollHorizGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollHorizGL"));
   ajustScrollVertGL=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "ajustScrollVertGL"));
+  adjustAlpha=GTK_ADJUSTMENT(gtk_builder_get_object(builderPrincipal, "adjustAlpha"));
   tbAddEntidade=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAddEntidade"));
   tbAddImagem=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAddImagem"));
   tbAddTexto=GTK_TOGGLE_TOOL_BUTTON(gtk_builder_get_object(builderPrincipal, "tbAddTexto"));

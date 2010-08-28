@@ -38,6 +38,15 @@ Heap *Heap_criar(void *funcao) {
   return heap;
 }
 
+void Heap_deletar(Heap *heap) {
+  if (heap) {
+    if (heap->elm)
+      free(heap->elm);
+
+    free(heap);
+  }
+}
+
 static int compararHeap(Heap *heap, void *a, void *b) {
   if (heap->funcao == NULL)
     return (*((int *) a) < *((int *) b));

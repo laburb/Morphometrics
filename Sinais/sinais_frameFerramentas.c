@@ -134,3 +134,9 @@ G_MODULE_EXPORT void on_tbExibirLabel_toggled(GtkObject *object, gpointer user_d
   mapa.exibirLabel=estado;
   Interface_atualizaOpengl();
 }
+
+G_MODULE_EXPORT void on_adjustAlpha_value_changed(GtkObject *object, gpointer user_data) {
+  corAlpha=255-(unsigned char) gtk_adjustment_get_value(adjustAlpha);
+
+  Interface_atualizaOpengl();
+}

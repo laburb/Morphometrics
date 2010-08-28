@@ -122,7 +122,7 @@ DijksDados *dijkstra(Grafo *grafo, int origem, int tipo) {
     printf("%d , distancia: %d\n",i+1, grafo->nodos[i].aux);
   }
 */
-  Heap_remover(Q);
+  Heap_deletar(Q);
 
   return dados;
 }

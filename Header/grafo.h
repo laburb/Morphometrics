@@ -47,16 +47,11 @@
     double anguloFinal;
   } Arc;
 
-  typedef struct {
-    unsigned char r;
-    unsigned char g;
-    unsigned char b;
-  } Cor;
-
   struct nodo {
     int id;
     void *d;
-    Cor cor;
+    int cor;
+    int espessura;
     enum EntidadeTipo tipo;
     double impedancia;
     Arestas *arestas;

@@ -35,6 +35,7 @@
 
     GtkAdjustment *ajustScrollHorizGL;
     GtkAdjustment *ajustScrollVertGL;
+    GtkAdjustment *adjustAlpha;
 
     GtkToggleToolButton *tbAddEntidade;
     GtkToggleToolButton *tbAddImagem;

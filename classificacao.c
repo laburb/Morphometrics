@@ -40,12 +40,19 @@ Cor cores[5]={
     {224,19,53},
     {255,0,0}
 };
+Cor corPadrao={0,0,0};
+
+int espessuraMin=1;
+int espessuraMax=10;
 
 void Classificacao(ArrayValor *valores) {
-  int *kclass;
+  int *classCor=NULL;
+  int *classEspessura=NULL;
   double *data;
-  int numData,i,classe=0;
-  int numClassTmp=numClass;
+  int numData,i;
+  int classePerCor=0,classePerEspes=0;
+  int numClassCor=numClass;
+  int numClassEspessura=espessuraMax-espessuraMin;
   Grafo *grafo=mapa.grafo;
   Nodo *nodo;
 
@@ -57,15 +64,27 @@ void Classificacao(ArrayValor *valores) {
   for (i=0; i<numData ;i++)
     data[i]=valores[i].valor;
 
-  if (numClassTmp > numData)
-    numClassTmp=numData;
+  if (numClassCor > numData)
+    numClassCor=numData;
 
-  if (classificaoAtiva == CLASS_NATURALBREAKS)
-    kclass=NaturalBreaks(data, numData, numClassTmp);
+  if (numClassEspessura > numData)
+    numClassEspessura=numData;
+
+  if (classificaoAtiva == CLASS_NATURALBREAKS) {
+    classCor=NaturalBreaks(data, numData, numClassCor);
+
+    if (numClassEspessura)
+      classEspessura=NaturalBreaks(data, numData, numClassEspessura);
+  }
 
   for (i=0; i<numData ;i++) {
-    while (valores[i].valor > data[kclass[classe]])
-      classe++;
+    while (valores[i].valor > data[classCor[classePerCor]])
+      classePerCor++;
+
+    if (numClassEspessura) {
+      while (valores[i].valor > data[classEspessura[classePerEspes]])
+        classePerEspes++;
+    }
 
     nodo=Grafo_getNodo(grafo, valores[i].id);
 
@@ -75,11 +94,13 @@ void Classificacao(ArrayValor *valores) {
       break;
     }
 
-    nodo->cor.r=cores[classe].r;
-    nodo->cor.g=cores[classe].g;
-    nodo->cor.b=cores[classe].b;
+    nodo->cor=classePerCor;
+    nodo->espessura=espessuraMin+classePerEspes;
   }
 
-  free(kclass);
+  free(classCor);
+  if (classEspessura)
+    free(classEspessura);
+
   free(data);
 }

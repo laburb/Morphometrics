@@ -30,7 +30,20 @@
     CLASS_NATURALBREAKS
   };
 
+  typedef struct {
+    unsigned char r;
+    unsigned char g;
+    unsigned char b;
+  } Cor;
+
+  Cor cores[5];
+  Cor corPadrao;
+
+  int espessuraMin;
+  int espessuraMax;
+
   enum ClassificaoTipo classificaoAtiva;
 
   void Classificacao(ArrayValor *valores);
+
 #endif /* CLASSIFICACAO_H_ */

@@ -30,6 +30,8 @@
 
 #include <math.h>
 
+unsigned char corAlpha=255;
+
 /**
  * Inicia o mapa com configuracões padrões
  */
